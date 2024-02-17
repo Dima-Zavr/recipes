@@ -1,0 +1,18 @@
+.header{
+    width: 100%;
+    border-bottom: 1px solid #82bd69;
+}
+.container{
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    height: 120px;
+    padding:0 40px;
+    justify-content: space-between;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}

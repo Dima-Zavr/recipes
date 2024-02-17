@@ -1,0 +1,139 @@
+{
+    "allRecipes":[
+        {
+            "id": 1,
+            "name": "Куринная лапша",
+            "photos": [
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
+                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png"
+            ],
+            "cooking_time": 30,
+            "calories": 43,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":70, "quantity": "none"},
+                {"name": "морковь", "weight":80, "quantity": "none"},
+                {"name": "стебель сельдерея", "weight":"none", "quantity": 1},
+                {"name": "курица вареная", "weight":1500, "quantity": "none"},
+                {"name": "перепелинные яйца", "weight":"none", "quantity": 3},
+                {"name": "тесто для лапши", "weight":100, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "бульон куринный", "weight":2000, "quantity": "none"},
+                {"name": "веточка укропа", "weight":"none", "quantity": 2},
+                {"name": "соль", "weight":"none", "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
+            ],
+            "equipment":["доска разделочная", "нож", "кастрюля", "миска"],
+            "cooking steps": [
+                {"id": 1, "text": "Лук нарубите тонкими перьями."},
+                {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
+                {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
+                {"id": 4, "text": "Отварные перепелиные яйца почистите и разрежьте пополам."},
+                {"id": 5, "text": "Раскатайте тесто для лапши в пласт толщиной 3мм, сверните в рулетик и нарежьте в лапшу толщиной 3мм."},
+                {"id": 6, "text": "В кастрюлю налейте и разогрейте растительное масло. Обжарьте на среднем огне лук, затем морковь и сельдерей. Постоянно помешивайте."},
+                {"id": 7, "text": "Влейте к овощам бульон, доведите до кипения."},
+                {"id": 8, "text": "Мелко порубите укроп."},
+                {"id": 9, "text": "В бульон отправьте курицу, посолите. Аккуратно добавьте лапшу в бульон и варите 2 минуты. Всыпьте укроп и поперчите."},
+                {"id": 10, "text": "Подавайте бульон порционно, украсьте перепелиными яйцами."}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Блины",
+            "photos": [
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg",
+                "https://gas-kvas.com/grafic/uploads/posts/2023-10/1696590502_gas-kvas-com-p-kartinki-blinchik-1.jpg"
+            ],
+            "cooking_time": 30,
+            "calories": 43,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":70, "quantity": "none"},
+                {"name": "морковь", "weight":80, "quantity": "none"},
+                {"name": "стебель сельдерея", "weight":"none", "quantity": 1},
+                {"name": "курица вареная", "weight":1500, "quantity": "none"},
+                {"name": "перепелинные яйца", "weight":"none", "quantity": 3},
+                {"name": "тесто для лапши", "weight":100, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "бульон куринный", "weight":2000, "quantity": "none"},
+                {"name": "веточка укропа", "weight":"none", "quantity": 2},
+                {"name": "соль", "weight":"none", "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
+            ],
+            "equipment":["доска разделочная", "нож", "кастрюля", "миска"],
+            "cooking steps": [
+                {"id": 1, "text": "Лук нарубите тонкими перьями."},
+                {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
+                {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
+                {"id": 4, "text": "Отварные перепелиные яйца почистите и разрежьте пополам."},
+                {"id": 5, "text": "Раскатайте тесто для лапши в пласт толщиной 3мм, сверните в рулетик и нарежьте в лапшу толщиной 3мм."},
+                {"id": 6, "text": "В кастрюлю налейте и разогрейте растительное масло. Обжарьте на среднем огне лук, затем морковь и сельдерей. Постоянно помешивайте."},
+                {"id": 7, "text": "Влейте к овощам бульон, доведите до кипения."},
+                {"id": 8, "text": "Мелко порубите укроп."},
+                {"id": 9, "text": "В бульон отправьте курицу, посолите. Аккуратно добавьте лапшу в бульон и варите 2 минуты. Всыпьте укроп и поперчите."},
+                {"id": 10, "text": "Подавайте бульон порционно, украсьте перепелиными яйцами."}
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Жареный картофель",
+            "photos": [
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg",
+                "https://numerolog8.ru/wp-content/uploads/2023/11/zharit-kartoshku.jpg"
+            ],
+            "cooking_time": 30,
+            "calories": 43,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":70, "quantity": "none"},
+                {"name": "морковь", "weight":80, "quantity": "none"},
+                {"name": "стебель сельдерея", "weight":"none", "quantity": 1},
+                {"name": "курица вареная", "weight":1500, "quantity": "none"},
+                {"name": "перепелинные яйца", "weight":"none", "quantity": 3},
+                {"name": "тесто для лапши", "weight":100, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "бульон куринный", "weight":2000, "quantity": "none"},
+                {"name": "веточка укропа", "weight":"none", "quantity": 2},
+                {"name": "соль", "weight":"none", "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
+            ],
+            "equipment":["доска разделочная", "нож", "кастрюля", "миска"],
+            "cooking steps": [
+                {"id": 1, "text": "Лук нарубите тонкими перьями."},
+                {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
+                {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
+                {"id": 4, "text": "Отварные перепелиные яйца почистите и разрежьте пополам."},
+                {"id": 5, "text": "Раскатайте тесто для лапши в пласт толщиной 3мм, сверните в рулетик и нарежьте в лапшу толщиной 3мм."},
+                {"id": 6, "text": "В кастрюлю налейте и разогрейте растительное масло. Обжарьте на среднем огне лук, затем морковь и сельдерей. Постоянно помешивайте."},
+                {"id": 7, "text": "Влейте к овощам бульон, доведите до кипения."},
+                {"id": 8, "text": "Мелко порубите укроп."},
+                {"id": 9, "text": "В бульон отправьте курицу, посолите. Аккуратно добавьте лапшу в бульон и варите 2 минуты. Всыпьте укроп и поперчите."},
+                {"id": 10, "text": "Подавайте бульон порционно, украсьте перепелиными яйцами."}
+            ]
+        }
+        
+    ],
+    "myRecipes":[],
+    "favouriteRecipes":[]
+}
