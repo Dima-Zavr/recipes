@@ -4,7 +4,6 @@ import  logo  from '../../assets/logo.svg'
 import styled from 'styled-components'
 
 const MyLink = styled.p`
-    font-family: Verdana;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.3;
@@ -20,13 +19,13 @@ export const PageHeader = () => {
   return (
     <header className={styles.header}>
         <div className={styles.container}>
-            <img src={logo} alt="website logo" width="auto" height="100px"/>
+            <img className={styles.img} src={logo} alt="website logo" />
             <div className={styles.links}>
                 <Link to=""><MyLink>Все рецепты</MyLink></Link>
                 <Link to="myRecipes"><MyLink>Мои рецепты</MyLink></Link>
                 <Link to="favouriteRecipes"><MyLink>Избранные рецепты</MyLink></Link>
             </div>
-            <img src={logo} alt="website logo" width="auto" height="100px"/>
+            <img className={styles.img} src={logo} alt="website logo"/>
         </div>
     </header>
   );
