@@ -4,16 +4,16 @@
             "id": 1,
             "name": "Куринная лапша",
             "photos": [
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png"
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp"
             ],
             "cooking_time": 30,
             "calories": 43,
@@ -30,7 +30,7 @@
                 {"name": "соль", "weight":"none", "quantity": "none"},
                 {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
             ],
-            "equipment":["доска разделочная", "нож", "кастрюля", "миска"],
+            "equipments":["доска разделочная", "нож", "кастрюля", "миска"],
             "cooking steps": [
                 {"id": 1, "text": "Лук нарубите тонкими перьями."},
                 {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
@@ -70,7 +70,7 @@
                 {"name": "сахар", "weight":"none", "quantity": "none"},
                 {"name": "соль", "weight":"none", "quantity": "none"}
             ], 
-            "equipment":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
+            "equipments":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
             "cooking steps": [
                 {"id": 1, "text": "Разбейте яйца в глубокой миске. Добавьте сахар, соль, воду и взбивайте получившуюся массу венчиком."},
                 {"id": 2, "text": "Добавьте муку."},
@@ -108,7 +108,7 @@
                 {"name": "перец черный молотый", "weight":"none", "quantity": "none"},
                 {"name": "кунжут", "weight":"none", "quantity": "none"}
             ],
-            "equipment":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
+            "equipments":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
             "cooking steps": [
                 {"id": 1, "text": "Репчатый лук и морковь нарежьте мелким кубиком."},
                 {"id": 2, "text": "Перья лука мелко нарежьте. Чеснок раздавите плоской частью ножа и мелко нарубите."},
@@ -153,7 +153,7 @@
                 {"name": "сметана", "weight":30, "quantity": "none"},
                 {"name": "укроп", "weight":"none", "quantity": 1}
             ],
-            "equipment":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
+            "equipments":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
             "cooking steps": [
                 {"id": 1, "text": "Налейте бульон в кастрюлю, поставьте на небольшой огонь. Картофель и говядину нарежьте небольшим кубиком."},
                 {"id": 2, "text": "Морковь и свеклу натрите на крупной тёрке. Лук нашинкуйте на мелкий кубик."},
@@ -167,16 +167,16 @@
             "id": 5,
             "name": "Куринная лапша",
             "photos": [
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png",
-                "https://mykaleidoscope.ru/x/uploads/posts/2022-09/1663807358_8-mykaleidoscope-ru-p-kurinii-sup-s-domashnei-lapshoi-yeda-vkont-8.png"
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp"
             ],
             "cooking_time": 30,
             "calories": 43,
@@ -193,7 +193,7 @@
                 {"name": "соль", "weight":"none", "quantity": "none"},
                 {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
             ],
-            "equipment":["доска разделочная", "нож", "кастрюля", "миска"],
+            "equipments":["доска разделочная", "нож", "кастрюля", "миска"],
             "cooking steps": [
                 {"id": 1, "text": "Лук нарубите тонкими перьями."},
                 {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
@@ -233,7 +233,7 @@
                 {"name": "сахар", "weight":"none", "quantity": "none"},
                 {"name": "соль", "weight":"none", "quantity": "none"}
             ], 
-            "equipment":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
+            "equipments":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
             "cooking steps": [
                 {"id": 1, "text": "Разбейте яйца в глубокой миске. Добавьте сахар, соль, воду и взбивайте получившуюся массу венчиком."},
                 {"id": 2, "text": "Добавьте муку."},
@@ -271,7 +271,7 @@
                 {"name": "перец черный молотый", "weight":"none", "quantity": "none"},
                 {"name": "кунжут", "weight":"none", "quantity": "none"}
             ],
-            "equipment":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
+            "equipments":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
             "cooking steps": [
                 {"id": 1, "text": "Репчатый лук и морковь нарежьте мелким кубиком."},
                 {"id": 2, "text": "Перья лука мелко нарежьте. Чеснок раздавите плоской частью ножа и мелко нарубите."},
@@ -316,7 +316,7 @@
                 {"name": "сметана", "weight":30, "quantity": "none"},
                 {"name": "укроп", "weight":"none", "quantity": 1}
             ],
-            "equipment":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
+            "equipments":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
             "cooking steps": [
                 {"id": 1, "text": "Налейте бульон в кастрюлю, поставьте на небольшой огонь. Картофель и говядину нарежьте небольшим кубиком."},
                 {"id": 2, "text": "Морковь и свеклу натрите на крупной тёрке. Лук нашинкуйте на мелкий кубик."},
