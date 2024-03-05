@@ -1,5 +1,8 @@
 import styles from "./styles.module.css"
 import { Title } from "../styled-components";
+import { Heart } from "../../assets/heart";
+import { store } from "../../store/store";
+import { addFavouriteRecipesAction } from "../../store/favourite-reducer";
 
 export const RecipeInf = ({recipe}) => {
     return (
@@ -19,14 +22,15 @@ export const RecipeInf = ({recipe}) => {
                     <li className={styles.equipment} key={index}>{el}</li>
                 ))}
             </ul>
-
             <span className={styles.weight}>Ингредиенты</span>
             <ul className={styles.ingredients}>
                 {recipe.ingredients.map((el, index) => (
                     <li className={styles.ingredient} key={index}>{el.name}</li>
                 ))}
             </ul>
-            
+            <div onClick={() => {console.log("Tap"); store.dispatch(addFavouriteRecipesAction(recipe))}}>
+                <Heart color="#000000" />
+            </div>
         </div>
     );
 }

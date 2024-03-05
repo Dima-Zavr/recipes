@@ -15,11 +15,9 @@ export const Slider = ({photos}) => {
                 slidesPerView={1}
                 navigation
                 speed={800}
-
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-            >
+                onSlideChange={() => console.log('slide change')}>
                 {photos.map((photo, index) => (
                     <SwiperSlide key={index}> <Img src={photo} alt="photo" /> </SwiperSlide>
                 ))}

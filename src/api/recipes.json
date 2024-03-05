@@ -31,7 +31,7 @@
                 {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
             ],
             "equipments":["доска разделочная", "нож", "кастрюля", "миска"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Лук нарубите тонкими перьями."},
                 {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
                 {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
@@ -71,7 +71,7 @@
                 {"name": "соль", "weight":"none", "quantity": "none"}
             ], 
             "equipments":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Разбейте яйца в глубокой миске. Добавьте сахар, соль, воду и взбивайте получившуюся массу венчиком."},
                 {"id": 2, "text": "Добавьте муку."},
                 {"id": 3, "text": "В ту же миску залейте молоко и масло. Размешивайте до получения однородной массы."},
@@ -109,7 +109,7 @@
                 {"name": "кунжут", "weight":"none", "quantity": "none"}
             ],
             "equipments":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Репчатый лук и морковь нарежьте мелким кубиком."},
                 {"id": 2, "text": "Перья лука мелко нарежьте. Чеснок раздавите плоской частью ножа и мелко нарубите."},
                 {"id": 3, "text": "На сковороде разогрейте растительное масло, добавьте яйца и, помешивая, обжарьте."},
@@ -154,7 +154,7 @@
                 {"name": "укроп", "weight":"none", "quantity": 1}
             ],
             "equipments":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Налейте бульон в кастрюлю, поставьте на небольшой огонь. Картофель и говядину нарежьте небольшим кубиком."},
                 {"id": 2, "text": "Морковь и свеклу натрите на крупной тёрке. Лук нашинкуйте на мелкий кубик."},
                 {"id": 3, "text": "В закипевший бульон добавьте перец, лавровый лист, картофель и мясо."},
@@ -194,7 +194,7 @@
                 {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
             ],
             "equipments":["доска разделочная", "нож", "кастрюля", "миска"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Лук нарубите тонкими перьями."},
                 {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
                 {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
@@ -234,7 +234,7 @@
                 {"name": "соль", "weight":"none", "quantity": "none"}
             ], 
             "equipments":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Разбейте яйца в глубокой миске. Добавьте сахар, соль, воду и взбивайте получившуюся массу венчиком."},
                 {"id": 2, "text": "Добавьте муку."},
                 {"id": 3, "text": "В ту же миску залейте молоко и масло. Размешивайте до получения однородной массы."},
@@ -272,7 +272,7 @@
                 {"name": "кунжут", "weight":"none", "quantity": "none"}
             ],
             "equipments":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
-            "cooking steps": [
+            "cooking_steps": [
                 {"id": 1, "text": "Репчатый лук и морковь нарежьте мелким кубиком."},
                 {"id": 2, "text": "Перья лука мелко нарежьте. Чеснок раздавите плоской частью ножа и мелко нарубите."},
                 {"id": 3, "text": "На сковороде разогрейте растительное масло, добавьте яйца и, помешивая, обжарьте."},
@@ -317,7 +317,333 @@
                 {"name": "укроп", "weight":"none", "quantity": 1}
             ],
             "equipments":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
-            "cooking steps": [
+            "cooking_steps": [
+                {"id": 1, "text": "Налейте бульон в кастрюлю, поставьте на небольшой огонь. Картофель и говядину нарежьте небольшим кубиком."},
+                {"id": 2, "text": "Морковь и свеклу натрите на крупной тёрке. Лук нашинкуйте на мелкий кубик."},
+                {"id": 3, "text": "В закипевший бульон добавьте перец, лавровый лист, картофель и мясо."},
+                {"id": 4, "text": "На сковороду добавьте растительное масло. Пока масло нагревается, натрите зубчик чеснока на мелкой тёрке. Обжарьте морковь, чеснок и лук до золотистости. Посолите и поперчите по вкусу. Зажарку из моркови и чеснока отправьте в бульон."},
+                {"id": 5, "text": "Отдельно обжарьте свеклу на растительном масле, с добавлением уксуса, чтобы не потерялся свекольный цвет. Капусту тонко нашинкуйте. Посолите, поперчите свеклу, добавьте томатную пасту и отправьте смесь в кастрюлю. Капусту кладите в борщ в последнюю очередь. После добавьте сахар и соль и варите суп на небольшом огне 1 час."},
+                {"id": 6, "text": "Готовый суп подавайте порционно, со сметаной (рекомендуется использовать сметану жирностью 20%) и веточкой укропа."}
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Куринная лапша",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp"
+            ],
+            "cooking_time": 30,
+            "calories": 43,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":70, "quantity": "none"},
+                {"name": "морковь", "weight":80, "quantity": "none"},
+                {"name": "стебель сельдерея", "weight":"none", "quantity": 1},
+                {"name": "курица вареная", "weight":1500, "quantity": "none"},
+                {"name": "перепелинные яйца", "weight":"none", "quantity": 3},
+                {"name": "тесто для лапши", "weight":100, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "бульон куринный", "weight":2000, "quantity": "none"},
+                {"name": "веточка укропа", "weight":"none", "quantity": 2},
+                {"name": "соль", "weight":"none", "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
+            ],
+            "equipments":["доска разделочная", "нож", "кастрюля", "миска"],
+            "cooking_steps": [
+                {"id": 1, "text": "Лук нарубите тонкими перьями."},
+                {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
+                {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
+                {"id": 4, "text": "Отварные перепелиные яйца почистите и разрежьте пополам."},
+                {"id": 5, "text": "Раскатайте тесто для лапши в пласт толщиной 3мм, сверните в рулетик и нарежьте в лапшу толщиной 3мм."},
+                {"id": 6, "text": "В кастрюлю налейте и разогрейте растительное масло. Обжарьте на среднем огне лук, затем морковь и сельдерей. Постоянно помешивайте."},
+                {"id": 7, "text": "Влейте к овощам бульон, доведите до кипения."},
+                {"id": 8, "text": "Мелко порубите укроп."},
+                {"id": 9, "text": "В бульон отправьте курицу, посолите. Аккуратно добавьте лапшу в бульон и варите 2 минуты. Всыпьте укроп и поперчите."},
+                {"id": 10, "text": "Подавайте бульон порционно, украсьте перепелиными яйцами."}
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Классически блины",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp"
+            ],
+            "cooking_time": 25,
+            "calories": 217,
+            "ingredients":[
+                {"name": "молоко", "weight":"none", "quantity": "none"},
+                {"name": "вода", "weight":"none", "quantity": "none"},
+                {"name": "яйцо C1", "weight":"none", "quantity": "none"},
+                {"name": "мука пшеничная", "weight":"none", "quantity": "none"},
+                {"name": "масло растительное", "weight":"none", "quantity": "none"},
+                {"name": "сахар", "weight":"none", "quantity": "none"},
+                {"name": "соль", "weight":"none", "quantity": "none"}
+            ], 
+            "equipments":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
+            "cooking_steps": [
+                {"id": 1, "text": "Разбейте яйца в глубокой миске. Добавьте сахар, соль, воду и взбивайте получившуюся массу венчиком."},
+                {"id": 2, "text": "Добавьте муку."},
+                {"id": 3, "text": "В ту же миску залейте молоко и масло. Размешивайте до получения однородной массы."},
+                {"id": 4, "text": "Разогрейте сковороду на среднем огне. Перед жаркой первого блина смажьте сковороду небольшим количеством растительного масла. Жарьте блинчики до получения румяного цвета с обеих сторон."},
+                {"id": 5, "text": "Подавайте блинчики со сметаной и вареньем или любой другой любимой вами добавкой. По желанию их также можно украсить сахарной пудрой."}
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Жареный рис с яйцом",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp"
+            ],
+            "cooking_time": 30,
+            "calories": 156,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":100, "quantity": "none"},
+                {"name": "морковь", "weight":100, "quantity": "none"},
+                {"name": "зеленый лук", "weight":"none", "quantity": 1},
+                {"name": "чеснок", "weight":12, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "яйцо C1", "weight":"none", "quantity": 2},
+                {"name": "рис жасмин отварной", "weight":300, "quantity": "none"},
+                {"name": "соевый соус", "weight":130, "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"},
+                {"name": "кунжут", "weight":"none", "quantity": "none"}
+            ],
+            "equipments":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
+            "cooking_steps": [
+                {"id": 1, "text": "Репчатый лук и морковь нарежьте мелким кубиком."},
+                {"id": 2, "text": "Перья лука мелко нарежьте. Чеснок раздавите плоской частью ножа и мелко нарубите."},
+                {"id": 3, "text": "На сковороде разогрейте растительное масло, добавьте яйца и, помешивая, обжарьте."},
+                {"id": 4, "text": "Добавьте к яйцам репчатый лук, морковь, продолжайте обжаривать. После добавьте чеснок, рис и поперчите. Обжаривайте 2 минуты, помешивая."},
+                {"id": 5, "text": "Влейте в рис соевый соус и добавьте половину зелёного лука."},
+                {"id": 6, "text": "Готовый рис подавайте горячим, украсьте зелёным луком и кунжутом."}
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Борщ с говядиной",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp"
+            ],
+            "cooking_time": 45,
+            "calories": 33,
+            "ingredients":[
+                {"name": "говяжий бульон", "weight":2000, "quantity": "none"},
+                {"name": "картофель", "weight":400, "quantity": "none"},
+                {"name": "говядина отварная", "weight":400, "quantity": "none"},
+                {"name": "морковь", "weight":250, "quantity": "none"},
+                {"name": "лук репчатый", "weight":150, "quantity": "none"},
+                {"name": "лавровый лист", "weight":"none", "quantity": 3},
+                {"name": "перец черный горошек", "weight":5, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "чеснок", "weight":"none", "quantity": 1},
+                {"name": "свекла", "weight":250, "quantity": "none"},
+                {"name": "томатная паста", "weight":40, "quantity": "none"},
+                {"name": "красный винный уксус", "weight":20, "quantity": "none"},
+                {"name": "капуста белокачанная", "weight":150, "quantity": "none"},
+                {"name": "сахар", "weight":10, "quantity": "none"},
+                {"name": "сметана", "weight":30, "quantity": "none"},
+                {"name": "укроп", "weight":"none", "quantity": 1}
+            ],
+            "equipments":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
+            "cooking_steps": [
+                {"id": 1, "text": "Налейте бульон в кастрюлю, поставьте на небольшой огонь. Картофель и говядину нарежьте небольшим кубиком."},
+                {"id": 2, "text": "Морковь и свеклу натрите на крупной тёрке. Лук нашинкуйте на мелкий кубик."},
+                {"id": 3, "text": "В закипевший бульон добавьте перец, лавровый лист, картофель и мясо."},
+                {"id": 4, "text": "На сковороду добавьте растительное масло. Пока масло нагревается, натрите зубчик чеснока на мелкой тёрке. Обжарьте морковь, чеснок и лук до золотистости. Посолите и поперчите по вкусу. Зажарку из моркови и чеснока отправьте в бульон."},
+                {"id": 5, "text": "Отдельно обжарьте свеклу на растительном масле, с добавлением уксуса, чтобы не потерялся свекольный цвет. Капусту тонко нашинкуйте. Посолите, поперчите свеклу, добавьте томатную пасту и отправьте смесь в кастрюлю. Капусту кладите в борщ в последнюю очередь. После добавьте сахар и соль и варите суп на небольшом огне 1 час."},
+                {"id": 6, "text": "Готовый суп подавайте порционно, со сметаной (рекомендуется использовать сметану жирностью 20%) и веточкой укропа."}
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Куринная лапша",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp"
+            ],
+            "cooking_time": 30,
+            "calories": 43,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":70, "quantity": "none"},
+                {"name": "морковь", "weight":80, "quantity": "none"},
+                {"name": "стебель сельдерея", "weight":"none", "quantity": 1},
+                {"name": "курица вареная", "weight":1500, "quantity": "none"},
+                {"name": "перепелинные яйца", "weight":"none", "quantity": 3},
+                {"name": "тесто для лапши", "weight":100, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "бульон куринный", "weight":2000, "quantity": "none"},
+                {"name": "веточка укропа", "weight":"none", "quantity": 2},
+                {"name": "соль", "weight":"none", "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"}
+            ],
+            "equipments":["доска разделочная", "нож", "кастрюля", "миска"],
+            "cooking_steps": [
+                {"id": 1, "text": "Лук нарубите тонкими перьями."},
+                {"id": 2, "text": "Морковь и сельдерей нарежьте соломкой."},
+                {"id": 3, "text": "Отделите варёное куриное мясо от костей и кожи."},
+                {"id": 4, "text": "Отварные перепелиные яйца почистите и разрежьте пополам."},
+                {"id": 5, "text": "Раскатайте тесто для лапши в пласт толщиной 3мм, сверните в рулетик и нарежьте в лапшу толщиной 3мм."},
+                {"id": 6, "text": "В кастрюлю налейте и разогрейте растительное масло. Обжарьте на среднем огне лук, затем морковь и сельдерей. Постоянно помешивайте."},
+                {"id": 7, "text": "Влейте к овощам бульон, доведите до кипения."},
+                {"id": 8, "text": "Мелко порубите укроп."},
+                {"id": 9, "text": "В бульон отправьте курицу, посолите. Аккуратно добавьте лапшу в бульон и варите 2 минуты. Всыпьте укроп и поперчите."},
+                {"id": 10, "text": "Подавайте бульон порционно, украсьте перепелиными яйцами."}
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Классически блины",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp"
+            ],
+            "cooking_time": 25,
+            "calories": 217,
+            "ingredients":[
+                {"name": "молоко", "weight":"none", "quantity": "none"},
+                {"name": "вода", "weight":"none", "quantity": "none"},
+                {"name": "яйцо C1", "weight":"none", "quantity": "none"},
+                {"name": "мука пшеничная", "weight":"none", "quantity": "none"},
+                {"name": "масло растительное", "weight":"none", "quantity": "none"},
+                {"name": "сахар", "weight":"none", "quantity": "none"},
+                {"name": "соль", "weight":"none", "quantity": "none"}
+            ], 
+            "equipments":["сковорода блинная", "половник", "венчик", "миска", "лопатка", "кулинарные весы"],
+            "cooking_steps": [
+                {"id": 1, "text": "Разбейте яйца в глубокой миске. Добавьте сахар, соль, воду и взбивайте получившуюся массу венчиком."},
+                {"id": 2, "text": "Добавьте муку."},
+                {"id": 3, "text": "В ту же миску залейте молоко и масло. Размешивайте до получения однородной массы."},
+                {"id": 4, "text": "Разогрейте сковороду на среднем огне. Перед жаркой первого блина смажьте сковороду небольшим количеством растительного масла. Жарьте блинчики до получения румяного цвета с обеих сторон."},
+                {"id": 5, "text": "Подавайте блинчики со сметаной и вареньем или любой другой любимой вами добавкой. По желанию их также можно украсить сахарной пудрой."}
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Жареный рис с яйцом",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp"
+            ],
+            "cooking_time": 30,
+            "calories": 156,
+            "ingredients":[
+                {"name": "лук репчатый", "weight":100, "quantity": "none"},
+                {"name": "морковь", "weight":100, "quantity": "none"},
+                {"name": "зеленый лук", "weight":"none", "quantity": 1},
+                {"name": "чеснок", "weight":12, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "яйцо C1", "weight":"none", "quantity": 2},
+                {"name": "рис жасмин отварной", "weight":300, "quantity": "none"},
+                {"name": "соевый соус", "weight":130, "quantity": "none"},
+                {"name": "перец черный молотый", "weight":"none", "quantity": "none"},
+                {"name": "кунжут", "weight":"none", "quantity": "none"}
+            ],
+            "equipments":["доска разделочная", "нож", "миска", "сковорода", "лопатка"],
+            "cooking_steps": [
+                {"id": 1, "text": "Репчатый лук и морковь нарежьте мелким кубиком."},
+                {"id": 2, "text": "Перья лука мелко нарежьте. Чеснок раздавите плоской частью ножа и мелко нарубите."},
+                {"id": 3, "text": "На сковороде разогрейте растительное масло, добавьте яйца и, помешивая, обжарьте."},
+                {"id": 4, "text": "Добавьте к яйцам репчатый лук, морковь, продолжайте обжаривать. После добавьте чеснок, рис и поперчите. Обжаривайте 2 минуты, помешивая."},
+                {"id": 5, "text": "Влейте в рис соевый соус и добавьте половину зелёного лука."},
+                {"id": 6, "text": "Готовый рис подавайте горячим, украсьте зелёным луком и кунжутом."}
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Борщ с говядиной",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp"
+            ],
+            "cooking_time": 45,
+            "calories": 33,
+            "ingredients":[
+                {"name": "говяжий бульон", "weight":2000, "quantity": "none"},
+                {"name": "картофель", "weight":400, "quantity": "none"},
+                {"name": "говядина отварная", "weight":400, "quantity": "none"},
+                {"name": "морковь", "weight":250, "quantity": "none"},
+                {"name": "лук репчатый", "weight":150, "quantity": "none"},
+                {"name": "лавровый лист", "weight":"none", "quantity": 3},
+                {"name": "перец черный горошек", "weight":5, "quantity": "none"},
+                {"name": "масло растительное", "weight":20, "quantity": "none"},
+                {"name": "чеснок", "weight":"none", "quantity": 1},
+                {"name": "свекла", "weight":250, "quantity": "none"},
+                {"name": "томатная паста", "weight":40, "quantity": "none"},
+                {"name": "красный винный уксус", "weight":20, "quantity": "none"},
+                {"name": "капуста белокачанная", "weight":150, "quantity": "none"},
+                {"name": "сахар", "weight":10, "quantity": "none"},
+                {"name": "сметана", "weight":30, "quantity": "none"},
+                {"name": "укроп", "weight":"none", "quantity": 1}
+            ],
+            "equipments":["доска разделочная", "нож", "терка", "кастрюля", "миска", "сковорода", "лопатка", "кулинарные весы"],
+            "cooking_steps": [
                 {"id": 1, "text": "Налейте бульон в кастрюлю, поставьте на небольшой огонь. Картофель и говядину нарежьте небольшим кубиком."},
                 {"id": 2, "text": "Морковь и свеклу натрите на крупной тёрке. Лук нашинкуйте на мелкий кубик."},
                 {"id": 3, "text": "В закипевший бульон добавьте перец, лавровый лист, картофель и мясо."},

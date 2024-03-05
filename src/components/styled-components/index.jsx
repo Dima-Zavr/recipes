@@ -60,11 +60,12 @@ export const Ul = styled.ul`
 `
 export const Content = styled.div`
   display:flex;
+  justify-content:center;
   width:100%;
   gap: 30px;
 `
 export const Imgs = styled.div`
-  width: 50%;
+  width: 30vw;
   height: auto;
 `
 export const Img = styled.img`

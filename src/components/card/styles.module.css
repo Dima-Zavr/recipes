@@ -30,6 +30,17 @@
         height: 100%;
     }
 }
+.heart{
+    position: absolute;
+    top:0;
+    right: 0;
+    width:46px;
+    height:46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
 .inf{
     position: absolute;
     bottom: 0;
