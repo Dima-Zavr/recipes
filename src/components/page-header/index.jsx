@@ -1,28 +1,25 @@
-import styles from "./styles.module.css"
-import logo from "../../assets/logo.svg"
-import exit from "../../assets/exit.svg"
 import { Link } from "react-router-dom"
+import logo from "../../assets/logo.svg"
+import { Header, Container, Logo, Links, MyLink } from "./styled_components"
 
-export function PageHeader() {
+export const PageHeader = () => {
   return (
-    <div className={styles.pageHeader}>
-      <div className={styles.container}>
-        <div className={styles.left}>
-          <img src={logo} alt="website logo" />
-          <Link className={styles.link} to="/profile">
-            Профиль
+    <Header>
+      <Container>
+        <Logo src={logo} alt="website logo" />
+        <Links>
+          <Link to="">
+            <MyLink>Все рецепты</MyLink>
           </Link>
-          <Link className={styles.link} to="/tickets">
-            Билеты
+          <Link to="myRecipes">
+            <MyLink>Мои рецепты</MyLink>
           </Link>
-        </div>
-        <div className={styles.right}>
-          <img src={exit} alt="exit" />
-          <a className={styles.link} href="#">
-            Выйти
-          </a>
-        </div>
-      </div>
-    </div>
+          <Link to="favouriteRecipes">
+            <MyLink>Избранные рецепты</MyLink>
+          </Link>
+        </Links>
+        <Logo src={logo} alt="website logo" />
+      </Container>
+    </Header>
   )
 }
