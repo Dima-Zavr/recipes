@@ -1,4 +1,4 @@
-import styles from "./styles.module.css"
+import { Main, Picture, Img, Inf, Time, Kalor, Title} from "./styled_components"
 import { useNavigate } from "react-router-dom"
 import { Heart } from "../heart/heart"
 import { addFavouriteRecipesAction, deleteFavouriteRecipesAction} from "../../store/favourite-reducer"
@@ -6,9 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 export function Card({ recipe }) {
   const dispatch = useDispatch()
-  const favouriteRecipes = useSelector(
-    (state) => state.favourite.favouriteRecipes
-  )
+  const favouriteRecipes = useSelector((state) => state.favourite.favouriteRecipes)
   const nav = useNavigate()
 
   const recipePage = () => {
@@ -25,20 +23,19 @@ export function Card({ recipe }) {
   }
 
   return (
-    <div className={styles.card} onClick={recipePage}>
-      <div className={styles.picture}>
-        <img
-          className={styles.img}
+    <Main onClick={recipePage}>
+      <Picture>
+        <Img
           src={recipe.photos[0]}
           alt={"фото " + recipe.name}
         />
         <Heart onClick={like} />
-        <div className={styles.inf}>
-          <p className={styles.time}> {recipe.cooking_time} минут</p>
-          <p className={styles.calor}>{recipe.calories} ккал</p>
-        </div>
-      </div>
-      <p className={styles.title}>{recipe.name}</p>
-    </div>
+        <Inf>
+          <Time> {recipe.cooking_time} минут</Time>
+          <Kalor>{recipe.calories} ккал</Kalor>
+        </Inf>
+      </Picture>
+      <Title>{recipe.name}</Title>
+    </Main>
   )
 }

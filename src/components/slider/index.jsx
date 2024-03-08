@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, A11y } from "swiper/modules"
-import { Imgs, Img } from "../styled-components"
+import { Imgs, Img } from "./styled_components"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import "swiper/css/scrollbar"
 
 export const Slider = ({ photos }) => {
   return (
@@ -16,13 +15,10 @@ export const Slider = ({ photos }) => {
         navigation
         speed={800}
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
       >
         {photos.map((photo, index) => (
           <SwiperSlide key={index}>
-            {" "}
-            <Img src={photo} alt="photo" />{" "}
+            <Img src={photo} alt="photo" />
           </SwiperSlide>
         ))}
       </Swiper>

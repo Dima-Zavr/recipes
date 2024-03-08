@@ -1,47 +1,52 @@
-import styles from "./styles.module.css"
-import { Title } from "../styled-components"
+import { Container, Title, Weight, Blocks, Block, Subtitle, Li } from "./styled_components"
 import { Heart } from "../heart/heart"
-import { addFavouriteRecipesAction } from "../../store/favourite-reducer"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { addFavouriteRecipesAction, deleteFavouriteRecipesAction } from "../../store/favourite-reducer"
 
 export const RecipeInf = ({ recipe }) => {
   const dispatch = useDispatch()
+  const favouriteRecipes = useSelector((state) => state.favourite.favouriteRecipes)
+
+  const like = (event) => {
+    event.stopPropagation()
+    if (favouriteRecipes.includes(recipe)) {
+      dispatch(deleteFavouriteRecipesAction(recipe.id))
+    } else {
+      dispatch(addFavouriteRecipesAction(recipe))
+    }
+  }
+
   return (
-    <div className={styles.container}>
-      <Title>
-        {recipe.name}
-        <Heart
-          onClick={() => {
-            dispatch(addFavouriteRecipesAction(recipe))
-          }}
-        />
-      </Title>
-      <p className={styles.subtitle}>
-        <span className={styles.weight}>Время приготовления: </span>
-        {recipe.cooking_time} мин
-      </p>
-      <p className={styles.subtitle}>
-        <span className={styles.weight}>
-          Количество калорий (в 100 грамм продукта):{" "}
-        </span>
-        {recipe.calories} ккал
-      </p>
-      <span className={styles.weight}>Оборудование для приготовления</span>
-      <ul className={styles.equipments}>
+    <Container>
+      <Title>{recipe.name}</Title>
+      <Blocks>
+        <Block>Время готовки:<Weight> {recipe.cooking_time} мин</Weight>
+        </Block>
+        <Block>Кол-во калорий:<Weight> {recipe.calories} ккал</Weight>
+        </Block>
+        <Block>
+          <Heart onClick={like} />
+        </Block>
+      </Blocks>
+      
+      <Subtitle>Оборудование для приготовления:</Subtitle>
+      <ul>
         {recipe.equipments.map((el, index) => (
-          <li className={styles.equipment} key={index}>
+          <Li key={index}>
             {el}
-          </li>
+          </Li>
         ))}
       </ul>
-      <span className={styles.weight}>Ингредиенты</span>
-      <ul className={styles.ingredients}>
+
+      <Subtitle>Ингредиенты:</Subtitle>
+      <ul>
         {recipe.ingredients.map((el, index) => (
-          <li className={styles.ingredient} key={index}>
+          <Li key={index}>
             {el}
-          </li>
+          </Li>
         ))}
       </ul>
-    </div>
+
+    </Container>
   )
 }

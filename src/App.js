@@ -1,17 +1,13 @@
-// import { useSelector } from 'react-redux'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { PageHeader } from "./components/page-header"
 import { AllRecipesPage } from "./pages/all-recipes-page"
 import { MyRecipesPage } from "./pages/my-recipes-page"
 import { FavouriteRecipesPage } from "./pages/favourite-recipes-page"
 import { RecipePage } from "./pages/recipe-page"
-import "./App.css"
-import { store } from "./store/store"
+import { useSelector } from "react-redux"
 
 function App() {
-  // const store = useSelector(store => store)
-
-  console.log("store", store.getState())
+  const allRecipes = useSelector((state) => state.all.allRecipes)
   return (
     <BrowserRouter>
       <PageHeader></PageHeader>
@@ -21,7 +17,7 @@ function App() {
         <Route path="favouriteRecipes" element={<FavouriteRecipesPage />} />
         <Route
           path={"recipe/:recipeId"}
-          element={<RecipePage recipes={store.getState().all.allRecipes} />}
+          element={<RecipePage recipes={allRecipes} />}
         />
       </Routes>
     </BrowserRouter>

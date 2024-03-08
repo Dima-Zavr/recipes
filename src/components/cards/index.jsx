@@ -1,4 +1,4 @@
-import { Search, Ul } from "../styled-components"
+import { Search, Ul } from "./styled_components"
 import { Card } from "../card"
 import { useState } from "react"
 import _ from "lodash"
@@ -8,22 +8,18 @@ export const Cards = ({ recipes }) => {
   const [thisRecipes, setThisRecipes] = useState(recipes.slice(0, 4))
 
   const loadRecipes = (page) => {
-    setTimeout(() => {
-      if (recipes.length >= page * 4) {
-        setThisRecipes(
-          thisRecipes.concat(recipes.slice(page * 4, page * 4 + 4))
-        )
-      }
-    }, 500)
+    if (recipes.length >= page * 4) {
+      setThisRecipes(
+        thisRecipes.concat(recipes.slice(page * 4, page * 4 + 4))
+      )
+    }
   }
 
   const newRecipes = []
   function SearchRecipe(event) {
     if (event.target.value !== "") {
       _.filter(recipes, function (item) {
-        if (
-          item.name.toLowerCase().includes(event.target.value.toLowerCase())
-        ) {
+        if (item.name.toLowerCase().includes(event.target.value.toLowerCase())){
           newRecipes.push(item)
         }
       })
@@ -37,9 +33,7 @@ export const Cards = ({ recipes }) => {
     <>
       <Search
         placeholder="Поиск"
-        onChange={(e) => {
-          SearchRecipe(e)
-        }}
+        onChange={(e) => {SearchRecipe(e)}}
       />
       <InfiniteScroll
         threshold={0}

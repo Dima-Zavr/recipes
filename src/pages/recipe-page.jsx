@@ -13,8 +13,8 @@ export const RecipePage = ({ recipes }) => {
     <Page>
       <Container>
         <Content>
-          <Slider photos={recipe.photos} />
           <RecipeInf recipe={recipe} />
+          <Slider photos={recipe.photos} />
         </Content>
         <RecipeSteps steps={recipe.cooking_steps}></RecipeSteps>
       </Container>

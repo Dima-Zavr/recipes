@@ -1,9 +1,16 @@
+import { Title } from '../recipe-inf/styled_components'
+import { Container, Li, Step } from './styled_components'
+
 export const RecipeSteps = ({ steps }) => {
   return (
-    <ol>
+    <Container>
+    <Title>Шаги по приготовлению</Title>
       {steps.map((el, index) => (
-        <li key={index}>{el}</li>
+        <>
+          <Li>Шаг {index+1}</Li>
+          <Step key={index}>{el}</Step>
+        </>
       ))}
-    </ol>
+    </Container>
   )
 }
