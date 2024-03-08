@@ -1,6 +1,6 @@
 import { store } from "../store/store"
-import { Cards } from '../components/cards'
-import {Page, Container, Title } from '../components/styled-components'
+import { Cards } from "../components/cards"
+import { Page, Container, Title } from "../components/styled-components"
 
 export const FavouriteRecipesPage = () => (
   <Page>

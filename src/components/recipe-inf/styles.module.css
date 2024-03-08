@@ -1,21 +1,17 @@
-
-.weight{
-    font-weight: 700;
-    line-height: 1.3;
-    
+.weight {
+  font-weight: 700;
+  line-height: 1.3;
 }
-.subtitle{
-    margin-bottom: 10px;
+.subtitle {
+  margin-bottom: 10px;
 }
-.equipments{
-
+.equipments {
 }
-.equipment{
-    margin-left: 20px;
+.equipment {
+  margin-left: 20px;
 }
-.ingredients{
-
+.ingredients {
 }
-.ingredient{
-    margin-left: 20px;
+.ingredient {
+  margin-left: 20px;
 }
