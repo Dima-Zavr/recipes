@@ -1,12 +1,25 @@
-import { Main, Picture, Img, Inf, Time, Kalor, Title} from "./styled_components"
+import {
+  Main,
+  Picture,
+  Img,
+  Inf,
+  Time,
+  Kalor,
+  Title
+} from "./styled_components"
 import { useNavigate } from "react-router-dom"
 import { Heart } from "../heart/heart"
-import { addFavouriteRecipesAction, deleteFavouriteRecipesAction} from "../../store/favourite-reducer"
+import {
+  addFavouriteRecipesAction,
+  deleteFavouriteRecipesAction
+} from "../../store/favourite-reducer"
 import { useDispatch, useSelector } from "react-redux"
 
 export function Card({ recipe }) {
   const dispatch = useDispatch()
-  const favouriteRecipes = useSelector((state) => state.favourite.favouriteRecipes)
+  const favouriteRecipes = useSelector(
+    (state) => state.favourite.favouriteRecipes
+  )
   const nav = useNavigate()
 
   const recipePage = () => {
@@ -25,10 +38,7 @@ export function Card({ recipe }) {
   return (
     <Main onClick={recipePage}>
       <Picture>
-        <Img
-          src={recipe.photos[0]}
-          alt={"фото " + recipe.name}
-        />
+        <Img src={recipe.photos[0]} alt={"фото " + recipe.name} />
         <Heart onClick={like} />
         <Inf>
           <Time> {recipe.cooking_time} минут</Time>

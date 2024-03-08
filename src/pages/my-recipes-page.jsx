@@ -4,7 +4,7 @@ import { Cards } from "../components/cards"
 
 export const MyRecipesPage = () => {
   const myRecipes = useSelector((state) => state.my.myRecipes)
-  return(
+  return (
     <Page>
       <Container>
         <Title>Рецепты</Title>

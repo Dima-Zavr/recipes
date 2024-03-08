@@ -9,9 +9,7 @@ export const Cards = ({ recipes }) => {
 
   const loadRecipes = (page) => {
     if (recipes.length >= page * 4) {
-      setThisRecipes(
-        thisRecipes.concat(recipes.slice(page * 4, page * 4 + 4))
-      )
+      setThisRecipes(thisRecipes.concat(recipes.slice(page * 4, page * 4 + 4)))
     }
   }
 
@@ -19,7 +17,9 @@ export const Cards = ({ recipes }) => {
   function SearchRecipe(event) {
     if (event.target.value !== "") {
       _.filter(recipes, function (item) {
-        if (item.name.toLowerCase().includes(event.target.value.toLowerCase())){
+        if (
+          item.name.toLowerCase().includes(event.target.value.toLowerCase())
+        ) {
           newRecipes.push(item)
         }
       })
@@ -33,7 +33,9 @@ export const Cards = ({ recipes }) => {
     <>
       <Search
         placeholder="Поиск"
-        onChange={(e) => {SearchRecipe(e)}}
+        onChange={(e) => {
+          SearchRecipe(e)
+        }}
       />
       <InfiniteScroll
         threshold={0}
