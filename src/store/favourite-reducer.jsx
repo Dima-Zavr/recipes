@@ -14,9 +14,7 @@ export const favouriteReducer = (state = initialState, action) => {
     case "DELETE_FAVOURITE_RECIPE":
       return {
         ...state,
-        favouriteRecipes: state.favouriteRecipes.filter(
-          (recipe) => recipe.id !== action.recipeId
-        )
+        favouriteRecipes: state.favouriteRecipes.filter((recipe) => recipe.id !== action.recipeId)
       }
     default:
       return state

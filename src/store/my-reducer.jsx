@@ -7,24 +7,25 @@ const initialState = {
 export const myReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_MY_RECIPE":
-      return { ...state, myRecipes: [...state.myRecipes, action.payload] }
+      return {
+        ...state,
+        myRecipes: [...state.myRecipes, action.recipe]
+      }
     case "DELETE_MY_RECIPE":
       return {
         ...state,
-        myRecipes: state.myRecipes.filter(
-          (recipe) => recipe.id !== action.payload
-        )
+        myRecipes: state.myRecipes.filter((recipe) => recipe.id !== action.recipeId)
       }
     default:
       return state
   }
 }
 
-export const addMyeRecipesAction = (payload) => ({
-  type: "ADD_RECIPES",
-  payload
+export const addMyRecipesAction = (value) => ({
+  type: "ADD_MY_RECIPE",
+  recipe: value
 })
-export const deleteMyRecipesAction = (payload) => ({
-  type: "DELETE_RECIPES",
-  payload
+export const deleteMyRecipesAction = (value) => ({
+  type: "DELETE_MY_RECIPE",
+  recipeId: value
 })
