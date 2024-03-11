@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { Page, Container, Title } from "../components/styled-components"
 import { Cards } from "../components/cards"
 import { useState } from "react"
-import { Button } from "../components/button/index"
+import { Button } from "../components/btn"
 import { ModalForm } from "../components/form/index"
 
 export const MyRecipesPage = () => {

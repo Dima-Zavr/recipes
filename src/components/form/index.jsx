@@ -1,13 +1,13 @@
 import { Container, Form, Title, Label, Input, Buttons } from "./styled_components"
-import { Button } from "../button"
+import { Button } from "../btn"
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react"
 import { addMyRecipesAction } from "../../store/my-reducer"
+import { addAllRecipesAction } from "../../store/all-reducer"
 
 export const ModalForm = ({ clickExit }) => {
   const dispatch = useDispatch()
   const allRecipes = useSelector((state) => state.all.allRecipes)
-  const myRecipes = useSelector((state) => state.my.myRecipes)
 
   const [recipe, setRecipe] = useState({
     id: allRecipes.length + 1,
@@ -37,9 +37,8 @@ export const ModalForm = ({ clickExit }) => {
   }
   const addRecipe = (event) => {
     event.preventDefault()
-    console.log(recipe)
     dispatch(addMyRecipesAction(recipe))
-    console.log(myRecipes)
+    dispatch(addAllRecipesAction(recipe))
     clickExit()
   }
   return (
