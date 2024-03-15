@@ -1,7 +1,7 @@
-import styles from "./styles.module.css"
+import {MyButton} from "./styled_components"
 
 export const Button = ({ children, onClick, type }) => (
-  <button type={type} className={styles.button} onClick={onClick}>
+  <MyButton type={type} onClick={onClick}>
     {children}
-  </button>
+  </MyButton>
 )
