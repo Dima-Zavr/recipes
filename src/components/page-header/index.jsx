@@ -8,7 +8,7 @@ export const PageHeader = () => {
       <Container>
         <Logo src={logo} alt="website logo" />
         <Links>
-          <Link to="">
+          <Link to="/">
             <MyLink>Все рецепты</MyLink>
           </Link>
           <Link to="myRecipes">

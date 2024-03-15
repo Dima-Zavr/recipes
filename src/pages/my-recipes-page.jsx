@@ -3,7 +3,7 @@ import { Page, Container, Title } from "../components/styled-components"
 import { Cards } from "../components/cards"
 import { useState } from "react"
 import { Button } from "../components/btn"
-import { ModalForm } from "../components/form/index"
+import { ModalForm } from "../components/form"
 
 export const MyRecipesPage = () => {
   const myRecipes = useSelector((state) => state.my.myRecipes)

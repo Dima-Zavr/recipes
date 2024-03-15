@@ -55,7 +55,7 @@ export const ModalForm = ({ clickExit }) => {
           />
         </Label>
         <Label>
-          Время приготовления<br />
+          Время приготовления (в минутах)<br />
           <Input
             type="number"
             name="cooking_time"
@@ -71,7 +71,7 @@ export const ModalForm = ({ clickExit }) => {
           />
         </Label>
         <Label>
-          Добавить ссылку на фотографию<br />
+          Ссылка на фотографию<br />
           <Input
             type="text"
             name="photo"

@@ -1,14 +1,15 @@
-import { Page, Container } from "../components/styled-components"
-import { Slider } from "../components/slider"
-import { RecipeInf } from "../components/recipe-inf"
-import { RecipeSteps } from "../components/recipe-steps"
-import { Content } from "../components/styled-components"
-import { useParams } from "react-router-dom"
+import { Page, Container, Content} from "../components/styled-components"
 import { BtnBack } from "../components/btn-back"
+import { RecipeInf } from "../components/recipe-inf"
+import { Slider } from "../components/slider"
+import { RecipeSteps } from "../components/recipe-steps"
+import { useParams } from "react-router-dom"
+import { useSelector } from "react-redux"
 
-export const RecipePage = ({ recipes }) => {
+export const RecipePage = () => {
   const { recipeId } = useParams()
-  const recipe = recipes.find((el) => el.id === parseInt(recipeId))
+  const allRecipes = useSelector((state) => state.all.allRecipes)
+  const recipe = allRecipes.find((el) => el.id === parseInt(recipeId))
 
   return (
     <Page>
