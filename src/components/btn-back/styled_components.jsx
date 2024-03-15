@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Back = styled.a`
   color: #637083;
-  width:80px;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +10,7 @@ export const Back = styled.a`
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  &:hover{
+  &:hover {
     cursor: pointer;
     color: red;
   }

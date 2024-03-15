@@ -9,16 +9,15 @@ import { ScrollToTop } from "./components/scroll-to-top"
 function App() {
   return (
     <>
-    <PageHeader/>
-    <Routes>
+      <PageHeader />
+      <Routes>
         <Route path="/" element={<AllRecipesPage />} />
         <Route path="myRecipes" element={<MyRecipesPage />} />
         <Route path="favouriteRecipes" element={<FavouriteRecipesPage />} />
-        <Route path={"recipe/:recipeId"} element={<RecipePage />}/>
-    </Routes>
-    <ScrollToTop />
+        <Route path={"recipe/:recipeId"} element={<RecipePage />} />
+      </Routes>
+      <ScrollToTop />
     </>
-    
   )
 }
 

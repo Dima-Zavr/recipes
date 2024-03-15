@@ -1,4 +1,4 @@
-import { Page, Container, Content} from "../components/styled-components"
+import { Page, Container, Content } from "../components/styled-components"
 import { BtnBack } from "../components/btn-back"
 import { RecipeInf } from "../components/recipe-inf"
 import { Slider } from "../components/slider"

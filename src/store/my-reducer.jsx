@@ -14,7 +14,9 @@ export const myReducer = (state = initialState, action) => {
     case "DELETE_MY_RECIPE":
       return {
         ...state,
-        myRecipes: state.myRecipes.filter((recipe) => recipe.id !== action.recipeId)
+        myRecipes: state.myRecipes.filter(
+          (recipe) => recipe.id !== action.recipeId
+        )
       }
     default:
       return state

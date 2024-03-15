@@ -11,7 +11,9 @@ export const allReducer = (state = initialState, action) => {
     case "DELETE_RECIPE":
       return {
         ...state,
-        allRecipes: state.allRecipes.filter((recipe) => recipe.id !== action.recipe.id)
+        allRecipes: state.allRecipes.filter(
+          (recipe) => recipe.id !== action.recipe.id
+        )
       }
     default:
       return state

@@ -1,4 +1,11 @@
-import { Container, Form, Title, Label, Input, Buttons } from "./styled_components"
+import {
+  Container,
+  Form,
+  Title,
+  Label,
+  Input,
+  Buttons
+} from "./styled_components"
 import { Button } from "../btn"
 import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react"
@@ -51,37 +58,50 @@ export const ModalForm = ({ clickExit }) => {
           <Input
             type="text"
             name="name"
-            onChange={(event) => {dishesName(event)}}
+            onChange={(event) => {
+              dishesName(event)
+            }}
           />
         </Label>
         <Label>
-          Время приготовления (в минутах)<br />
+          Время приготовления (в минутах)
+          <br />
           <Input
             type="number"
             name="cooking_time"
-            onChange={(event) => {cookingTime(event)}}
+            onChange={(event) => {
+              cookingTime(event)
+            }}
           />
         </Label>
         <Label>
-          Количество каллорий<br />
+          Количество каллорий
+          <br />
           <Input
             type="number"
             name="calories"
-            onChange={(event) => {numberCalories(event)}}
+            onChange={(event) => {
+              numberCalories(event)
+            }}
           />
         </Label>
         <Label>
-          Ссылка на фотографию<br />
+          Ссылка на фотографию
+          <br />
           <Input
             type="text"
             name="photo"
-            onChange={(event) => {photos(event)}}
+            onChange={(event) => {
+              photos(event)
+            }}
           />
         </Label>
         <Buttons>
           <Button
             type={"submit"}
-            onClick={(event) => {addRecipe(event)}}
+            onClick={(event) => {
+              addRecipe(event)
+            }}
           >
             Добавить
           </Button>

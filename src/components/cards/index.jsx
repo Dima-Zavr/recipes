@@ -6,28 +6,34 @@ import InfiniteScroll from "react-infinite-scroller"
 
 export const Cards = ({ recipes }) => {
   let filterRecipes = recipes
-  const [currentRecipes, setCurrentRecipes] = useState(filterRecipes.slice(0, 4))
+  const [currentRecipes, setCurrentRecipes] = useState(
+    filterRecipes.slice(0, 4)
+  )
 
   const loadRecipes = (page) => {
-    if (filterRecipes.length >= page*4) {
-      setCurrentRecipes(currentRecipes.concat(filterRecipes.slice(page*4, page*4 + 4)))
+    if (filterRecipes.length >= page * 4) {
+      setCurrentRecipes(
+        currentRecipes.concat(filterRecipes.slice(page * 4, page * 4 + 4))
+      )
     }
   }
 
   const searchRecipe = (value) => {
     if (value !== "") {
-      filterRecipes = recipes.filter((recipe) => 
+      filterRecipes = recipes.filter((recipe) =>
         recipe.name.toLowerCase().includes(value.toLowerCase())
       )
     } else {
       filterRecipes = recipes
     }
-    setCurrentRecipes(filterRecipes.slice(0,4))
+    setCurrentRecipes(filterRecipes.slice(0, 4))
   }
 
   const debounceSearch = useRef(
-    debounce((value) => {searchRecipe(value)}, 1000)
-  ).current;
+    debounce((value) => {
+      searchRecipe(value)
+    }, 1000)
+  ).current
 
   const handleChange = (event) => {
     debounceSearch(event.target.value)
@@ -37,7 +43,9 @@ export const Cards = ({ recipes }) => {
     <>
       <Search
         placeholder="Поиск"
-        onChange={(event) => { handleChange(event)}}
+        onChange={(event) => {
+          handleChange(event)
+        }}
       />
       <InfiniteScroll
         threshold={0}
