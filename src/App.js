@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<AllRecipesPage />} />
         <Route path="myRecipes" element={<MyRecipesPage />} />
         <Route path="favouriteRecipes" element={<FavouriteRecipesPage />} />
-        <Route path={"recipe/:recipeId"} element={<RecipePage />} />
+        <Route path="recipe/:recipeId" element={<RecipePage />} />
       </Routes>
       <ScrollToTop />
     </>
