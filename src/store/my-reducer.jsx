@@ -1,4 +1,4 @@
-import recipes from "../api/recipes.json"
+import recipes from "../db.json"
 
 const initialState = {
   myRecipes: recipes.myRecipes
