@@ -3,19 +3,33 @@ import { Card } from "../card"
 import { useState, useRef } from "react"
 import { debounce } from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
+import { request } from "../../api/recipes"
+import { useLocation } from "react-router-dom"
 
 export const Cards = ({ recipes }) => {
+  const typeRecipes = useLocation()
+  console.log(typeRecipes);
+  if(typeRecipes.pathname === "/"){
+    typeRecipes.pathname = "/allRecipes"
+  }
+
   let filterRecipes = recipes
   const [currentRecipes, setCurrentRecipes] = useState(
     filterRecipes.slice(0, 4)
   )
 
   const loadRecipes = (page) => {
-    if (filterRecipes.length >= page * 4) {
-      setCurrentRecipes(
-        currentRecipes.concat(filterRecipes.slice(page * 4, page * 4 + 4))
-      )
-    }
+    const str=typeRecipes.pathname+"?_per_page=4&_page="+page
+    request
+      .fetch(str)
+      .then((response) => response.json())
+      .then((data) => {
+        if (page<=data.pages) {
+          setCurrentRecipes(
+            currentRecipes.concat(data.data)
+          )
+        }
+      })
   }
 
   const searchRecipe = (value) => {
