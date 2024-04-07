@@ -1,5 +1,3 @@
-import recipes from "../db.json"
-
 const initialState = {
   allRecipes: []
 }

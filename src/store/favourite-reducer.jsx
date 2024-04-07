@@ -1,7 +1,20 @@
-import recipes from "../db.json"
+import {request} from "../api/recipes";
+
+const ri = () => {
+  let dataRecipes = []
+   request
+      .fetch("/favouriteRecipes")
+      .then((response) => response.json())
+      .then((data) => {
+        dataRecipes = data
+        //console.log(data)
+      })
+  console.log(dataRecipes)
+  return dataRecipes
+}
 
 const initialState = {
-  favouriteRecipes: recipes.favouriteRecipes
+  favouriteRecipes: ri()
 }
 
 export const favouriteReducer = (state = initialState, action) => {

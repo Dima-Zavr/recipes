@@ -1,81 +1,78 @@
-import { Search, Ul } from "./styled_components"
-import { Card } from "../card"
-import { useState, useRef } from "react"
-import { debounce } from "lodash"
+import {Search, Ul} from "./styled_components"
+import {Card} from "../card"
+import {useState, useRef} from "react"
+import {debounce} from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
-import { request } from "../../api/recipes"
-import { useLocation } from "react-router-dom"
+import {request} from "../../api/recipes"
+import {useLocation} from "react-router-dom"
 
-export const Cards = ({ recipes }) => {
-  const typeRecipes = useLocation()
-  console.log(typeRecipes);
-  if(typeRecipes.pathname === "/"){
-    typeRecipes.pathname = "/allRecipes"
-  }
+export const Cards = () => {
+    const [currentRecipes, setCurrentRecipes] = useState([])
 
-  let filterRecipes = recipes
-  const [currentRecipes, setCurrentRecipes] = useState(
-    filterRecipes.slice(0, 4)
-  )
+    let typeRecipes = useLocation().pathname
+    if (typeRecipes === "/") { typeRecipes = "/allRecipes" }
 
-  const loadRecipes = (page) => {
-    const str=typeRecipes.pathname+"?_per_page=4&_page="+page
-    request
-      .fetch(str)
-      .then((response) => response.json())
-      .then((data) => {
-        if (page<=data.pages) {
-          setCurrentRecipes(
-            currentRecipes.concat(data.data)
-          )
-        }
-      })
-  }
+    const [isHasMore, setIsHasMore] = useState(true)
+    const [nameFilter, setNameFilter] = useState("?")
+    const [page, setPage] = useState(1)
+    let str= ""
 
-  const searchRecipe = (value) => {
-    if (value !== "") {
-      filterRecipes = recipes.filter((recipe) =>
-        recipe.name.toLowerCase().includes(value.toLowerCase())
-      )
-    } else {
-      filterRecipes = recipes
+    const searchRecipe = (value) => {
+        setCurrentRecipes([])
+        setNameFilter("?name_like="+value.toLowerCase())
+        console.log(nameFilter)
     }
-    setCurrentRecipes(filterRecipes.slice(0, 4))
-  }
 
-  const debounceSearch = useRef(
-    debounce((value) => {
-      searchRecipe(value)
-    }, 1000)
-  ).current
+    const loadRecipes = (page) => {
+        str = typeRecipes + nameFilter + "&_page=" + page + "&_limit=4"
+        console.log(str)
+        request
+            .fetch(str)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data != '') {
+                    setCurrentRecipes(currentRecipes.concat(data))
+                    setPage(page+1)
+                }
+                else{
+                    setIsHasMore(false)
+                }
+            })
+    }
 
-  const handleChange = (event) => {
-    debounceSearch(event.target.value)
-  }
+    const debounceSearch = useRef(
+        debounce((value) => {
+            searchRecipe(value)
+        }, 1000)
+    ).current
 
-  return (
-    <>
-      <Search
-        placeholder="Поиск"
-        onChange={(event) => {
-          handleChange(event)
-        }}
-      />
-      <InfiniteScroll
-        threshold={0}
-        pageStart={0}
-        loadMore={loadRecipes}
-        hasMore={true}
-        loader={InfiniteScroll.setDefaultLoader}
-      >
-        <Ul>
-          {currentRecipes.map((recipe) => (
-            <li key={recipe.id}>
-              <Card recipe={recipe} />
-            </li>
-          ))}
-        </Ul>
-      </InfiniteScroll>
-    </>
-  )
+    const handleChange = (event) => {
+        debounceSearch(event.target.value)
+        setPage(1)
+        setIsHasMore(true)
+    }
+
+    return (
+        <>
+            <Search
+                placeholder="Поиск"
+                onChange={(event) => {handleChange(event)}}
+            />
+            <InfiniteScroll
+                threshold={0}
+                pageStart={0}
+                loadMore={() => loadRecipes(page)}
+                hasMore={isHasMore}
+                loader={InfiniteScroll.setDefaultLoader}
+            >
+                <Ul>
+                    {currentRecipes.map((recipe) => (
+                        <li key={recipe.id}>
+                            <Card recipe={recipe}/>
+                        </li>
+                    ))}
+                </Ul>
+            </InfiniteScroll>
+        </>
+    )
 }

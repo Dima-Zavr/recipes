@@ -1,7 +1,5 @@
-import recipes from "../db.json"
-
 const initialState = {
-  myRecipes: recipes.myRecipes
+  myRecipes: []
 }
 
 export const myReducer = (state = initialState, action) => {

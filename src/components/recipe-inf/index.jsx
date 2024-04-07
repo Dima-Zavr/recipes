@@ -1,18 +1,7 @@
-import {
-  Container,
-  Title,
-  Weight,
-  Blocks,
-  Block,
-  Subtitle,
-  Li
-} from "./styled_components"
+import { Container, Title, Weight, Blocks, Block, Subtitle, Li } from "./styled_components"
 import { Heart } from "../heart/heart"
 import { useDispatch, useSelector } from "react-redux"
-import {
-  addFavouriteRecipesAction,
-  deleteFavouriteRecipesAction
-} from "../../store/favourite-reducer"
+import { addFavouriteRecipesAction, deleteFavouriteRecipesAction } from "../../store/favourite-reducer"
 import { useState } from "react"
 
 export const RecipeInf = ({ recipe }) => {
@@ -21,11 +10,7 @@ export const RecipeInf = ({ recipe }) => {
     (state) => state.favourite.favouriteRecipes
   )
   const [isLike, setIsLike] = useState(() => {
-    if (favouriteRecipes.includes(recipe)) {
-      return true
-    } else {
-      return false
-    }
+    return favouriteRecipes.includes(recipe);
   })
 
   const like = (event) => {
