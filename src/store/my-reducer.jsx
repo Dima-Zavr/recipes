@@ -1,5 +1,6 @@
 const initialState = {
-  myRecipes: []
+  myRecipes: [],
+  page: 1
 }
 
 export const myReducer = (state = initialState, action) => {
@@ -7,25 +8,25 @@ export const myReducer = (state = initialState, action) => {
     case "ADD_MY_RECIPE":
       return {
         ...state,
-        myRecipes: [...state.myRecipes, action.recipe]
+        myRecipes: [...state.myRecipes, action.recipe],
+        page: action.page
       }
     case "DELETE_MY_RECIPE":
       return {
         ...state,
-        myRecipes: state.myRecipes.filter(
-          (recipe) => recipe.id !== action.recipeId
-        )
+        myRecipes: [],
+        page: 1
       }
     default:
       return state
   }
 }
 
-export const addMyRecipesAction = (value) => ({
+export const addMyRecipesAction = (value, page) => ({
   type: "ADD_MY_RECIPE",
-  recipe: value
+  recipe: value,
+  page: page
 })
-export const deleteMyRecipesAction = (value) => ({
+export const deleteMyRecipesAction = () => ({
   type: "DELETE_MY_RECIPE",
-  recipeId: value
 })

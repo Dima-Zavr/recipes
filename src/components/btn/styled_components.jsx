@@ -22,3 +22,9 @@ export const MyButton = styled.button`
     background: #4c8435;
   }
 `
+export const BtnContainer = styled.div`
+  position: fixed;
+  bottom:20px;
+  right: 20px;
+  z-index: 1;
+`

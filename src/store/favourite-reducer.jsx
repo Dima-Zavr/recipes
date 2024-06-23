@@ -1,20 +1,6 @@
-import {request} from "../api/recipes";
-
-const ri = () => {
-  let dataRecipes = []
-   request
-      .fetch("/favouriteRecipes")
-      .then((response) => response.json())
-      .then((data) => {
-        dataRecipes = data
-        //console.log(data)
-      })
-  console.log(dataRecipes)
-  return dataRecipes
-}
-
 const initialState = {
-  favouriteRecipes: ri()
+  favouriteRecipes: [],
+  page: 1
 }
 
 export const favouriteReducer = (state = initialState, action) => {
@@ -22,25 +8,25 @@ export const favouriteReducer = (state = initialState, action) => {
     case "ADD_FAVOURITE_RECIPE":
       return {
         ...state,
-        favouriteRecipes: [...state.favouriteRecipes, action.recipe]
+        favouriteRecipes: [...state.favouriteRecipes, action.recipe],
+        page: action.page
       }
     case "DELETE_FAVOURITE_RECIPE":
       return {
         ...state,
-        favouriteRecipes: state.favouriteRecipes.filter(
-          (recipe) => recipe.id !== action.recipeId
-        )
+        favouriteRecipes: [],
+        page: 1
       }
     default:
       return state
   }
 }
 
-export const addFavouriteRecipesAction = (value) => ({
+export const addFavouriteRecipesAction = (value, page) => ({
   type: "ADD_FAVOURITE_RECIPE",
-  recipe: value
+  recipe: value,
+  page: page
 })
-export const deleteFavouriteRecipesAction = (value) => ({
+export const deleteFavouriteRecipesAction = () => ({
   type: "DELETE_FAVOURITE_RECIPE",
-  recipeId: value
 })

@@ -4,7 +4,7 @@ export const Search = styled.input`
   font-size: 20px;
   background-color: #ffffff;
   padding: 15px 20px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   border-radius: 20px;
   border: 1px solid #82bd69;
   &:focus {
