@@ -27,11 +27,11 @@ export async function GET(path, params = {},  token = null) {
 }
 
 //Метод POST добавляет даные на бекэнд
-export async function POST(path, params = {}, element= {}, token = null) {
+export async function POST(path, element= {}, token = null) {
     try{
         // Создание URL с параметрами
         const urlWithParams = new URL(baseUrl + path);
-        Object.keys(params).forEach(key => urlWithParams.searchParams.append(key, params[key]));
+        //Object.keys(params).forEach(key => urlWithParams.searchParams.append(key, params[key]));
 
         //Создание токена зарегистрированного пользователя
         const headers = {'Content-Type': 'application/json'};

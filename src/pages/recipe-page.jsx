@@ -4,7 +4,7 @@ import {RecipeInf} from "../components/recipe-inf"
 import {Slider} from "../components/slider"
 import {RecipeSteps} from "../components/recipe-steps"
 import {useParams} from "react-router-dom"
-import {GET} from "../api/recipes";
+import {GET} from "../api/request";
 import {useState} from "react";
 import {Preloader} from "../components/preloader";
 

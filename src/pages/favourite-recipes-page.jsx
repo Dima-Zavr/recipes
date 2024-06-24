@@ -1,21 +1,11 @@
 import {Page, Container, Title} from "../components/styled-components"
 import Cards from "../components/cards"
-import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
+import {useState} from "react";
 import {Preloader} from "../components/preloader";
-import {addFavouriteRecipesAction} from "../store/favourite-reducer";
+import {addFavouriteRecipesAction, deleteFavouriteRecipesAction} from "../store/favourite-reducer";
 
 export const FavouriteRecipesPage = () => {
-    const [isLoad, setIsLoad] = useState(false)
-
-    const favouriteRecipes = useSelector(
-        (state) => state.favourite.favouriteRecipes[0]
-    )
-    useEffect(() => {
-        if(favouriteRecipes !== undefined){
-            setIsLoad(true)
-        }
-    }, []);
+    const [isLoad, setIsLoad] = useState(true)
 
     return (<>
         {isLoad &&
@@ -23,7 +13,9 @@ export const FavouriteRecipesPage = () => {
                 <Container>
                     <Title>Избранные Рецепты</Title>
                     <Cards favouriteRecipes
-                        addRecipes={addFavouriteRecipesAction}/>
+                           addRecipes={addFavouriteRecipesAction}
+                           deleteRecipes={deleteFavouriteRecipesAction}
+                    />
                 </Container>
             </Page>
         }

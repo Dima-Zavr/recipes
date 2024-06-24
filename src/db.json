@@ -5,179 +5,194 @@
       "name": "Куринная лапша",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/7813f67d-d637-4da1-9e76-9aa08d0b02ae.webp",
       "cooking_time": 30,
-      "calories": 43
+      "calories": 43,
+      "like": false
     },
     {
       "id": 2,
       "name": "Классические блины",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/dc5c6931-bdc1-4442-8cc3-91bf958fc45f.webp",
       "cooking_time": 25,
-      "calories": 217
+      "calories": 217,
+      "like": false
     },
     {
       "id": 3,
       "name": "Жареный рис с яйцом",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/ab08e314-bd52-472f-9188-c7e22868d1aa.webp",
       "cooking_time": 30,
-      "calories": 156
+      "calories": 156,
+      "like": false
     },
     {
       "id": 4,
       "name": "Борщ с говядиной",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
       "cooking_time": 45,
-      "calories": 33
+      "calories": 33,
+      "like": false
     },
     {
       "id": 5,
       "name": "Паста с креветками",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/b4a5cdfd-b341-4cf6-b26a-773d4726289d.webp",
       "cooking_time": 15,
-      "calories": 132
+      "calories": 132,
+      "like": false
     },
     {
       "id": 6,
       "name": "Шакшука",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/4f5f813f-8ff9-4f4c-b616-b0a31fa45aef.webp",
       "cooking_time": 20,
-      "calories": 130
+      "calories": 130,
+      "like": false
     },
     {
       "id": 7,
       "name": "Рыбный пирог киш с лососем",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/b999e9fc-7892-4388-94dc-ccfbcd199b12.webp",
       "cooking_time": 90,
-      "calories": 361
+      "calories": 361,
+      "like": false
     },
     {
       "id": 8,
       "name": "Тартар из лосося",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/a3505ce1-e4ce-4ce9-80d5-c24b768cd770.webp",
       "cooking_time": 25,
-      "calories": 132
+      "calories": 132,
+      "like": false
     },
     {
       "id": 9,
       "name": "Кюфта",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/2d6adc62-2aaf-45ff-ba8b-5953080982bd.webp",
       "cooking_time": 40,
-      "calories": 126
+      "calories": 126,
+      "like": false
     },
     {
       "id": 10,
       "name": "Цыпленок в глазури",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/7848fc2b-38e4-409d-b659-818d5949f2e9.webp",
       "cooking_time": 90,
-      "calories": 243
+      "calories": 243,
+      "like": false
     },
     {
       "id": 11,
       "name": "Жюльен с курицей и грибами",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/3ddbb35f-958c-4c21-935f-40b36ffa7e0d.webp",
       "cooking_time": 45,
-      "calories": 156
+      "calories": 156,
+      "like": true
     },
     {
       "id": 12,
       "name": "Цезарь классический",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/912d0b21-1249-4430-b7d1-a20ee0ecf05c.webp",
       "cooking_time": 20,
-      "calories": 176
+      "calories": 176,
+      "like": false
     },
     {
       "id": 13,
       "name": "Cырники",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/dfc9fea2-f7b6-4d61-bca0-3c835239ffc0.webp",
       "cooking_time": 60,
-      "calories": 220
+      "calories": 220,
+      "like": false
     },
     {
       "id": 14,
       "name": "Печеньки-сердечки",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/cd387977-8ab0-4379-8029-f6621bdd9fe2.webp",
       "cooking_time": 30,
-      "calories": 388
+      "calories": 388,
+      "like": false
     },
     {
       "id": 15,
       "name": "Панна Котта",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/13faaa24-96e4-4c64-91cc-97f396b41efa.webp",
       "cooking_time": 90,
-      "calories": 277
+      "calories": 277,
+      "like": true
     },
     {
       "id": 16,
       "name": "Стейк из тунца с авокадо",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/7984e11d-21d1-4711-9eb7-c5400ca4157b.webp",
       "cooking_time": 15,
-      "calories": 127
+      "calories": 127,
+      "like": false
     },
     {
       "id": 17,
       "name": "Эклеры",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/07acfbb6-59dc-47b3-ba08-6c306329913d.webp",
       "cooking_time": 60,
-      "calories": 356
+      "calories": 356,
+      "like": false
     },
     {
       "id": 18,
       "name": "Фраппучино",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/86160761-84dd-4fa8-8d70-c6627cba39e9.webp",
       "cooking_time": 10,
-      "calories": 81
+      "calories": 81,
+      "like": false
     },
     {
       "id": 19,
       "name": "Клюквенный морс",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp",
       "cooking_time": 60,
-      "calories": 35
+      "calories": 35,
+      "like": false
     },
     {
       "id": 20,
       "name": "Мясной пирог с пивом",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/eb0c7cd4-b243-44c3-a33f-14b34cd7b6e5.webp",
       "cooking_time": 150,
-      "calories": 267
+      "calories": 267,
+      "like": false
     },
     {
       "id": 21,
       "name": "Морковные котлеты",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/f8de4b52-83e0-4ffe-b64c-3c6b80ab17ba.webp",
       "cooking_time": 95,
-      "calories": 149
+      "calories": 149,
+      "like": false
     }
   ],
   "myRecipes": [
     {
-      "id": 14,
+      "id": 1,
       "name": "Печеньки-сердечки",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/cd387977-8ab0-4379-8029-f6621bdd9fe2.webp",
       "cooking_time": 30,
-      "calories": 388
+      "calories": 388,
+      "like": false
     },
     {
-      "id": 19,
+      "id": 2,
       "name": "Клюквенный морс",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp",
       "cooking_time": 60,
-      "calories": 35
-    }
-  ],
-  "favouriteRecipes": [
-    {
-      "id": 11,
-      "name": "Жюльен с курицей и грибами",
-      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/3ddbb35f-958c-4c21-935f-40b36ffa7e0d.webp",
-      "cooking_time": 45,
-      "calories": 156
+      "calories": 35,
+      "like": false
     },
     {
-      "id": 15,
-      "name": "Панна Котта",
-      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/13faaa24-96e4-4c64-91cc-97f396b41efa.webp",
-      "cooking_time": 90,
-      "calories": 277
+      "id": 3,
+      "name": "Кукиш с маслом",
+      "photos": "https://rusnord.ru/uploads/posts/2022-02/1646027364_4329.jpg",
+      "cooking_time": "1",
+      "calories": "0",
+      "like": false
     }
   ],
   "recipes": [
@@ -193,6 +208,7 @@
       ],
       "cooking_time": 30,
       "calories": 43,
+      "like": false,
       "ingredients": [
         "лук репчатый",
         "морковь",
@@ -205,7 +221,12 @@
         "соль",
         "перец черный молотый"
       ],
-      "equipments": ["доска разделочная", "нож", "кастрюля", "миска"],
+      "equipments": [
+        "доска разделочная",
+        "нож",
+        "кастрюля",
+        "миска"
+      ],
       "cooking_steps": [
         "Лук нарубите тонкими перьями.",
         "Морковь и сельдерей нарежьте соломкой.",
@@ -231,6 +252,7 @@
       ],
       "cooking_time": 25,
       "calories": 217,
+      "like": false,
       "ingredients": [
         "молоко",
         "вода",
@@ -268,6 +290,7 @@
       ],
       "cooking_time": 30,
       "calories": 156,
+      "like": false,
       "ingredients": [
         "лук репчатый",
         "морковь",
@@ -308,6 +331,7 @@
       ],
       "cooking_time": 45,
       "calories": 33,
+      "like": false,
       "ingredients": [
         "говяжий бульон",
         "картофель",
@@ -357,6 +381,7 @@
       ],
       "cooking_time": 15,
       "calories": 132,
+      "like": false,
       "ingredients": [
         "макароны",
         "креветки очищенные",
@@ -405,6 +430,7 @@
       ],
       "cooking_time": 20,
       "calories": 130,
+      "like": false,
       "ingredients": [
         "хлеб пшеничный",
         "яйцо C1",
@@ -418,7 +444,11 @@
         "соль",
         "перец черный молотый"
       ],
-      "equipments": ["доска разделочная", "нож", "сковорода"],
+      "equipments": [
+        "доска разделочная",
+        "нож",
+        "сковорода"
+      ],
       "cooking_steps": [
         "Багет нарежьте на ломтики.",
         "Томаты и лук нарежьте мелким кубиком.",
@@ -442,6 +472,7 @@
       ],
       "cooking_time": 90,
       "calories": 361,
+      "like": false,
       "ingredients": [
         "мука пшеничная",
         "масло сливочное",
@@ -497,6 +528,7 @@
       ],
       "cooking_time": 25,
       "calories": 132,
+      "like": false,
       "ingredients": [
         "оливки без косточек",
         "маринованный имбирь",
@@ -510,7 +542,12 @@
         "кунжут",
         "икра красная"
       ],
-      "equipments": ["доска разделочная", "нож", "миска", "кулинарное кольцо"],
+      "equipments": [
+        "доска разделочная",
+        "нож",
+        "миска",
+        "кулинарное кольцо"
+      ],
       "cooking_steps": [
         "Оливки раздавите пальцами и мелко нарубите. Пару оливок оставьте на декор. Маринованный имбирь мелко нарежьте и отправьте к оливкам.",
         "Лосось разделите на удобные слайсы и каждый ломтик мелко нарежьте, добавьте к имбирю и оливкам. Влейте к рыбе соевый соус и оставьте мариноваться 5 минут.",
@@ -531,6 +568,7 @@
       ],
       "cooking_time": 40,
       "calories": 126,
+      "like": false,
       "ingredients": [
         "лук репчатый",
         "фарш говяжий",
@@ -569,6 +607,7 @@
       ],
       "cooking_time": 90,
       "calories": 243,
+      "like": false,
       "ingredients": [
         "корень имбиря",
         "апельсин",
@@ -614,6 +653,7 @@
       ],
       "cooking_time": 45,
       "calories": 156,
+      "like": true,
       "ingredients": [
         "шампиньоны",
         "куриное филе",
@@ -658,6 +698,7 @@
       ],
       "cooking_time": 20,
       "calories": 176,
+      "like": false,
       "ingredients": [
         "салат романо",
         "куриное филе",
@@ -704,6 +745,7 @@
       ],
       "cooking_time": 60,
       "calories": 220,
+      "like": false,
       "ingredients": [
         "свежая клубника",
         "мята",
@@ -756,6 +798,7 @@
       ],
       "cooking_time": 30,
       "calories": 388,
+      "like": false,
       "ingredients": [
         "мука пшеничная",
         "масло сливочное",
@@ -797,6 +840,7 @@
       ],
       "cooking_time": 90,
       "calories": 277,
+      "like": true,
       "ingredients": [
         "сливки",
         "молоко",
@@ -838,6 +882,7 @@
       ],
       "cooking_time": 15,
       "calories": 127,
+      "like": false,
       "ingredients": [
         "томаты черри",
         "лайм",
@@ -880,6 +925,7 @@
       ],
       "cooking_time": 60,
       "calories": 356,
+      "like": false,
       "ingredients": [
         "молоко",
         "вода",
@@ -937,6 +983,7 @@
       ],
       "cooking_time": 10,
       "calories": 81,
+      "like": false,
       "ingredients": [
         "лед",
         "молоко",
@@ -945,7 +992,11 @@
         "растворимый кофе",
         "сливки взбитые"
       ],
-      "equipments": ["блендер", "трубочка", "высокий бокал"],
+      "equipments": [
+        "блендер",
+        "трубочка",
+        "высокий бокал"
+      ],
       "cooking_steps": [
         "В чашу блендера поместите: 70г льда, холодное молоко, холодное эспрессо, растворимый кофе, сироп.",
         "Взбейте до однородности, 2-3 минуты, на максимальной скорости.",
@@ -965,8 +1016,19 @@
       ],
       "cooking_time": 60,
       "calories": 35,
-      "ingredients": ["вода", "сахар", "розмарин", "клюква"],
-      "equipments": ["сотейник", "кастрюля", "сито", "погружной блендер"],
+      "like": false,
+      "ingredients": [
+        "вода",
+        "сахар",
+        "розмарин",
+        "клюква"
+      ],
+      "equipments": [
+        "сотейник",
+        "кастрюля",
+        "сито",
+        "погружной блендер"
+      ],
       "cooking_steps": [
         "В сотейник влейте 500мл воды, всыпьте сахар. С пяти веточек розмарина снимите листья и отправьте в сотейник. Варите до растворения сахара и закипания.",
         "В кастрюлю влейте 2л воды, добавьте клюкву и варите до закипания.",
@@ -987,6 +1049,7 @@
       ],
       "cooking_time": 150,
       "calories": 267,
+      "like": false,
       "ingredients": [
         "говядина (вырезка)",
         "темное пиво",
@@ -1045,6 +1108,7 @@
       ],
       "cooking_time": 95,
       "calories": 149,
+      "like": false,
       "ingredients": [
         "морковь",
         "сахар",
@@ -1070,4 +1134,3 @@
     }
   ]
 }
-  
