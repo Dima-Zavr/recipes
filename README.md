@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Сайт рецептов блюд
+Проект написан при помощи web-технологий таких как **HTML**, **CSS**, **JavaScript**, в качестве фреймворка использована популярная библиотека [React](https://react.dev/). В качесте сборщика приложения используется [Vite](https://vitejs.dev/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Вместо backend-а используется **мок** созданный с помощью библиотеки [Json-server](https://www.npmjs.com/package/json-server).
 
-## Available Scripts
+Менеджмент глобального состояния приложения, а также хранение информации на клиенте осуществляется применением распространенной библиотеки [Redux](https://redux.js.org/).
 
-In the project directory, you can run:
+Навигации по сайту осуществляется благодаря библиотеке [react-router-dom](https://reactrouter.com/en/main). 
 
-### `npm start`
+Для обеспечения бесконечной прокрутки на страницах с карточками рецептов используется библиотека [react-infinile-scroller](https://www.npmjs.com/package/react-infinite-scroller).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Для написания стилей в данном проекте используется технология [Styled components](https://styled-components.com/), позволяющая писать CSS код внутри JSX файлов, такой подход позволяет передавать из JS параметры в CSS, что обеспечивает более простую динамическую стилизацию.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Для создания галлереи фотографий блюда, используется популярная библиотека [Swiper](https://swiperjs.com/).
 
-### `npm test`
+В качестве вспомогательной библиотеки c готовыми функциями используется [Lodash](https://lodash.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Также для удобства написания кода, в этом проекте активно используется библиотека для форматирования кода [Prettier](https://prettier.io/).
+___
+### На данный момент реализовано:
+* Мокирование данных, в моке реализованы основная требуемая информация для рецептов;
+* Запросы (GET, POST, PUT, PATCH, DELETE) на "фальшивый" backend;
+* Страницы: "Все рецепты", "Мои рецепты", "Избранные рецепты", индивидуальная страница рецепта;
+* Store и все reducers, для менеджмента глобального состояния Redux и хранения в удобной и доступной форме требуемых данных;
+* Логика бесконечной прокрутки и поиска по рецептам.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### В планах реализовать:
+* Возможность смены темы (темная/светлая);
+* Вход в свой аккаунт через Регистрацию и Авторизацию;
+* Возможность полноценно создавать свои собственные рецепты (пока можно создать только карточку рецепта).
+___
+|Страница "Все рецепты"|Страница "Мои рецепты"|
+|:--------------:|:--------------:|
+|![image](https://github.com/Dima-Sosin/recipes/assets/127529532/2ec48385-9430-45c1-802e-aa67b79001d7)|![image](https://github.com/Dima-Sosin/recipes/assets/127529532/5945d990-1cea-4184-a6fb-d8eb1404d198)|
+|**Страница "Избранные рецепты"**|**Индивидуальная страница рецепта**|
+|![image](https://github.com/Dima-Sosin/recipes/assets/127529532/df4d852b-c554-40c9-9fce-bf9b03bea9ae)|![image](https://github.com/Dima-Sosin/recipes/assets/127529532/85e30acf-3568-4344-a302-6adfb1b357c2)|
+|**Индивидуальная страница рецепта, шаги по приготовлению**||
+|![image](https://github.com/Dima-Sosin/recipes/assets/127529532/16911b33-7a4e-4815-879f-87080ec79ae7)||
