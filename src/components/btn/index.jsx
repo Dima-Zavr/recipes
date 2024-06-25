@@ -1,7 +1,7 @@
-import { MyButton } from "./styled_components"
+import {MyButton} from "./styled_components"
 
-export const Button = ({ children, onClick, type }) => (
-  <MyButton type={type} onClick={onClick}>
-    {children}
-  </MyButton>
+export const Button = ({children, onClick, type}) => (
+    <MyButton type={type} onClick={onClick}>
+        {children}
+    </MyButton>
 )

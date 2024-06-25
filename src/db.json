@@ -30,7 +30,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
       "cooking_time": 45,
       "calories": 33,
-      "like": false
+      "like": true
     },
     {
       "id": 5,
@@ -184,7 +184,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp",
       "cooking_time": 60,
       "calories": 35,
-      "like": false
+      "like": true
     },
     {
       "id": 3,
@@ -192,6 +192,14 @@
       "photos": "https://rusnord.ru/uploads/posts/2022-02/1646027364_4329.jpg",
       "cooking_time": "1",
       "calories": "0",
+      "like": false
+    },
+    {
+      "id": 4,
+      "name": "Хинкали",
+      "photos": "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
+      "cooking_time": "50",
+      "calories": "10",
       "like": false
     }
   ],

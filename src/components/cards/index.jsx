@@ -1,17 +1,17 @@
-import {Search, Ul} from "./styled_components"
-import {Card} from "../card"
-import {useState} from "react"
-import {debounce} from "lodash"
+import { Search, Ul } from "./styled_components"
+import { Card } from "../card"
+import { useState } from "react"
+import { debounce } from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
-import {GET} from "../../api/request"
-import {useLocation} from "react-router-dom"
-import {Preloader} from "../preloader";
-import {connect, useDispatch} from "react-redux";
+import { GET } from "../../api/request"
+import { useLocation } from "react-router-dom"
+import { Preloader } from "../preloader"
+import { connect, useDispatch } from "react-redux"
 
-function Cards(props){
+function Cards(props) {
     let pathName = useLocation().pathname
-    if(pathName === "/"){ pathName = "/allRecipes" }
-    if(pathName === "/favouriteRecipes"){ pathName = "/allRecipes?like=true" }
+    if (pathName === "/") { pathName = "/allRecipes" }
+    if (pathName === "/favouriteRecipes") { pathName = "/allRecipes?like=true" }
     const dispatch = useDispatch()
     const [isHasMore, setIsHasMore] = useState(true)
 
@@ -23,10 +23,11 @@ function Cards(props){
     const debounceSearch = debounce(searchRecipe, 500)
 
     const loadRecipes = () => {
-        GET(pathName, {name_like:props.searchStr, _page:props.page, _limit:8}).then(data => {
-            if (data != '') {
+        GET(pathName, { name_like: props.searchStr, _page: props.page, _limit: 8 }).then(data => {
+            console.log(props.page)
+            if (data != "") {
                 data?.map((el) => {
-                    dispatch(props.addRecipes(el, props.page+1))
+                    dispatch(props.addRecipes(el))
                 })
             } else {
                 setIsHasMore(false)
@@ -44,7 +45,7 @@ function Cards(props){
             pageStart={0}
             loadMore={loadRecipes}
             hasMore={isHasMore}
-            loader={<Preloader/>}
+            loader={<Preloader />}
         >
             <Ul>
                 {props.item?.map((recipe) => (
@@ -61,23 +62,23 @@ const mapStateToProps = (state, ownProps) => {
     let itemState = []
     let page = 1
     let searchStr = ""
-    if(ownProps.allRecipes){
+    if (ownProps.allRecipes) {
         itemState = state.all.allRecipes
         page = state.all.page
         searchStr = state.all.searchStr
     }
-    if(ownProps.myRecipes){
+    if (ownProps.myRecipes) {
         itemState = state.my.myRecipes
         page = state.my.page
         searchStr = state.my.searchStr
 
     }
-    if(ownProps.favouriteRecipes){
+    if (ownProps.favouriteRecipes) {
         itemState = state.favourite.favouriteRecipes
         page = state.favourite.page
         searchStr = state.favourite.searchStr
     }
-    return{
+    return {
         item: itemState,
         page: page,
         searchStr: searchStr,

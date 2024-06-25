@@ -1,11 +1,4 @@
-import {
-    Container,
-    Form,
-    Title,
-    Label,
-    Input,
-    Buttons
-} from "./styled_components"
+import { Container, Form, Title, Label, Input, Buttons } from "./styled_components"
 import {Button} from "../btn"
 import {useDispatch, useSelector} from "react-redux"
 import {useState} from "react"
@@ -44,8 +37,7 @@ export const ModalForm = ({clickExit}) => {
     const addRecipe = (event) => {
         event.preventDefault()
         POST("/myRecipes", recipe).then()
-        const page = myRecipes.length/4
-        dispatch(addMyRecipesAction(recipe, page+1))
+        dispatch(addMyRecipesAction(recipe))
         clickExit()
     }
 

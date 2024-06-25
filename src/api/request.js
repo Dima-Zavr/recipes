@@ -81,11 +81,11 @@ export async function PUT(path, params = {}, element = {}, token = null) {
 }
 
 //Метод PATCH обновляет конкретное поле элемента
-export async function PATCH(path, params = {}, element = {}, token = null) {
+export async function PATCH(path, element = {}, token = null) {
     try{
         // Создание URL с параметрами
         const urlWithParams = new URL(baseUrl + path);
-        Object.keys(params).forEach(key => urlWithParams.searchParams.append(key, params[key]));
+        //Object.keys(params).forEach(key => urlWithParams.searchParams.append(key, params[key]));
 
         //Создание токена зарегистрированного пользователя
         const headers = {'Content-Type': 'application/json'};
