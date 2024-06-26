@@ -1,11 +1,11 @@
 import { Container, Form, Title, Label, Input, Buttons } from "./styled_components"
-import {Button} from "../btn"
-import {useDispatch, useSelector} from "react-redux"
-import {useState} from "react"
-import {addMyRecipesAction} from "../../store/my-reducer"
-import {POST} from "../../api/request";
+import { Button } from "../btn"
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { POST } from "../../api"
+import { addMyRecipesAction } from "../../store/my-reducer"
 
-export const ModalForm = ({clickExit}) => {
+export const ModalForm = ({ clickExit }) => {
     const dispatch = useDispatch()
     const myRecipes = useSelector((state) => state.my.myRecipes)
 
@@ -19,7 +19,7 @@ export const ModalForm = ({clickExit}) => {
     })
 
     const dishesName = (event) => {
-        setRecipe((prevState) => ({...prevState, name: event.target.value}))
+        setRecipe((prevState) => ({ ...prevState, name: event.target.value }))
     }
     const cookingTime = (event) => {
         setRecipe((prevState) => ({
@@ -28,10 +28,10 @@ export const ModalForm = ({clickExit}) => {
         }))
     }
     const numberCalories = (event) => {
-        setRecipe((prevState) => ({...prevState, calories: event.target.value}))
+        setRecipe((prevState) => ({ ...prevState, calories: event.target.value }))
     }
     const photo = (event) => {
-        setRecipe((prevState) => ({...prevState, photos: event.target.value}))
+        setRecipe((prevState) => ({ ...prevState, photos: event.target.value }))
     }
 
     const addRecipe = (event) => {
@@ -47,7 +47,7 @@ export const ModalForm = ({clickExit}) => {
                 <Title>Мой рецепт</Title>
                 <Label>
                     Название блюда
-                    <br/>
+                    <br />
                     <Input
                         type="text"
                         name="name"
@@ -58,7 +58,7 @@ export const ModalForm = ({clickExit}) => {
                 </Label>
                 <Label>
                     Время приготовления (в минутах)
-                    <br/>
+                    <br />
                     <Input
                         type="number"
                         name="cooking_time"
@@ -69,7 +69,7 @@ export const ModalForm = ({clickExit}) => {
                 </Label>
                 <Label>
                     Количество каллорий
-                    <br/>
+                    <br />
                     <Input
                         type="number"
                         name="calories"
@@ -80,7 +80,7 @@ export const ModalForm = ({clickExit}) => {
                 </Label>
                 <Label>
                     Ссылка на фотографию
-                    <br/>
+                    <br />
                     <Input
                         type="text"
                         name="photo"

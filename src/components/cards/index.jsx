@@ -1,17 +1,15 @@
 import { Search, Ul } from "./styled_components"
 import { Card } from "../card"
+import { Preloader } from "../preloader"
 import { useState } from "react"
+import { useLocation } from "react-router-dom"
+import { connect, useDispatch } from "react-redux"
 import { debounce } from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
-import { GET } from "../../api/request"
-import { useLocation } from "react-router-dom"
-import { Preloader } from "../preloader"
-import { connect, useDispatch } from "react-redux"
+import { GET } from "../../api"
 
 function Cards(props) {
     let pathName = useLocation().pathname
-    if (pathName === "/") { pathName = "/allRecipes" }
-    if (pathName === "/favouriteRecipes") { pathName = "/allRecipes?like=true" }
     const dispatch = useDispatch()
     const [isHasMore, setIsHasMore] = useState(true)
 
@@ -73,10 +71,10 @@ const mapStateToProps = (state, ownProps) => {
         searchStr = state.my.searchStr
 
     }
-    if (ownProps.favouriteRecipes) {
-        itemState = state.favourite.favouriteRecipes
-        page = state.favourite.page
-        searchStr = state.favourite.searchStr
+    if (ownProps.likeRecipes) {
+        itemState = state.like.likeRecipes
+        page = state.like.page
+        searchStr = state.like.searchStr
     }
     return {
         item: itemState,

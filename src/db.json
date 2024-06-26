@@ -30,7 +30,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/a78801c8-9a6e-4d12-9be2-f2fe6afc196a.webp",
       "cooking_time": 45,
       "calories": 33,
-      "like": true
+      "like": false
     },
     {
       "id": 5,
@@ -86,7 +86,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/3ddbb35f-958c-4c21-935f-40b36ffa7e0d.webp",
       "cooking_time": 45,
       "calories": 156,
-      "like": true
+      "like": false
     },
     {
       "id": 12,
@@ -94,7 +94,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/912d0b21-1249-4430-b7d1-a20ee0ecf05c.webp",
       "cooking_time": 20,
       "calories": 176,
-      "like": false
+      "like": true
     },
     {
       "id": 13,
@@ -118,7 +118,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/13faaa24-96e4-4c64-91cc-97f396b41efa.webp",
       "cooking_time": 90,
       "calories": 277,
-      "like": true
+      "like": false
     },
     {
       "id": 16,
@@ -150,7 +150,7 @@
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp",
       "cooking_time": 60,
       "calories": 35,
-      "like": false
+      "like": true
     },
     {
       "id": 20,
@@ -167,19 +167,45 @@
       "cooking_time": 95,
       "calories": 149,
       "like": false
+    },
+    {
+      "id": 22,
+      "name": "Овсянка на молоке с ягодами и ванилью",
+      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp",
+      "cooking_time": 20,
+      "calories": 75,
+      "like": true
     }
   ],
   "myRecipes": [
     {
-      "id": 1,
-      "name": "Печеньки-сердечки",
-      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/cd387977-8ab0-4379-8029-f6621bdd9fe2.webp",
-      "cooking_time": 30,
-      "calories": 388,
+      "id": 23,
+      "name": "Бургер куринный",
+      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/df614d0a-af1d-43c1-a8c7-1415855170d4.webp",
+      "cooking_time": 18,
+      "calories": 175,
       "like": false
     },
     {
-      "id": 2,
+      "id": 24,
+      "name": "Хинкали",
+      "photos": "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
+      "cooking_time": 90,
+      "calories": 180,
+      "like": false
+    },
+    {
+      "id": 25,
+      "name": "Сэндвич с беконом",
+      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/468733f1-fd44-42ee-9b46-34bddf8810b6.webp",
+      "cooking_time": 20,
+      "calories": 275,
+      "like": false
+    }
+  ],
+  "likeRecipes": [
+    {
+      "id": 19,
       "name": "Клюквенный морс",
       "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp",
       "cooking_time": 60,
@@ -187,20 +213,20 @@
       "like": true
     },
     {
-      "id": 3,
-      "name": "Кукиш с маслом",
-      "photos": "https://rusnord.ru/uploads/posts/2022-02/1646027364_4329.jpg",
-      "cooking_time": "1",
-      "calories": "0",
-      "like": false
+      "id": 22,
+      "name": "Овсянка на молоке с ягодами и ванилью",
+      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp",
+      "cooking_time": 20,
+      "calories": 75,
+      "like": true
     },
     {
-      "id": 4,
-      "name": "Хинкали",
-      "photos": "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
-      "cooking_time": "50",
-      "calories": "10",
-      "like": false
+      "id": 12,
+      "name": "Цезарь классический",
+      "photos": "https://cdn.xn--j1agri5c.xn--p1ai/preview/912d0b21-1249-4430-b7d1-a20ee0ecf05c.webp",
+      "cooking_time": 20,
+      "calories": 176,
+      "like": true
     }
   ],
   "recipes": [
@@ -661,7 +687,7 @@
       ],
       "cooking_time": 45,
       "calories": 156,
-      "like": true,
+      "like": false,
       "ingredients": [
         "шампиньоны",
         "куриное филе",
@@ -706,7 +732,7 @@
       ],
       "cooking_time": 20,
       "calories": 176,
-      "like": false,
+      "like": true,
       "ingredients": [
         "салат романо",
         "куриное филе",
@@ -848,7 +874,7 @@
       ],
       "cooking_time": 90,
       "calories": 277,
-      "like": true,
+      "like": false,
       "ingredients": [
         "сливки",
         "молоко",
@@ -1024,7 +1050,7 @@
       ],
       "cooking_time": 60,
       "calories": 35,
-      "like": false,
+      "like": true,
       "ingredients": [
         "вода",
         "сахар",
@@ -1138,6 +1164,40 @@
         "Сформируйте котлеты и обваляйте в манке.",
         "На сковороде разогрейте масло, обжарьте котлеты до золотистости.",
         "Готовые котлеты обсушите от масла салфеткой.\nУкрасьте микрозеленью, копченой паприкой и подавайте к столу."
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Овсянка на молоке с ягодами и ванилью",
+      "photos": [
+        "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp",
+        "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp",
+        "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp",
+        "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp",
+        "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp"
+      ],
+      "cooking_time": 20,
+      "calories": 75,
+      "like": true,
+      "ingredients": [
+        "овсяные хлопья",
+        "молоко",
+        "вода",
+        "сахар",
+        "соль",
+        "ванилин",
+        "ягоды свежие"
+      ],
+      "equipments": [
+        "сотейник",
+        "ложка",
+        "кулинарные весы",
+        "доска разделочная",
+        "нож"
+      ],
+      "cooking_steps": [
+        "Соедините воду с молоком в сотейнике, доведите до кипения. В сотейник засыпьте овсяные хлопья, ванилин, соль и сахар. Убавьте нагрев, варите 7-10 минут до готовности при постоянном помешивании.",
+        "Готовое блюдо украсьте ягодами."
       ]
     }
   ]

@@ -1,7 +1,7 @@
-import {useEffect, useState} from "react"
-import {Svg} from "./styled_components.tsx"
+import { Svg } from "./styled_components.tsx"
+import { useEffect, useState } from "react"
 
-export const Heart = ({isLike, onClick}) => {
+export const Heart = ({ isLike, onClick }) => {
     const [color, setColor] = useState("")
     useEffect(() => {
         if (isLike) {

@@ -1,11 +1,11 @@
-import {Page, Container, Title} from "../components/styled-components"
+import { Page, Container, Title } from "../components/styled-components"
 import Cards from "../components/cards"
-import {useState} from "react"
-import {Button} from "../components/btn"
-import {ModalForm} from "../components/form"
-import {Preloader} from "../components/preloader";
-import {BtnContainer} from "../components/btn/styled_components";
-import {addMyRecipesAction, deleteMyRecipesAction} from "../store/my-reducer";
+import { useState } from "react"
+import { Button } from "../components/btn"
+import { ModalForm } from "../components/form"
+import { Preloader } from "../components/preloader"
+import { BtnContainer } from "../components/btn/styled_components"
+import { addMyRecipesAction, deleteMyRecipesAction } from "../store/my-reducer"
 
 export const MyRecipesPage = () => {
     const [isLoad, setIsLoad] = useState(true)
@@ -25,12 +25,12 @@ export const MyRecipesPage = () => {
                            addRecipes={addMyRecipesAction}
                            deleteRecipes={deleteMyRecipesAction}
                     />
-                    {isModal && <ModalForm clickExit={() => setIsModal(false)}/>}
+                    {isModal && <ModalForm clickExit={() => setIsModal(false)} />}
                 </Container>
             </Page>
         }
         {!isLoad &&
-            <Preloader/>
+            <Preloader />
         }
     </>)
 }

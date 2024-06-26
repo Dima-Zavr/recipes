@@ -1,32 +1,34 @@
 import { Main, Picture, Img, Inf, Time, Kalor, Title } from "./styled_components"
-import { useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
-import { useDispatch } from "react-redux"
-import { PATCH } from "../../api/request"
-import { changeAllRecipesAction } from "../../store/all-reducer"
-import { addFavouriteRecipesAction, eraseFavouriteRecipesAction } from "../../store/favourite-reducer"
 import { Heart } from "../heart/heart"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { POST, PATCH, DELETE } from "../../api"
+import { changeAllRecipesAction } from "../../store/all-reducer"
+import { changeMyRecipesAction } from "../../store/my-reducer"
+import { addLikeRecipesAction, eraseLikeRecipesAction } from "../../store/like-reducer"
 
 export const Card = ({ recipe }) => {
     const nav = useNavigate()
     const dispatch = useDispatch()
-    let pathName = useLocation().pathname
-    if ((pathName === "/") || (pathName === "/favouriteRecipes")) {
-        pathName = "/allRecipes"
-    }
     const [isLike, setIsLike] = useState(recipe.like)
     const newRecipe = recipe
 
     const like = (event) => {
         event.stopPropagation()
-        PATCH(pathName + "/" + recipe.id, { like: !isLike }).then()
+        PATCH("/recipes/" + recipe.id, { like: !isLike }).then()
+        PATCH("/allRecipes/" + recipe.id, { like: !isLike }).then()
+        PATCH("/myRecipes/" + recipe.id, { like: !isLike }).then()
         newRecipe.like = !isLike
         dispatch(changeAllRecipesAction(newRecipe))
+        dispatch(changeMyRecipesAction(newRecipe))
         if(isLike){
-            dispatch(eraseFavouriteRecipesAction(newRecipe))
+            DELETE("/likeRecipes/"+recipe.id).then()
+            dispatch(eraseLikeRecipesAction(newRecipe))
         }
-        else{
-            dispatch(addFavouriteRecipesAction(newRecipe))
+        else {
+            POST("/likeRecipes", newRecipe).then()
+            dispatch(addLikeRecipesAction(newRecipe))
         }
         setIsLike(!isLike)
     }

@@ -2,9 +2,9 @@ import {Page, Container, Title} from "../components/styled-components"
 import Cards from "../components/cards"
 import {useState} from "react";
 import {Preloader} from "../components/preloader";
-import {addFavouriteRecipesAction, deleteFavouriteRecipesAction} from "../store/favourite-reducer";
+import {addLikeRecipesAction, deleteLikeRecipesAction} from "../store/like-reducer";
 
-export const FavouriteRecipesPage = () => {
+export const LikeRecipesPage = () => {
     const [isLoad, setIsLoad] = useState(true)
 
     return (<>
@@ -12,9 +12,9 @@ export const FavouriteRecipesPage = () => {
             <Page>
                 <Container>
                     <Title>Избранные Рецепты</Title>
-                    <Cards favouriteRecipes
-                           addRecipes={addFavouriteRecipesAction}
-                           deleteRecipes={deleteFavouriteRecipesAction}
+                    <Cards likeRecipes
+                           addRecipes={addLikeRecipesAction}
+                           deleteRecipes={deleteLikeRecipesAction}
                     />
                 </Container>
             </Page>

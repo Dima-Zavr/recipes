@@ -1,5 +1,5 @@
-import {useNavigate} from "react-router-dom"
-import {Back} from "./styled_components"
+import { useNavigate } from "react-router-dom"
+import { Back } from "./styled_components"
 
 export const BtnBack = () => {
     const nav = useNavigate()
