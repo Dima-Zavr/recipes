@@ -8,7 +8,7 @@
 * State-manager - [Redux](https://redux.js.org/) + [React Redux](https://react-redux.js.org/)
 * Пагинация (бесконечная прокрутка) - [React Infinite Scroller](https://www.npmjs.com/package/react-infinite-scroller)
 * Галлерея фотографий - [Swiper](https://swiperjs.com/)
-* Вспомогательные функции [Lodash](https://lodash.com/)
+* Вспомогательные функции - [Lodash](https://lodash.com/)
 * Мокирование данных (фальшивый backend) - [Json Server](https://www.npmjs.com/package/json-server).
 
 ___
