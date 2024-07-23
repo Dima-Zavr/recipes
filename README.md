@@ -1,21 +1,16 @@
 # Сайт рецептов блюд
-Проект написан при помощи таких web-технологий, как **HTML**, **CSS**, **JavaScript**, в качестве фреймворка использована популярная библиотека [React](https://react.dev/). В качесте сборщика приложения используется **create-react-app**.
+Проект написан при помощи таких web-технологий, как **HTML**, **CSS**, **JavaScript**, в качестве фреймворка использована популярная библиотека [React](https://react.dev/).
 
-Вместо backend-а используется **мок** созданный с помощью библиотеки [Json-server](https://www.npmjs.com/package/json-server).
+Основной стек технологий:
+* Форматирование кода - [Prettier](https://prettier.io/)
+* Стилизация - [Styled components](https://styled-components.com/)
+* Маршрутизация - [React Router Dom](https://reactrouter.com/en/main)
+* State-manager - [Redux](https://redux.js.org/) + [React Redux](https://react-redux.js.org/)
+* Пагинация (бесконечная прокрутка) - [React Infinite Scroller](https://www.npmjs.com/package/react-infinite-scroller)
+* Галлерея фотографий - [Swiper](https://swiperjs.com/)
+* Вспомогательные функции [Lodash](https://lodash.com/)
+* Мокирование данных (фальшивый backend) - [Json Server](https://www.npmjs.com/package/json-server).
 
-Менеджмент глобального состояния приложения, а также хранение информации на клиенте осуществляется применением распространенной библиотеки [Redux](https://redux.js.org/).
-
-Навигации по сайту осуществляется благодаря библиотеке [react-router-dom](https://reactrouter.com/en/main). 
-
-Для обеспечения бесконечной прокрутки на страницах с карточками рецептов используется библиотека [react-infinile-scroller](https://www.npmjs.com/package/react-infinite-scroller).
-
-Для написания стилей в данном проекте используется технология [Styled components](https://styled-components.com/), позволяющая писать CSS код внутри JSX файлов, такой подход позволяет передавать из JS параметры в CSS, что обеспечивает более простую динамическую стилизацию.
-
-Для создания галлереи фотографий блюда, используется популярная библиотека [Swiper](https://swiperjs.com/).
-
-В качестве вспомогательной библиотеки c готовыми функциями используется [Lodash](https://lodash.com/).
-
-Также для удобства написания кода, в этом проекте активно используется библиотека для форматирования кода [Prettier](https://prettier.io/).
 ___
 ### На данный момент реализовано:
 * Мокирование данных, в моке реализованы основная требуемая информация для рецептов;
@@ -29,6 +24,7 @@ ___
 * Вход в свой аккаунт через Регистрацию и Авторизацию;
 * Возможность полноценно создавать свои собственные рецепты (пока можно создать только карточку рецепта).
 ___
+
 |Страница "Все рецепты"|Страница "Мои рецепты"|
 |:--------------:|:--------------:|
 |![image](https://github.com/Dima-Sosin/recipes/assets/127529532/2ec48385-9430-45c1-802e-aa67b79001d7)|![image](https://github.com/Dima-Sosin/recipes/assets/127529532/5945d990-1cea-4184-a6fb-d8eb1404d198)|
