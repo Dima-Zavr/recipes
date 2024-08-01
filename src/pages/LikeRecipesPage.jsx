@@ -1,7 +1,7 @@
-import {Page, Container, Title} from "../components/styled-components"
-import Cards from "../components/cards"
+import {Page, Container, Title} from "../components/Styled_components"
+import Cards from "../components/Cards/Cards"
 import {useState} from "react";
-import {Preloader} from "../components/preloader";
+import {Preloader} from "../components/Preloader/Preloader";
 import {addLikeRecipesAction, deleteLikeRecipesAction} from "../store/like-reducer";
 
 export const LikeRecipesPage = () => {

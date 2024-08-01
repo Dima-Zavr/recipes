@@ -1,11 +1,11 @@
-import { Page, Container, Content } from "../components/styled-components"
+import { Page, Container, Content } from "../components/Styled_components"
 import { BtnBack } from "../components/btn-back"
-import { RecipeInf } from "../components/recipe-inf"
-import { Slider } from "../components/slider"
+import { RecipeInf } from "../components/RecipeInf/RecipeInf"
+import { Slider } from "../components/Slider/Slider"
 import { RecipeSteps } from "../components/recipe-steps"
-import { Preloader } from "../components/preloader"
+import { Preloader } from "../components/Preloader/Preloader"
 import { useParams } from "react-router-dom"
-import { GET } from "../api"
+import { api } from "../api/api"
 import { useEffect, useState } from "react"
 
 export const RecipePage = () => {
@@ -14,7 +14,7 @@ export const RecipePage = () => {
     const [recipe, setRecipe] = useState({})
 
     useEffect(() => {
-        GET("/recipes?id=" + recipeId).then(data => {
+        api.get("/recipes?id=" + recipeId).then(data => {
             setRecipe(data[0])
             setIsLoad(true)
         })

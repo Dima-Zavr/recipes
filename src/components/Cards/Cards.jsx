@@ -1,12 +1,12 @@
-import { Search, Ul } from "./styled_components"
-import { Card } from "../card"
-import { Preloader } from "../preloader"
+import { Search, Ul } from "./Cards_components"
+import { Card } from "../Card/Card"
+import { Preloader } from "../Preloader/Preloader"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { connect, useDispatch } from "react-redux"
 import { debounce } from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
-import { GET } from "../../api"
+import { api } from "../../api/api"
 
 function Cards(props) {
     let pathName = useLocation().pathname
@@ -21,7 +21,7 @@ function Cards(props) {
     const debounceSearch = debounce(searchRecipe, 500)
 
     const loadRecipes = () => {
-        GET(pathName, { name_like: props.searchStr, _page: props.page, _limit: 8 }).then(data => {
+        api.get(pathName, { name_like: props.searchStr, _page: props.page, _limit: 8 }).then(data => {
             console.log(props.page)
             if (data != "") {
                 data?.map((el) => {

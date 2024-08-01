@@ -1,4 +1,4 @@
-import { Svg } from "./styled_components.tsx"
+import { Svg } from "./Heart_components.tsx"
 import { useEffect, useState } from "react"
 
 export const Heart = ({ isLike, onClick }) => {

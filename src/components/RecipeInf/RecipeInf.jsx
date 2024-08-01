@@ -1,8 +1,8 @@
-import { Container, Title, Weight, Blocks, Block, Subtitle, Li } from "./styled_components"
-import { Heart } from "../heart/heart"
+import { Container, Title, Weight, Blocks, Block, Subtitle, Li } from "./RecipeInf_components"
+import { Heart } from "../Heart/Heart"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { DELETE, PATCH, POST } from "../../api"
+import { api } from "../../api/api"
 import { changeAllRecipesAction } from "../../store/all-reducer"
 import { changeMyRecipesAction } from "../../store/my-reducer"
 import { addLikeRecipesAction, eraseLikeRecipesAction } from "../../store/like-reducer"
@@ -21,17 +21,17 @@ export const RecipeInf = ({ recipe }) => {
 
     const like = (event) => {
         event.stopPropagation()
-        PATCH("/recipes/" + recipe.id, { like: !isLike }).then()
-        PATCH("/allRecipes/" + recipe.id, { like: !isLike }).then()
-        PATCH("/myRecipes/" + recipe.id, { like: !isLike }).then()
+        api.patch("/recipes/" + recipe.id, { like: !isLike }).then()
+        api.patch("/allRecipes/" + recipe.id, { like: !isLike }).then()
+        api.patch("/myRecipes/" + recipe.id, { like: !isLike }).then()
         newRecipe.like = !isLike
         dispatch(changeAllRecipesAction(newRecipe))
         dispatch(changeMyRecipesAction(newRecipe))
         if (isLike) {
-            DELETE("/likeRecipes/" + recipe.id).then()
+            api.delete("/likeRecipes/" + recipe.id).then()
             dispatch(eraseLikeRecipesAction(newRecipe))
         } else {
-            POST("/likeRecipes", newRecipe).then()
+            api.post("/likeRecipes", newRecipe).then()
             dispatch(addLikeRecipesAction(newRecipe))
         }
         setIsLike(!isLike)

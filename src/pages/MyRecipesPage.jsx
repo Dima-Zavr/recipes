@@ -1,10 +1,10 @@
-import { Page, Container, Title } from "../components/styled-components"
-import Cards from "../components/cards"
+import { Page, Container, Title } from "../components/Styled_components"
+import Cards from "../components/Cards/Cards"
 import { useState } from "react"
-import { Button } from "../components/btn"
-import { ModalForm } from "../components/form"
-import { Preloader } from "../components/preloader"
-import { BtnContainer } from "../components/btn/styled_components"
+import { Button } from "../components/Button/Button"
+import { ModalForm } from "../components/Form/Form"
+import { Preloader } from "../components/Preloader/Preloader"
+import { BtnContainer } from "../components/Button/Button_components"
 import { addMyRecipesAction, deleteMyRecipesAction } from "../store/my-reducer"
 
 export const MyRecipesPage = () => {

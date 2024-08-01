@@ -1,4 +1,4 @@
-import { Header, Container, Logo, Links, MyLink } from "./styled_components"
+import { Header, Container, Logo, Links, MyLink } from "./PageHeader_components"
 import { Link } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 

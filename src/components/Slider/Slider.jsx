@@ -1,4 +1,4 @@
-import { Imgs, Img } from "./styled_components"
+import { Imgs, Img } from "./Slider_components"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, A11y } from "swiper/modules"
 import "swiper/css"

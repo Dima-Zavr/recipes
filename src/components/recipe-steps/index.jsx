@@ -1,5 +1,5 @@
 import { Container, Li, Step } from "./styled_components"
-import { Title } from "../recipe-inf/styled_components"
+import { Title } from "../RecipeInf/RecipeInf_components"
 
 export const RecipeSteps = ({ steps }) => {
     return (

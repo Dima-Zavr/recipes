@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import { PageHeader } from "./components/page-header"
-import { AllRecipesPage } from "./pages/all-recipes-page"
-import { MyRecipesPage } from "./pages/my-recipes-page"
-import { LikeRecipesPage } from "./pages/like-recipes-page"
-import { RecipePage } from "./pages/recipe-page"
-import { ScrollToTop } from "./components/scroll-to-top"
+import { PageHeader } from "./components/PageHeader/PageHeader"
+import { AllRecipesPage } from "./pages/AllRecipesPage"
+import { MyRecipesPage } from "./pages/MyRecipesPage"
+import { LikeRecipesPage } from "./pages/LikeRecipesPage"
+import { RecipePage } from "./pages/RecipePage"
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop"
 
 export const App = () => (
     <>

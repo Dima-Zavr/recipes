@@ -1,8 +1,8 @@
-import { Container, Form, Title, Label, Input, Buttons } from "./styled_components"
-import { Button } from "../btn"
+import { Container, Form, Title, Label, Input, Buttons } from "./Form_components"
+import { Button } from "../Button/Button"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { POST } from "../../api"
+import { api } from "../../api/api"
 import { addMyRecipesAction } from "../../store/my-reducer"
 
 export const ModalForm = ({ clickExit }) => {
@@ -36,7 +36,7 @@ export const ModalForm = ({ clickExit }) => {
 
     const addRecipe = (event) => {
         event.preventDefault()
-        POST("/myRecipes", recipe).then()
+        api.post("/myRecipes", recipe).then()
         dispatch(addMyRecipesAction(recipe))
         clickExit()
     }

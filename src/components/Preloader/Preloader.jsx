@@ -1,4 +1,4 @@
-import { LoaderContainer, Loader } from "./styled_components"
+import { LoaderContainer, Loader } from "./Preloader_components"
 
 export const Preloader = () => {
     return (
