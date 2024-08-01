@@ -2,13 +2,18 @@
   "name": "recipes",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "json-server -w src/db.json -p 3001",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "json-server": "^0.17.4",
     "lodash": "^4.17.21",
-    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-infinite-scroller": "^1.2.6",
@@ -20,18 +25,19 @@
     "swiper": "^11.0.6",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server -w src/db.json -p 3001"
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.2.5"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,css}": "npx prettier --write",
+    "*.{js,jsx,ts,tsx}": "npx eslint --fix"
   },
   "browserslist": {
     "production": [
