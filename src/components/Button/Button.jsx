@@ -1,7 +1,7 @@
-import { MyButton } from "./Button_components"
+import { MyButton } from "./Button_components.ts"
 
-export const Button = ({ children, onClick, type }) => (
-    <MyButton type={type} onClick={onClick}>
+export const Button = ({ type, view, children, onClick }) => (
+    <MyButton type={type} view={view} onClick={onClick}>
         {children}
     </MyButton>
 )

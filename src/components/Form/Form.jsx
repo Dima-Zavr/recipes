@@ -1,11 +1,11 @@
-import { Container, Form, Title, Label, Input, Buttons } from "./Form_components"
+import { Buttons, Container, Form, Input, Label } from "./Form_components"
 import { Button } from "../Button/Button"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { api } from "../../api/api"
 import { addMyRecipesAction } from "../../store/my-reducer"
 
-export const ModalForm = ({ clickExit }) => {
+export const ModalForm = ({ onClose }) => {
     const dispatch = useDispatch()
     const myRecipes = useSelector((state) => state.my.myRecipes)
 
@@ -38,13 +38,13 @@ export const ModalForm = ({ clickExit }) => {
         event.preventDefault()
         api.post("/myRecipes", recipe).then()
         dispatch(addMyRecipesAction(recipe))
-        clickExit()
+        onClose()
     }
 
     return (
         <Container>
             <Form name="form" id="myform">
-                <Title>Мой рецепт</Title>
+                <h2>Мой рецепт</h2>
                 <Label>
                     Название блюда
                     <br />
@@ -91,14 +91,17 @@ export const ModalForm = ({ clickExit }) => {
                 </Label>
                 <Buttons>
                     <Button
-                        type={"submit"}
+                        view="primary"
+                        type="submit"
                         onClick={(event) => {
                             addRecipe(event)
                         }}
                     >
                         Добавить
                     </Button>
-                    <Button onClick={clickExit}>Закрыть</Button>
+                    <Button view="default" onClick={onClose}>
+                        Закрыть
+                    </Button>
                 </Buttons>
             </Form>
         </Container>
