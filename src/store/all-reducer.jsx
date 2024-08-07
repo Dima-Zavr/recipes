@@ -1,7 +1,8 @@
 const initialState = {
     allRecipes: [],
     page: 1,
-    searchStr: ""
+    searchStr: "",
+    limit: 6
 }
 
 export const allReducer = (state = initialState, action) => {
@@ -10,8 +11,7 @@ export const allReducer = (state = initialState, action) => {
             return {
                 ...state,
                 allRecipes: [...state.allRecipes, action.recipe],
-                page: Math.ceil(state.allRecipes.length/8)+1,
-                searchStr: state.searchStr
+                page: Math.ceil(state.allRecipes.length / state.limit) + 1
             }
         case "DELETE_RECIPE":
             return {
@@ -28,9 +28,7 @@ export const allReducer = (state = initialState, action) => {
                         return action.recipe
                     }
                     return el
-                }),
-                page: state.page,
-                searchStr: state.searchStr
+                })
             }
         default:
             return state
@@ -39,7 +37,7 @@ export const allReducer = (state = initialState, action) => {
 
 export const addAllRecipesAction = (value) => ({
     type: "ADD_RECIPE",
-    recipe: value,
+    recipe: value
 })
 export const deleteAllRecipesAction = (searchStr) => ({
     type: "DELETE_RECIPE",

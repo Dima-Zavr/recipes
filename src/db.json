@@ -253,11 +253,13 @@
             "like": false
         },
         {
-            "id": 4,
-            "name": "",
-            "photos": "",
-            "cooking_time": 0,
-            "calories": 0,
+            "id": 22,
+            "name": "Якитория",
+            "photos": [
+                "https://avatars.mds.yandex.net/i?id=6b871d57b21428d9314f4a02bbec67ac_l-8249293-images-thumbs&n=13"
+            ],
+            "cooking_time": 30,
+            "calories": 3230,
             "like": false
         }
     ],

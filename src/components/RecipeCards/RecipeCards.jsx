@@ -18,25 +18,31 @@ function RecipeCards(props) {
         setIsHasMore(true)
     }
 
-    const debounceSearch = debounce(searchRecipe, 500)
+    const debounceSearch = debounce(searchRecipe, 1000)
 
     const loadRecipes = () => {
-        api.get(pathName, { name_like: props.searchStr, _page: props.page, _limit: 6 }).then(
-            (data) => {
-                if (data != "") {
-                    data?.map((el) => {
-                        dispatch(props.addRecipes(el))
-                    })
-                } else {
-                    setIsHasMore(false)
-                }
+        api.get(pathName, {
+            name_like: props.searchStr,
+            _page: props.page,
+            _limit: props.limit
+        }).then((data) => {
+            if (data != "") {
+                data?.map((el) => {
+                    dispatch(props.addRecipes(el))
+                })
+            } else {
+                setIsHasMore(false)
             }
-        )
+        })
     }
 
     return (
         <>
-            <Search placeholder="Поиск" onChange={(event) => debounceSearch(event.target.value)} />
+            <Search
+                placeholder="Поиск"
+                defaultValue={props.searchStr}
+                onChange={(event) => debounceSearch(event.target.value)}
+            />
             <InfiniteScroll
                 threshold={400}
                 pageStart={0}
@@ -79,6 +85,7 @@ const mapStateToProps = (state, ownProps) => {
         item: itemState,
         page: page,
         searchStr: searchStr,
+        limit: 6,
         addRecipes: ownProps.addRecipes,
         deleteRecipes: ownProps.deleteRecipes
     }

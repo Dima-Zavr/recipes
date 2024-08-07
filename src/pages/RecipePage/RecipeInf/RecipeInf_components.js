@@ -31,7 +31,7 @@ export const Block = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #61a146;
-    border-radius: 10px;
+    border-radius: 16px;
     color: white;
 `
 export const Subtitle = styled.p`

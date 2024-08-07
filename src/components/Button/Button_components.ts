@@ -27,13 +27,13 @@ export const MyButton = styled.button<ViewProps>`
     align-items: center;
     padding: 16px 32px;
     border-radius: 16px;
-    background-color: ${({ view }) => {
+    background-color: ${({ view, theme }) => {
         if (view === "primary") {
-            return `#82bd69`
+            return theme.colors.primary
         } else if (view === "link") {
             return `transparent`
         } else {
-            return `#ffffff`
+            return theme.colors.bg
         }
     }};
 

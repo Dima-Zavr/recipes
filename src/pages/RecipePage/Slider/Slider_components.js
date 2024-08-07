@@ -8,7 +8,7 @@ export const Img = styled.img`
     object-fit: cover;
     width: 100%;
     aspect-ratio: 3 / 4;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     justify-content: center;

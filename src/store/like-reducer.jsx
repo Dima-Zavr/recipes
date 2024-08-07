@@ -1,7 +1,8 @@
 const initialState = {
     likeRecipes: [],
     page: 1,
-    searchStr: ""
+    searchStr: "",
+    limit: 6
 }
 
 export const likeReducer = (state = initialState, action) => {
@@ -10,8 +11,7 @@ export const likeReducer = (state = initialState, action) => {
             return {
                 ...state,
                 likeRecipes: [...state.likeRecipes, action.recipe],
-                page: Math.ceil(state.likeRecipes.length/8)+1,
-                searchStr: state.searchStr
+                page: Math.ceil(state.likeRecipes.length / state.limit) + 1
             }
         case "DELETE_LIKE_RECIPE":
             return {
@@ -23,11 +23,8 @@ export const likeReducer = (state = initialState, action) => {
         case "ERASE_LIKE_RECIPE":
             return {
                 ...state,
-                likeRecipes: state.likeRecipes.filter(el =>
-                    el.id !== action.recipe.id
-                ),
-                page: Math.ceil(state.likeRecipes.length/8)+1,
-                searchStr: state.searchStr
+                likeRecipes: state.likeRecipes.filter((el) => el.id !== action.recipe.id),
+                page: Math.ceil(state.likeRecipes.length / state.limit) + 1
             }
         default:
             return state
@@ -36,7 +33,7 @@ export const likeReducer = (state = initialState, action) => {
 
 export const addLikeRecipesAction = (value) => ({
     type: "ADD_LIKE_RECIPE",
-    recipe: value,
+    recipe: value
 })
 export const deleteLikeRecipesAction = (searchStr) => ({
     type: "DELETE_LIKE_RECIPE",
@@ -44,5 +41,5 @@ export const deleteLikeRecipesAction = (searchStr) => ({
 })
 export const eraseLikeRecipesAction = (value) => ({
     type: "ERASE_LIKE_RECIPE",
-    recipe: value,
+    recipe: value
 })

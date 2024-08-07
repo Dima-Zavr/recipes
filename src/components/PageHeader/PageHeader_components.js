@@ -12,18 +12,14 @@ export const Header = styled.header`
     padding: 0 40px;
     margin: 0 auto;
     justify-content: space-between;
-    @media (max-width: 1019px) {
-        height: 100px;
-    }
-    @media (max-width: 767px) {
-        height: 80px;
+    @media ${({ theme }) => theme.media.medium} {
         justify-content: center;
     }
 `
 export const Logo = styled.img`
     height: 80px;
     width: auto;
-    @media (max-width: 767px) {
+    @media ${({ theme }) => theme.media.medium} {
         display: none;
     }
 `

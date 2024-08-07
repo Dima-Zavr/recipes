@@ -4,14 +4,15 @@ export const Search = styled.input`
     font-size: 20px;
     width: 100%;
     box-sizing: border-box;
-    background-color: #ffffff;
-    padding: 15px 20px;
+    background-color: ${({ theme }) => theme.colors.fontPrimary};
+    padding: 12px;
     margin-bottom: 30px;
-    border-radius: 20px;
-    border: 1px solid #82bd69;
+    border-radius: 16px;
+    border: none;
 
     &:focus {
         outline: none;
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary};
     }
 `
 export const Ul = styled.ul`
@@ -19,11 +20,11 @@ export const Ul = styled.ul`
     grid-template-columns: 300px 300px 300px;
     gap: 30px 30px;
     list-style-type: none;
-    @media (max-width: 1019px) {
+    @media ${({ theme }) => theme.media.large} {
         grid-template-columns: 310px 310px;
         gap: 30px 30px;
     }
-    @media (max-width: 767px) {
+    @media ${({ theme }) => theme.media.medium} {
         grid-template-columns: 300px;
         gap: 20px;
     }

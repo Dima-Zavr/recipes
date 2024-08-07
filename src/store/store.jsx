@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from "redux"
+import { combineReducers, createStore } from "redux"
 import { allReducer } from "./all-reducer"
 import { myReducer } from "./my-reducer"
 import { likeReducer } from "./like-reducer"

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Svg = styled.svg<{ color: string }>`
-    color: ${(props) => props.color};
+    color: ${({ color }) => color};
 
     &:hover {
         color: #d9544d;

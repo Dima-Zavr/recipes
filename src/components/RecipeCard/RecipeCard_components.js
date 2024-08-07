@@ -3,18 +3,6 @@ import styled from "styled-components"
 export const Main = styled.div`
     &:hover {
         cursor: pointer;
-        position: relative;
-
-        Img {
-            box-shadow: 0 0 20px black;
-        }
-
-        Title {
-            display: flex;
-            overflow: inherit;
-            text-overflow: inherit;
-            white-space: inherit;
-        }
     }
 `
 export const Picture = styled.div`
@@ -31,11 +19,15 @@ export const Img = styled.img`
     width: 100%;
     aspect-ratio: 3 / 4;
     margin-bottom: 16px;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     position: relative;
+
+    ${Main}:hover & {
+        box-shadow: 0 0 20px ${({ theme }) => theme.colors.font};
+    }
 `
 export const Inf = styled.div`
     position: absolute;
@@ -47,24 +39,11 @@ export const Inf = styled.div`
     width: 100%;
 `
 export const Time = styled.p`
-    color: #000000;
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.bg};
     font-size: 20px;
-    line-height: 1.3;
     padding: 10px;
-    border-radius: 0 20px 0 20px;
+    border-radius: 0 16px 0 15px;
 `
 export const Calor = styled(Time)`
-    border-radius: 20px 0 20px 0;
-`
-export const Title = styled.p`
-    width: 100%;
-    color: #141c24;
-    font-size: 20px;
-    font-weight: 600;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    border-radius: 16px 0 15px 0;
 `

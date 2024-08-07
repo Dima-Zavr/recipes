@@ -30,7 +30,6 @@ export const api = {
     },
     put: async function (path, element = {}, token = null) {
         try {
-
             const response = await fetch(this.createUrl(path), {
                 method: "PUT",
                 headers: this.createHeader(token),
@@ -70,20 +69,20 @@ export const api = {
             throw error
         }
     },
-    createUrl: function(path, params) {
+    createUrl: function (path, params) {
         const urlWithParams = new URL(BASE_URL + path)
-        if(params){
+        if (params) {
             Object.keys(params).forEach((key) =>
                 urlWithParams.searchParams.append(key, params[key])
             )
         }
-        return urlWithParams;
+        return urlWithParams
     },
-    createHeader: function(token) {
+    createHeader: function (token) {
         const headers = { "Content-Type": "application/json" }
         if (token) {
             headers["Authorization"] = `Bearer ${token}`
         }
-        return headers;
+        return headers
     }
 }
