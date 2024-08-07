@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import { api } from "./api/api"
 import { PageHeader } from "./components/PageHeader/PageHeader.jsx"
-import { store } from "./store/store"
+import store from "./store/store"
 import { baseTheme } from "./theme"
 
 import { AllRecipesPage } from "./pages/AllRecipesPage/AllRecipesPage"

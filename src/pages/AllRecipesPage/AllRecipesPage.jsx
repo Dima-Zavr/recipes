@@ -1,25 +1,19 @@
 import { Page } from "../../components/components"
-import Cards from "../../components/RecipeCards/RecipeCards"
-import { useState } from "react"
-import { Preloader } from "../../components/Preloader/Preloader"
-import { addAllRecipesAction, deleteAllRecipesAction } from "../../store/all-reducer"
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards"
+import { addAllRecipes, deleteAllRecipes, selectAllRecipes } from "../../store/allRecipesSlice"
+import { useSelector } from "react-redux"
 
 export const AllRecipesPage = () => {
-    const [isLoad, setIsLoad] = useState(true)
+    const allRecipes = useSelector(selectAllRecipes)
 
     return (
-        <>
-            {isLoad && (
-                <Page>
-                    <h1>Все Рецепты</h1>
-                    <Cards
-                        allRecipes
-                        addRecipes={addAllRecipesAction}
-                        deleteRecipes={deleteAllRecipesAction}
-                    />
-                </Page>
-            )}
-            {!isLoad && <Preloader />}
-        </>
+        <Page>
+            <h1>Все Рецепты</h1>
+            <RecipeCards
+                recipes={allRecipes}
+                addRecipes={addAllRecipes}
+                deleteRecipes={deleteAllRecipes}
+            />
+        </Page>
     )
 }

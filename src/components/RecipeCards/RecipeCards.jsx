@@ -3,18 +3,18 @@ import { RecipeCard } from "../RecipeCard/RecipeCard"
 import { Preloader } from "../Preloader/Preloader"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
-import { connect, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { debounce } from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
 import { api } from "../../api/api"
 
-function RecipeCards(props) {
+export const RecipeCards = ({ recipes, addRecipes, deleteRecipes }) => {
     let pathName = useLocation().pathname
     const dispatch = useDispatch()
     const [isHasMore, setIsHasMore] = useState(true)
 
     const searchRecipe = (value) => {
-        dispatch(props.deleteRecipes(value.toLowerCase()))
+        dispatch(deleteRecipes(value.toLowerCase()))
         setIsHasMore(true)
     }
 
@@ -22,13 +22,13 @@ function RecipeCards(props) {
 
     const loadRecipes = () => {
         api.get(pathName, {
-            name_like: props.searchStr,
-            _page: props.page,
-            _limit: props.limit
+            name_like: recipes.searchStr,
+            _page: recipes.page,
+            _limit: recipes.limit
         }).then((data) => {
             if (data != "") {
                 data?.map((el) => {
-                    dispatch(props.addRecipes(el))
+                    dispatch(addRecipes(el))
                 })
             } else {
                 setIsHasMore(false)
@@ -40,7 +40,7 @@ function RecipeCards(props) {
         <>
             <Search
                 placeholder="Поиск"
-                defaultValue={props.searchStr}
+                defaultValue={recipes.searchStr}
                 onChange={(event) => debounceSearch(event.target.value)}
             />
             <InfiniteScroll
@@ -51,7 +51,7 @@ function RecipeCards(props) {
                 loader={<Preloader />}
             >
                 <Ul>
-                    {props.item?.map((recipe, i) => (
+                    {recipes.recipes?.map((recipe, i) => (
                         <li key={i}>
                             <RecipeCard recipe={recipe} />
                         </li>
@@ -61,33 +61,3 @@ function RecipeCards(props) {
         </>
     )
 }
-
-const mapStateToProps = (state, ownProps) => {
-    let itemState = []
-    let page = 1
-    let searchStr = ""
-    if (ownProps.allRecipes) {
-        itemState = state.all.allRecipes
-        page = state.all.page
-        searchStr = state.all.searchStr
-    }
-    if (ownProps.myRecipes) {
-        itemState = state.my.myRecipes
-        page = state.my.page
-        searchStr = state.my.searchStr
-    }
-    if (ownProps.likeRecipes) {
-        itemState = state.like.likeRecipes
-        page = state.like.page
-        searchStr = state.like.searchStr
-    }
-    return {
-        item: itemState,
-        page: page,
-        searchStr: searchStr,
-        limit: 6,
-        addRecipes: ownProps.addRecipes,
-        deleteRecipes: ownProps.deleteRecipes
-    }
-}
-export default connect(mapStateToProps)(RecipeCards)

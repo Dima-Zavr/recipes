@@ -1,12 +1,12 @@
-import { combineReducers, createStore } from "redux"
-import { allReducer } from "./all-reducer"
-import { myReducer } from "./my-reducer"
-import { likeReducer } from "./like-reducer"
+import { configureStore } from "@reduxjs/toolkit"
+import allRecipesSlice from "./allRecipesSlice"
+import myRecipesSlice from "./myRecipesSlice"
+import likeRecipesSlice from "./likeRecipesSlice"
 
-const Reducers = combineReducers({
-    all: allReducer,
-    my: myReducer,
-    like: likeReducer
+export default configureStore({
+    reducer: {
+        all: allRecipesSlice,
+        my: myRecipesSlice,
+        like: likeRecipesSlice
+    }
 })
-
-export const store = createStore(Reducers)

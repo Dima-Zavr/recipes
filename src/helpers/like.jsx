@@ -1,7 +1,7 @@
 import { api } from "../api/api"
-import { changeAllRecipesAction } from "../store/all-reducer"
-import { changeMyRecipesAction } from "../store/my-reducer"
-import { addLikeRecipesAction, eraseLikeRecipesAction } from "../store/like-reducer"
+import { changeAllRecipes } from "../store/allRecipesSlice"
+import { changeMyRecipes } from "../store/myRecipesSlice"
+import { addLikeRecipes, eraseLikeRecipes } from "../store/likeRecipesSlice"
 
 export const like = (event, dispatch, recipe) => {
     event.stopPropagation()
@@ -19,15 +19,15 @@ export const like = (event, dispatch, recipe) => {
         like: !recipe.like
     }
 
-    dispatch(changeAllRecipesAction(newRecipe))
-    dispatch(changeMyRecipesAction(newRecipe))
+    dispatch(changeAllRecipes(newRecipe))
+    dispatch(changeMyRecipes(newRecipe))
 
     if (recipe.like) {
         api.delete("/likeRecipes/" + recipe.id).then()
-        dispatch(eraseLikeRecipesAction(newRecipe))
+        dispatch(eraseLikeRecipes(newRecipe))
     } else {
         api.post("/likeRecipes", newRecipe).then()
-        dispatch(addLikeRecipesAction(newRecipe))
+        dispatch(addLikeRecipes(newRecipe))
     }
 
     return !recipe.like

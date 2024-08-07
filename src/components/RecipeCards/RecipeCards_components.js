@@ -10,6 +10,10 @@ export const Search = styled.input`
     border-radius: 16px;
     border: none;
 
+    &:hover {
+        box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.font};
+    }
+
     &:focus {
         outline: none;
         box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary};
@@ -18,11 +22,11 @@ export const Search = styled.input`
 export const Ul = styled.ul`
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    gap: 30px 30px;
+    gap: 30px;
     list-style-type: none;
     @media ${({ theme }) => theme.media.large} {
-        grid-template-columns: 310px 310px;
-        gap: 30px 30px;
+        grid-template-columns: 300px 300px;
+        gap: 30px;
     }
     @media ${({ theme }) => theme.media.medium} {
         grid-template-columns: 300px;

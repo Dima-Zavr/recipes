@@ -2,7 +2,7 @@ import * as S from "./ModalForm_components"
 import { Button } from "../../../components/Button/Button"
 import { useDispatch } from "react-redux"
 import { api } from "../../../api/api"
-import { addMyRecipesAction } from "../../../store/my-reducer"
+import { addMyRecipes } from "../../../store/myRecipesSlice"
 import { Modal } from "../../../components/Modal/Modal"
 import { Input } from "../../../components/Input/Input"
 import { Form, Formik } from "formik"
@@ -32,7 +32,7 @@ export const ModalForm = ({ onClose }) => {
             like: false
         }
         api.post("/myRecipes", recipe).then()
-        dispatch(addMyRecipesAction(recipe))
+        dispatch(addMyRecipes(recipe))
         onClose()
     }
 
