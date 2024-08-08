@@ -17,8 +17,8 @@ export default createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    color: #000000;
-    background-color: #f5f5f5;
+    color: ${({ theme }) => theme.colors.font};
+    background-color: ${({ theme }) => theme.colors.bg};
     overflow-y: scroll;
   }
 
@@ -38,7 +38,7 @@ export default createGlobalStyle`
   h1 {
     font-size: 28px;
     font-weight: 700;
-    color: #141c24;
+    color: ${({ theme }) => theme.colors.font};
     width: 100%;
     text-align: left;
     margin-bottom: 16px;
@@ -47,14 +47,14 @@ export default createGlobalStyle`
   h2 {
     font-size: 24px;
     font-weight: 700;
-    color: #141c24;
+    color: ${({ theme }) => theme.colors.font};
     margin-bottom: 12px;
   }
 
   h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #292929;
+    color: ${({ theme }) => theme.colors.font};
     margin-bottom: 8px;
   }
 `

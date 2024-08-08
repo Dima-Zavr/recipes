@@ -21,7 +21,7 @@ export const RecipeCard = ({ recipe }) => {
                 <Heart
                     isLike={isLike}
                     onClick={(event) => {
-                        setIsLike(like(event, dispatch, recipe))
+                        setIsLike(like(event, dispatch, recipe, isLike))
                     }}
                 />
                 <Inf>

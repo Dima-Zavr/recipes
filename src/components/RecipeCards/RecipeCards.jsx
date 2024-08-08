@@ -26,7 +26,7 @@ export const RecipeCards = ({ recipes, addRecipes, deleteRecipes }) => {
             _page: recipes.page,
             _limit: recipes.limit
         }).then((data) => {
-            if (data != "") {
+            if (data.length !== 0) {
                 data?.map((el) => {
                     dispatch(addRecipes(el))
                 })

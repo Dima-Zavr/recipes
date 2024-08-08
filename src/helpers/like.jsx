@@ -3,12 +3,12 @@ import { changeAllRecipes } from "../store/allRecipesSlice"
 import { changeMyRecipes } from "../store/myRecipesSlice"
 import { addLikeRecipes, eraseLikeRecipes } from "../store/likeRecipesSlice"
 
-export const like = (event, dispatch, recipe) => {
+export const like = (event, dispatch, recipe, isLike) => {
     event.stopPropagation()
 
-    api.patch("/recipes/" + recipe.id, { like: !recipe.like }).then()
-    api.patch("/allRecipes/" + recipe.id, { like: !recipe.like }).then()
-    api.patch("/myRecipes/" + recipe.id, { like: !recipe.like }).then()
+    api.patch("/recipes/" + recipe.id, { like: !isLike }).then()
+    api.patch("/allRecipes/" + recipe.id, { like: !isLike }).then()
+    api.patch("/myRecipes/" + recipe.id, { like: !isLike }).then()
 
     const newRecipe = {
         id: recipe.id,
@@ -16,13 +16,13 @@ export const like = (event, dispatch, recipe) => {
         photos: [recipe.photos[0]],
         cooking_time: recipe.cooking_time,
         calories: recipe.calories,
-        like: !recipe.like
+        like: !isLike
     }
 
     dispatch(changeAllRecipes(newRecipe))
     dispatch(changeMyRecipes(newRecipe))
 
-    if (recipe.like) {
+    if (isLike) {
         api.delete("/likeRecipes/" + recipe.id).then()
         dispatch(eraseLikeRecipes(newRecipe))
     } else {
@@ -30,5 +30,5 @@ export const like = (event, dispatch, recipe) => {
         dispatch(addLikeRecipes(newRecipe))
     }
 
-    return !recipe.like
+    return !isLike
 }

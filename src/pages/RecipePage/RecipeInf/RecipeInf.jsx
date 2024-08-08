@@ -1,4 +1,4 @@
-import { Block, Blocks, Container, Li, Subtitle, Weight } from "./RecipeInf_components"
+import { Block, Blocks, Container, HeartBlock, Li, Subtitle, Weight } from "./RecipeInf_components"
 import { Heart } from "../../../components/Heart/Heart"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
@@ -18,14 +18,14 @@ export const RecipeInf = ({ recipe }) => {
                 <Block>
                     Кол-во калорий:<Weight> {recipe.calories} ккал</Weight>
                 </Block>
-                <Block>
+                <HeartBlock>
                     <Heart
                         isLike={isLike}
                         onClick={(event) => {
-                            setIsLike(like(event, dispatch, recipe))
+                            setIsLike(like(event, dispatch, recipe, isLike))
                         }}
                     />
-                </Block>
+                </HeartBlock>
             </Blocks>
             <Subtitle>Оборудование для приготовления:</Subtitle>
             <ul>

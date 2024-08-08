@@ -251,29 +251,9 @@
             "cooking_time": 20,
             "calories": 275,
             "like": false
-        },
-        {
-            "id": 22,
-            "name": "Якитория",
-            "photos": [
-                "https://avatars.mds.yandex.net/i?id=6b871d57b21428d9314f4a02bbec67ac_l-8249293-images-thumbs&n=13"
-            ],
-            "cooking_time": 30,
-            "calories": 3230,
-            "like": false
         }
     ],
     "likeRecipes": [
-        {
-            "id": 19,
-            "name": "Клюквенный морс",
-            "photos": [
-                "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp"
-            ],
-            "cooking_time": 60,
-            "calories": 35,
-            "like": true
-        },
         {
             "id": 22,
             "name": "Овсянка на молоке с ягодами и ванилью",
@@ -292,6 +272,16 @@
             ],
             "cooking_time": 20,
             "calories": 176,
+            "like": true
+        },
+        {
+            "id": 19,
+            "name": "Клюквенный морс",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp"
+            ],
+            "cooking_time": 60,
+            "calories": 35,
             "like": true
         }
     ],

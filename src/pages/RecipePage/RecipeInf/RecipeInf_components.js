@@ -34,6 +34,15 @@ export const Block = styled.div`
     border-radius: 16px;
     color: white;
 `
+export const HeartBlock = styled(Block)`
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover svg {
+        color: #d9544d;
+    }
+`
 export const Subtitle = styled.p`
     margin: 15px 0;
     color: #141c24;
