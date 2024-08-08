@@ -25,7 +25,7 @@ export const ProfilePage = () => {
     }
 
     const onSubmit = (values) => {
-        alert("Не сегодня :(")
+        alert("Извините, не сегодня :(")
     }
 
     const validationSchema = yup.object({

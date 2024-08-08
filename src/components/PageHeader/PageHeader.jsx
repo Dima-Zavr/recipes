@@ -28,6 +28,7 @@ export const PageHeader = () => {
         } else {
             nav("/signin")
         }
+        console.log(localStorage.getItem("token"), !!localStorage.getItem("token"))
     }
 
     return (

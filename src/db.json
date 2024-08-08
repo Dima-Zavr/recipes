@@ -1202,8 +1202,8 @@
     ],
     "users": [
         {
-            "email": "ivanov@gmail.com",
-            "password": "$2a$10$6d820eIS2ckjg4AYSO9Z5.7VA3voDJOTssSthxv4.GpAd88t7BQe6",
+            "email": "Ivanov@gmai.com",
+            "password": "$2a$10$56NgMcsevOqTie4zHv3u3eEGTSxBQh/qPVxP/cz.1N.fOLyE3LbuS",
             "firstname": "Иван",
             "lastname": "Иванов",
             "id": 1

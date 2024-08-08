@@ -11,9 +11,29 @@ export default createGlobalStyle`
     padding: 0;
   }
 
-  html, body, #root {
+  #root {
     width: 100%;
     height: 100%;
+  }
+  
+  html {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 16px;
+      background-color: ${({ theme }) => theme.colors.fontPrimary};
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.primary};
+      border-radius: 8px;
+    }
   }
 
   body {
@@ -24,7 +44,8 @@ export default createGlobalStyle`
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.font};
     background-color: ${({ theme }) => theme.colors.bg};
-    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
   }
 
   li {

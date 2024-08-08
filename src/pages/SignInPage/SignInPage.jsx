@@ -16,9 +16,9 @@ export const SignInPage = () => {
 
     const onSubmit = (values) => {
         api.post("/signin", values).then((response) => {
+            console.log(response.user)
             localStorage.setItem("token", response.accessToken)
             localStorage.setItem("id", response.user.id)
-            console.log(response.user)
             nav("/allRecipes")
         })
     }

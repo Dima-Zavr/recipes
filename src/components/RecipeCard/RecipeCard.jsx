@@ -17,7 +17,7 @@ export const RecipeCard = ({ recipe }) => {
             }}
         >
             <Picture>
-                <Img src={recipe.photos} alt={"Фото блюда: " + recipe.name} />
+                <Img src={recipe.photos} alt={"Фото блюда: " + recipe.name} loading="lazy" />
                 <Heart
                     isLike={isLike}
                     onClick={(event) => {

@@ -18,9 +18,9 @@ export const SignUpPage = () => {
 
     const onSubmit = (values) => {
         api.post("/signup", values).then((response) => {
+            console.log(response)
             localStorage.setItem("token", response.accessToken)
             localStorage.setItem("id", response.user.id)
-            console.log(response)
             nav("/allRecipes")
         })
     }
