@@ -1199,5 +1199,14 @@
                 "Готовое блюдо украсьте ягодами."
             ]
         }
+    ],
+    "users": [
+        {
+            "email": "ivanov@gmail.com",
+            "password": "$2a$10$6d820eIS2ckjg4AYSO9Z5.7VA3voDJOTssSthxv4.GpAd88t7BQe6",
+            "firstname": "Иван",
+            "lastname": "Иванов",
+            "id": 1
+        }
     ]
 }

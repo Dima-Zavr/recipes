@@ -11,6 +11,11 @@ export default createGlobalStyle`
     padding: 0;
   }
 
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+  }
+
   body {
     font-family: "Verdana", sans-serif;
     font-size: 16px;

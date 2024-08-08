@@ -1,14 +1,20 @@
-import { useSelector } from "react-redux"
-import { selectTheme } from "./store/themeSlice"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import GlobalStyles from "./styles/global"
+
+import { useSelector } from "react-redux"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
+
 import { PageHeader } from "./components/PageHeader/PageHeader"
+import { selectTheme } from "./store/themeSlice"
+import { api } from "./api/api"
+
 import { AllRecipesPage } from "./pages/AllRecipesPage/AllRecipesPage"
 import { MyRecipesPage } from "./pages/MyRecipesPage/MyRecipesPage"
 import { LikeRecipesPage } from "./pages/LikeRecipesPage/LikeRecipesPage"
 import { RecipePage } from "./pages/RecipePage/RecipePage"
-import { api } from "./api/api"
+import { SignUpPage } from "./pages/SignUpPage/SignUpPage"
+import { SignInPage } from "./pages/SignInPage/SignInPage"
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage"
 
 const router = createBrowserRouter([
     {
@@ -35,8 +41,29 @@ const router = createBrowserRouter([
                         .get("/recipes?id=" + params.recipeId)
                         .then((response) => response)
                 }
+            },
+            {
+                path: "profile",
+                element: <ProfilePage />,
+                loader: async () => {
+                    return await api
+                        .get(
+                            "/users/" + localStorage.getItem("id"),
+                            {},
+                            localStorage.getItem("token")
+                        )
+                        .then((response) => response)
+                }
             }
         ]
+    },
+    {
+        path: "/signup",
+        element: <SignUpPage />
+    },
+    {
+        path: "/signin",
+        element: <SignInPage />
     }
 ])
 

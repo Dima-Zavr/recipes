@@ -58,7 +58,6 @@ export const Theme = styled.div`
         cursor: pointer;
     }
 `
-export const Profile = styled.div`
-    display: flex;
-    align-items: center;
+export const Profile = styled(Title)`
+    gap: 8px;
 `

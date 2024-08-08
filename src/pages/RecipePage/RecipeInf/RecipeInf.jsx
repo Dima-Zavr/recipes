@@ -1,4 +1,4 @@
-import { Block, Blocks, Container, HeartBlock, Li, Subtitle, Weight } from "./RecipeInf_components"
+import * as S from "./RecipeInf_components"
 import { Heart } from "../../../components/Heart/Heart"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
@@ -9,36 +9,36 @@ export const RecipeInf = ({ recipe }) => {
     const [isLike, setIsLike] = useState(recipe.like)
 
     return (
-        <Container>
-            <h1>{recipe.name}</h1>
-            <Blocks>
-                <Block>
-                    Время готовки:<Weight> {recipe.cooking_time} мин</Weight>
-                </Block>
-                <Block>
-                    Кол-во калорий:<Weight> {recipe.calories} ккал</Weight>
-                </Block>
-                <HeartBlock>
+        <S.Container>
+            <S.Title>{recipe.name}</S.Title>
+            <S.Blocks>
+                <S.Block>
+                    Время готовки:<S.Weight> {recipe.cooking_time} мин</S.Weight>
+                </S.Block>
+                <S.Block>
+                    Кол-во калорий:<S.Weight> {recipe.calories} ккал</S.Weight>
+                </S.Block>
+                <S.HeartBlock>
                     <Heart
                         isLike={isLike}
                         onClick={(event) => {
                             setIsLike(like(event, dispatch, recipe, isLike))
                         }}
                     />
-                </HeartBlock>
-            </Blocks>
-            <Subtitle>Оборудование для приготовления:</Subtitle>
+                </S.HeartBlock>
+            </S.Blocks>
+            <S.Subtitle>Оборудование для приготовления:</S.Subtitle>
             <ul>
                 {recipe.equipments?.map((el, index) => (
-                    <Li key={index}>{el}</Li>
+                    <S.Li key={index}>{el}</S.Li>
                 ))}
             </ul>
-            <Subtitle>Ингредиенты:</Subtitle>
+            <S.Subtitle>Ингредиенты:</S.Subtitle>
             <ul>
                 {recipe.ingredients?.map((el, index) => (
-                    <Li key={index}>{el}</Li>
+                    <S.Li key={index}>{el}</S.Li>
                 ))}
             </ul>
-        </Container>
+        </S.Container>
     )
 }

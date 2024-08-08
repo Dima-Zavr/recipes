@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Search = styled.input`
     font-size: 20px;
+    color: ${({ theme }) => theme.colors.font};
     width: 100%;
     box-sizing: border-box;
     background-color: ${({ theme }) => theme.colors.fontPrimary};

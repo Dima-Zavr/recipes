@@ -1,16 +1,16 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    margin: 30px 0;
-    max-width: 930px;
+    width: 100%;
+`
+export const Title = styled.h2`
+    text-align: center;
 `
 export const StepTitle = styled.p`
     font-size: 20px;
     font-weight: 600;
 `
 export const Step = styled.p`
-    margin: 16px 0;
+    margin: 16px 0 16px 16px;
     font-size: 16px;
-    line-height: 1.3;
-    margin-left: 20px;
 `

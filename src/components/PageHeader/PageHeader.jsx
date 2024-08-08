@@ -1,5 +1,5 @@
 import * as S from "./PageHeader_components"
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet, useNavigate } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 import { SunIcon } from "../../assets/SunIcon"
 import { ProfileIcon } from "../../assets/ProfileIcon"
@@ -11,12 +11,22 @@ import { darkTheme, lightTheme } from "../../styles/theme.ts"
 export const PageHeader = () => {
     const dispatch = useDispatch()
     const theme = useSelector(selectTheme)
+    const nav = useNavigate()
 
     const changeTheme = () => {
         if (theme.type === "light") {
             dispatch(toggleTheme(darkTheme))
+            localStorage.setItem("theme", "dark")
         } else {
             dispatch(toggleTheme(lightTheme))
+            localStorage.setItem("theme", "light")
+        }
+    }
+    const profileClick = () => {
+        if (!!localStorage.getItem("token")) {
+            nav("/profile")
+        } else {
+            nav("/signin")
         }
     }
 
@@ -41,11 +51,9 @@ export const PageHeader = () => {
                             {theme.type === "light" && <SunIcon />}
                             {theme.type === "dark" && <MoonIcon />}
                         </S.Theme>
-                        <S.Profile>
-                            <S.Title>
-                                <ProfileIcon />
-                                Профиль
-                            </S.Title>
+                        <S.Profile onClick={profileClick}>
+                            <ProfileIcon />
+                            {!!localStorage.getItem("token") ? "Профиль" : "Войти"}
                         </S.Profile>
                     </S.Right>
                 </S.Header>

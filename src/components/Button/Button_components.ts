@@ -21,7 +21,6 @@ export const MyButton = styled.button<ViewProps>`
     width: ${({ view }) => (view === "link" ? `fit-content` : `100%`)};
     height: 56px;
     display: flex;
-    gap: 24px;
     border: ${({ view }) => (view === "default" ? `1px #82bd69 solid` : `none`)};
     justify-content: center;
     align-items: center;
