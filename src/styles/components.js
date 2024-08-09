@@ -12,6 +12,7 @@ export const BtnBack = styled(MyButton)`
     width: fit-content;
     position: absolute;
     left: 0;
+    color: ${({ theme }) => theme.colors.font};
 `
 export const HangButton = styled(MyButton)`
     position: fixed;

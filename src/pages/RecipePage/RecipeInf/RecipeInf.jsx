@@ -6,7 +6,7 @@ import { like } from "../../../helpers/like"
 
 export const RecipeInf = ({ recipe }) => {
     const dispatch = useDispatch()
-    const [isLike, setIsLike] = useState(recipe.like)
+    const [isLike, setIsLike] = useState(recipe.like.includes(localStorage.getItem("userId")))
 
     return (
         <S.Container>

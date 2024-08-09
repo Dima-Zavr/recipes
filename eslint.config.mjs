@@ -35,6 +35,6 @@ export default [
         ]
     },
     pluginJs.configs.recommended,
-    ...pluginTs.configs.recommended,
+    pluginTs.configs.recommended,
     pluginReact.configs.flat.recommended
 ]

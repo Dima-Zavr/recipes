@@ -10,7 +10,7 @@ import { BackIcon } from "../../assets/BackIcon"
 import { PageLayout } from "../../components/PageLayout/PageLayout"
 
 export const RecipePage = () => {
-    const recipe = useLoaderData()[0]
+    const recipe = useLoaderData()
     const nav = useNavigate()
 
     return (
