@@ -13,13 +13,13 @@ export const ProfilePage = () => {
     const logOut = (event) => {
         event.stopPropagation()
         localStorage.removeItem("token")
-        localStorage.removeItem("id")
+        localStorage.removeItem("userId")
         nav("/allRecipes")
     }
 
     const initialValues = {
-        firstname: user.firstname,
         lastname: user.lastname,
+        firstname: user.firstname,
         email: user.email,
         password: "********"
     }
@@ -29,8 +29,8 @@ export const ProfilePage = () => {
     }
 
     const validationSchema = yup.object({
-        firstname: yup.string(),
         lastname: yup.string(),
+        firstname: yup.string(),
         email: yup.string(),
         password: yup.string()
     })
@@ -45,18 +45,18 @@ export const ProfilePage = () => {
                 <S.MyForm>
                     <S.Title>Профиль</S.Title>
                     <Input
-                        label="Имя"
-                        type="text"
-                        name="firstname"
-                        readOnly
-                        placeholder="Введите имя"
-                    />
-                    <Input
                         label="Фамилия"
                         type="text"
                         name="lastname"
                         readOnly
                         placeholder="Введите фамилию"
+                    />
+                    <Input
+                        label="Имя"
+                        type="text"
+                        name="firstname"
+                        readOnly
+                        placeholder="Введите имя"
                     />
                     <Input
                         label="Email"

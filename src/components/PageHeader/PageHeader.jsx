@@ -40,17 +40,20 @@ export const PageHeader = () => {
                         <NavLink to="allRecipes">
                             <S.Title>Все рецепты</S.Title>
                         </NavLink>
-                        <NavLink to="myRecipes">
-                            <S.Title>Мои рецепты</S.Title>
-                        </NavLink>
-                        <NavLink to="likeRecipes">
-                            <S.Title>Избранные рецепты</S.Title>
-                        </NavLink>
+                        {!!localStorage.getItem("token") && (
+                            <>
+                                <NavLink to="myRecipes">
+                                    <S.Title>Мои рецепты</S.Title>
+                                </NavLink>
+                                <NavLink to="likeRecipes">
+                                    <S.Title>Избранные рецепты</S.Title>
+                                </NavLink>
+                            </>
+                        )}
                     </S.Left>
                     <S.Right>
                         <S.Theme onClick={changeTheme}>
-                            {theme.type === "light" && <SunIcon />}
-                            {theme.type === "dark" && <MoonIcon />}
+                            {theme.type === "light" ? <SunIcon /> : <MoonIcon />}
                         </S.Theme>
                         <S.Profile onClick={profileClick}>
                             <ProfileIcon />

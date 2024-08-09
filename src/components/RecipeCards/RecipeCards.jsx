@@ -21,12 +21,17 @@ export const RecipeCards = ({ recipes, addRecipes, deleteRecipes }) => {
     const debounceSearch = debounce(searchRecipe, 1000)
 
     const loadRecipes = () => {
-        api.get(pathName, {
-            name_like: recipes.searchStr,
-            _page: recipes.page,
-            _limit: recipes.limit
-        }).then((data) => {
-            if (data.length !== 0) {
+        api.get(
+            pathName,
+            {
+                name_like: recipes.searchStr,
+                _page: recipes.page,
+                _limit: recipes.limit,
+                userId: localStorage.getItem("userId")
+            },
+            localStorage.getItem("token")
+        ).then((data) => {
+            if (data?.length !== 0) {
                 data?.map((el) => {
                     dispatch(addRecipes(el))
                 })

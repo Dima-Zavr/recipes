@@ -10,8 +10,8 @@ export const SignUpPage = () => {
     const nav = useNavigate()
 
     const initialValues = {
-        firstname: "",
         lastname: "",
+        firstname: "",
         email: "",
         password: ""
     }
@@ -20,20 +20,20 @@ export const SignUpPage = () => {
         api.post("/signup", values).then((response) => {
             console.log(response)
             localStorage.setItem("token", response.accessToken)
-            localStorage.setItem("id", response.user.id)
+            localStorage.setItem("userId", response.user.id)
             nav("/allRecipes")
         })
     }
 
     const validationSchema = yup.object({
-        firstname: yup
-            .string()
-            .max(100, "Слишком много символов!")
-            .matches(/^[A-ZА-Я-]+$/i, "Имя должно содержать только буквы!"),
         lastname: yup
             .string()
             .max(100, "Слишком много символов!")
             .matches(/^[A-ZА-Я-]+$/i, "Фамилия должна содержать только буквы!"),
+        firstname: yup
+            .string()
+            .max(100, "Слишком много символов!")
+            .matches(/^[A-ZА-Я-]+$/i, "Имя должно содержать только буквы!"),
         email: yup
             .string()
             .max(100, "Слишком много символов!")
@@ -44,7 +44,7 @@ export const SignUpPage = () => {
             .min(8, "Минимум 8 символов")
             .matches(
                 /^.*(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*$/,
-                "Пароль должен содержать буквы верхнего и нижнего регистра, а также цифры!"
+                "Используйте буквы верхнего и нижнего регистра, а также цифры!"
             )
             .required("Обязательное поле!")
     })
@@ -57,13 +57,13 @@ export const SignUpPage = () => {
             >
                 <S.MyForm>
                     <S.Title>Регистрация</S.Title>
-                    <Input label="Имя" type="text" name="firstname" placeholder="Введите имя" />
                     <Input
                         label="Фамилия"
                         type="text"
                         name="lastname"
                         placeholder="Введите фамилию"
                     />
+                    <Input label="Имя" type="text" name="firstname" placeholder="Введите имя" />
                     <Input label="Email*" type="text" name="email" placeholder="Введите email" />
                     <Input
                         label="Пароль*"

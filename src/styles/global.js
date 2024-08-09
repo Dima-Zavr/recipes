@@ -22,7 +22,7 @@ export default createGlobalStyle`
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
-      width: 16px;
+      width: 10px;
       background-color: ${({ theme }) => theme.colors.fontPrimary};
     }
 
@@ -32,7 +32,7 @@ export default createGlobalStyle`
 
     &::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => theme.colors.primary};
-      border-radius: 8px;
+      border-radius: 5px;
     }
   }
 

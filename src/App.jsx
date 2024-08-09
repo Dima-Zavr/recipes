@@ -48,7 +48,7 @@ const router = createBrowserRouter([
                 loader: async () => {
                     return await api
                         .get(
-                            "/users/" + localStorage.getItem("id"),
+                            "/users/" + localStorage.getItem("userId"),
                             {},
                             localStorage.getItem("token")
                         )

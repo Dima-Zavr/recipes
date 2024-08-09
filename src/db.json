@@ -230,7 +230,8 @@
             ],
             "cooking_time": 18,
             "calories": 175,
-            "like": false
+            "like": false,
+            "userId": 1
         },
         {
             "id": 24,
@@ -240,7 +241,8 @@
             ],
             "cooking_time": 90,
             "calories": 180,
-            "like": false
+            "like": false,
+            "userId": 2
         },
         {
             "id": 25,
@@ -250,7 +252,8 @@
             ],
             "cooking_time": 20,
             "calories": 275,
-            "like": false
+            "like": false,
+            "userId": 1
         }
     ],
     "likeRecipes": [
@@ -262,7 +265,8 @@
             ],
             "cooking_time": 20,
             "calories": 75,
-            "like": true
+            "like": true,
+            "userId": 1
         },
         {
             "id": 12,
@@ -272,7 +276,8 @@
             ],
             "cooking_time": 20,
             "calories": 176,
-            "like": true
+            "like": true,
+            "userId": 2
         },
         {
             "id": 19,
@@ -282,7 +287,8 @@
             ],
             "cooking_time": 60,
             "calories": 35,
-            "like": true
+            "like": true,
+            "userId": 1
         }
     ],
     "recipes": [
@@ -1203,10 +1209,17 @@
     "users": [
         {
             "email": "Ivanov@gmai.com",
-            "password": "$2a$10$56NgMcsevOqTie4zHv3u3eEGTSxBQh/qPVxP/cz.1N.fOLyE3LbuS",
-            "firstname": "Иван",
+            "password": "$2a$10$uv235EzV1JJ74UKK2rtpgeCldXFdziMDT3adgwr.X7LxCTiyXodsW",
             "lastname": "Иванов",
+            "firstname": "Иван",
             "id": 1
+        },
+        {
+            "email": "NoIvanov@gma.com",
+            "password": "$2a$10$i.cUruz6MkKhd5uQacQjsOwgYkFzdkF6sAJd1JCNSGC/FBCanTjaS",
+            "lastname": "НеИванов",
+            "firstname": "НеИван",
+            "id": 2
         }
     ]
 }
