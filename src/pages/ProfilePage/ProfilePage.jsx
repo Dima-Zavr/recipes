@@ -5,15 +5,23 @@ import { Formik } from "formik"
 import { Input } from "../../components/Input/Input"
 import { Button } from "../../components/Button/Button"
 import { useLoaderData, useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { deleteAllRecipes } from "../../store/allRecipesSlice"
+import { deleteMyRecipes } from "../../store/myRecipesSlice"
+import { deleteLikeRecipes } from "../../store/likeRecipesSlice"
 
 export const ProfilePage = () => {
     const user = useLoaderData()
     const nav = useNavigate()
+    const dispatch = useDispatch()
 
     const logOut = (event) => {
         event.stopPropagation()
         localStorage.removeItem("token")
         localStorage.removeItem("userId")
+        dispatch(deleteAllRecipes(""))
+        dispatch(deleteMyRecipes(""))
+        dispatch(deleteLikeRecipes(""))
         nav("/allRecipes")
     }
 

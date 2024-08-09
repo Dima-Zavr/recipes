@@ -1,5 +1,5 @@
 {
-    "allRecipes": [
+    "cardRecipes": [
         {
             "id": 1,
             "name": "Куринная лапша",
@@ -8,7 +8,7 @@
             ],
             "cooking_time": 30,
             "calories": 43,
-            "like": false
+            "like": ["1"]
         },
         {
             "id": 2,
@@ -18,7 +18,7 @@
             ],
             "cooking_time": 25,
             "calories": 217,
-            "like": false
+            "like": []
         },
         {
             "id": 3,
@@ -28,7 +28,7 @@
             ],
             "cooking_time": 30,
             "calories": 156,
-            "like": false
+            "like": []
         },
         {
             "id": 4,
@@ -38,7 +38,7 @@
             ],
             "cooking_time": 45,
             "calories": 33,
-            "like": false
+            "like": []
         },
         {
             "id": 5,
@@ -48,7 +48,7 @@
             ],
             "cooking_time": 15,
             "calories": 132,
-            "like": false
+            "like": []
         },
         {
             "id": 6,
@@ -58,7 +58,7 @@
             ],
             "cooking_time": 20,
             "calories": 130,
-            "like": false
+            "like": []
         },
         {
             "id": 7,
@@ -68,7 +68,7 @@
             ],
             "cooking_time": 90,
             "calories": 361,
-            "like": false
+            "like": []
         },
         {
             "id": 8,
@@ -78,7 +78,7 @@
             ],
             "cooking_time": 25,
             "calories": 132,
-            "like": false
+            "like": []
         },
         {
             "id": 9,
@@ -88,7 +88,7 @@
             ],
             "cooking_time": 40,
             "calories": 126,
-            "like": false
+            "like": []
         },
         {
             "id": 10,
@@ -98,7 +98,7 @@
             ],
             "cooking_time": 90,
             "calories": 243,
-            "like": false
+            "like": []
         },
         {
             "id": 11,
@@ -108,7 +108,7 @@
             ],
             "cooking_time": 45,
             "calories": 156,
-            "like": false
+            "like": []
         },
         {
             "id": 12,
@@ -118,7 +118,7 @@
             ],
             "cooking_time": 20,
             "calories": 176,
-            "like": true
+            "like": ["1", "2"]
         },
         {
             "id": 13,
@@ -128,7 +128,7 @@
             ],
             "cooking_time": 60,
             "calories": 220,
-            "like": false
+            "like": []
         },
         {
             "id": 14,
@@ -138,7 +138,7 @@
             ],
             "cooking_time": 30,
             "calories": 388,
-            "like": false
+            "like": []
         },
         {
             "id": 15,
@@ -148,7 +148,7 @@
             ],
             "cooking_time": 90,
             "calories": 277,
-            "like": false
+            "like": []
         },
         {
             "id": 16,
@@ -158,7 +158,7 @@
             ],
             "cooking_time": 15,
             "calories": 127,
-            "like": false
+            "like": []
         },
         {
             "id": 17,
@@ -168,7 +168,7 @@
             ],
             "cooking_time": 60,
             "calories": 356,
-            "like": false
+            "like": []
         },
         {
             "id": 18,
@@ -178,7 +178,7 @@
             ],
             "cooking_time": 10,
             "calories": 81,
-            "like": false
+            "like": []
         },
         {
             "id": 19,
@@ -188,7 +188,7 @@
             ],
             "cooking_time": 60,
             "calories": 35,
-            "like": true
+            "like": ["1"]
         },
         {
             "id": 20,
@@ -198,7 +198,7 @@
             ],
             "cooking_time": 150,
             "calories": 267,
-            "like": false
+            "like": []
         },
         {
             "id": 21,
@@ -208,7 +208,7 @@
             ],
             "cooking_time": 95,
             "calories": 149,
-            "like": false
+            "like": []
         },
         {
             "id": 22,
@@ -218,10 +218,8 @@
             ],
             "cooking_time": 20,
             "calories": 75,
-            "like": true
-        }
-    ],
-    "myRecipes": [
+            "like": ["2"]
+        },
         {
             "id": 23,
             "name": "Бургер куринный",
@@ -230,7 +228,7 @@
             ],
             "cooking_time": 18,
             "calories": 175,
-            "like": false,
+            "like": [],
             "userId": 1
         },
         {
@@ -241,7 +239,7 @@
             ],
             "cooking_time": 90,
             "calories": 180,
-            "like": false,
+            "like": [],
             "userId": 2
         },
         {
@@ -252,46 +250,11 @@
             ],
             "cooking_time": 20,
             "calories": 275,
-            "like": false,
+            "like": [],
             "userId": 1
         }
     ],
-    "likeRecipes": [
-        {
-            "id": 22,
-            "name": "Овсянка на молоке с ягодами и ванилью",
-            "photos": [
-                "https://cdn.xn--j1agri5c.xn--p1ai/preview/838d7c16-df01-4972-aa8d-d5eceea848cf.webp"
-            ],
-            "cooking_time": 20,
-            "calories": 75,
-            "like": true,
-            "userId": 1
-        },
-        {
-            "id": 12,
-            "name": "Цезарь классический",
-            "photos": [
-                "https://cdn.xn--j1agri5c.xn--p1ai/preview/912d0b21-1249-4430-b7d1-a20ee0ecf05c.webp"
-            ],
-            "cooking_time": 20,
-            "calories": 176,
-            "like": true,
-            "userId": 2
-        },
-        {
-            "id": 19,
-            "name": "Клюквенный морс",
-            "photos": [
-                "https://cdn.xn--j1agri5c.xn--p1ai/preview/2fa1275d-a560-4549-96f1-5c9d6894d2cf.webp"
-            ],
-            "cooking_time": 60,
-            "calories": 35,
-            "like": true,
-            "userId": 1
-        }
-    ],
-    "recipes": [
+    "infRecipes": [
         {
             "id": 1,
             "name": "Куринная лапша",
@@ -304,7 +267,7 @@
             ],
             "cooking_time": 30,
             "calories": 43,
-            "like": false,
+            "like": ["1"],
             "ingredients": [
                 "лук репчатый",
                 "морковь",
@@ -343,7 +306,7 @@
             ],
             "cooking_time": 25,
             "calories": 217,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "молоко",
                 "вода",
@@ -381,7 +344,7 @@
             ],
             "cooking_time": 30,
             "calories": 156,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "лук репчатый",
                 "морковь",
@@ -416,7 +379,7 @@
             ],
             "cooking_time": 45,
             "calories": 33,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "говяжий бульон",
                 "картофель",
@@ -466,7 +429,7 @@
             ],
             "cooking_time": 15,
             "calories": 132,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "макароны",
                 "креветки очищенные",
@@ -515,7 +478,7 @@
             ],
             "cooking_time": 20,
             "calories": 130,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "хлеб пшеничный",
                 "яйцо C1",
@@ -553,7 +516,7 @@
             ],
             "cooking_time": 90,
             "calories": 361,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "мука пшеничная",
                 "масло сливочное",
@@ -609,7 +572,7 @@
             ],
             "cooking_time": 25,
             "calories": 132,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "оливки без косточек",
                 "маринованный имбирь",
@@ -644,7 +607,7 @@
             ],
             "cooking_time": 40,
             "calories": 126,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "лук репчатый",
                 "фарш говяжий",
@@ -677,7 +640,7 @@
             ],
             "cooking_time": 90,
             "calories": 243,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "корень имбиря",
                 "апельсин",
@@ -723,7 +686,7 @@
             ],
             "cooking_time": 45,
             "calories": 156,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "шампиньоны",
                 "куриное филе",
@@ -762,7 +725,7 @@
             ],
             "cooking_time": 20,
             "calories": 176,
-            "like": true,
+            "like": ["1", "2"],
             "ingredients": [
                 "салат романо",
                 "куриное филе",
@@ -809,7 +772,7 @@
             ],
             "cooking_time": 60,
             "calories": 220,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "свежая клубника",
                 "мята",
@@ -862,7 +825,7 @@
             ],
             "cooking_time": 30,
             "calories": 388,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "мука пшеничная",
                 "масло сливочное",
@@ -904,7 +867,7 @@
             ],
             "cooking_time": 90,
             "calories": 277,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "сливки",
                 "молоко",
@@ -946,7 +909,7 @@
             ],
             "cooking_time": 15,
             "calories": 127,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "томаты черри",
                 "лайм",
@@ -989,7 +952,7 @@
             ],
             "cooking_time": 60,
             "calories": 356,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "молоко",
                 "вода",
@@ -1047,7 +1010,7 @@
             ],
             "cooking_time": 10,
             "calories": 81,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "лед",
                 "молоко",
@@ -1076,7 +1039,7 @@
             ],
             "cooking_time": 60,
             "calories": 35,
-            "like": true,
+            "like": [1],
             "ingredients": ["вода", "сахар", "розмарин", "клюква"],
             "equipments": ["сотейник", "кастрюля", "сито", "погружной блендер"],
             "cooking_steps": [
@@ -1099,7 +1062,7 @@
             ],
             "cooking_time": 150,
             "calories": 267,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "говядина (вырезка)",
                 "темное пиво",
@@ -1158,7 +1121,7 @@
             ],
             "cooking_time": 95,
             "calories": 149,
-            "like": false,
+            "like": [],
             "ingredients": [
                 "морковь",
                 "сахар",
@@ -1189,7 +1152,7 @@
             ],
             "cooking_time": 20,
             "calories": 75,
-            "like": true,
+            "like": ["2"],
             "ingredients": [
                 "овсяные хлопья",
                 "молоко",
@@ -1204,19 +1167,133 @@
                 "Соедините воду с молоком в сотейнике, доведите до кипения. В сотейник засыпьте овсяные хлопья, ванилин, соль и сахар. Убавьте нагрев, варите 7-10 минут до готовности при постоянном помешивании.",
                 "Готовое блюдо украсьте ягодами."
             ]
+        },
+        {
+            "id": 23,
+            "name": "Бургер куринный",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/df614d0a-af1d-43c1-a8c7-1415855170d4.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/df614d0a-af1d-43c1-a8c7-1415855170d4.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/df614d0a-af1d-43c1-a8c7-1415855170d4.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/df614d0a-af1d-43c1-a8c7-1415855170d4.webp",
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/df614d0a-af1d-43c1-a8c7-1415855170d4.webp"
+            ],
+            "cooking_time": 18,
+            "calories": 175,
+            "like": [],
+            "ingredients": [
+                "куриная грудка",
+                "соевый соус",
+                "масло оливковое",
+                "лайм",
+                "соус барбекю",
+                "огурец",
+                "мед",
+                "маринованный имбирь",
+                "перец чили",
+                "японский майонез",
+                "лист салатный",
+                "зеленый лук",
+                "кунжут",
+                "чеснок",
+                "масло растительное",
+                "соль",
+                "перец черный молотый"
+            ],
+            "equipments": [
+                "доска разделочная",
+                "нож",
+                "миска",
+                "сковорода",
+                "пергаментная бумага",
+                "овощечистка"
+            ],
+            "cooking_steps": [
+                "Грудку нарежьте на тонкие ломтики, замаринуйте в оливковом масле, 30мл соевого соуса, в соке четверти лайма и соусе барбекю.",
+                "Огурец нарежьте тонкими ломтиками овощечисткой. Добавьте оливковое масло, маринованный имбирь, перец чили и нарезанный слайсами чеснок.",
+                "Добавьте нарезанные перья зеленого лука, кунжут, 15мл соевого соуса и сок четверти лайма. По желанию можете добавить мед. Посолите, тщательно отбейте и оставьте мариноваться.",
+                "На сковороде разогрейте растительное масло и обжарьте курицу. Выложите готовую курицу на пергамент и смажьте 15г соуса барбекю",
+                "Булочку разрежьте на половины. Обжарьте на сухой сковороде до золотистости.",
+                "Смажьте нижнюю половину булочки японским майонезом. Выложите листья салата, курицу, замаринованные огурцы. Смажьте майонезом верхнюю половину булочки и накройте бургер.",
+                "Подавайте бургер горячим."
+            ],
+            "userId": 1
+        },
+        {
+            "id": 24,
+            "name": "Хинкали",
+            "photos": [
+                "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
+                "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
+                "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
+                "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg",
+                "https://img.goodfon.ru/original/3000x2000/e/49/khinkali-salat-gruzinskaia-kukhnia.jpg"
+            ],
+            "cooking_time": 90,
+            "calories": 180,
+            "like": [],
+            "ingredients": [
+                "мука пшеничная",
+                "вода",
+                "фарш мясной",
+                "лук репчатый",
+                "соль",
+                "перец черный молотый",
+                "кинза"
+            ],
+            "equipments": ["доска разделочная", "нож", "миска", "кастрюля"],
+            "cooking_steps": [
+                "Смешайте муку воду и соль для приготовления теста.",
+                "Вымесить тесто руками до тугого состояния.",
+                "Заверните тесто в пленку, и оставьте на 30-40 минут.",
+                "Для начинки мелко порубите и посолите репчатый лук, и кинзу после чего смешайте их с мясным фаршем, не забудьте добавить немного воды",
+                "Тесто толщиной 1,5 см нарежьте на кружки стаканом, после чего тонко раскатайте каждый кружок",
+                "В каждый кружок теста положите по 1,5 столовые ложки начинки, после чего поднимите края кружка вверх и соберите гармошкой. Также можете немного повернуть хвостик.",
+                "В кипящую хорошо подсоленную воду в кастрюле, положите хинкали. Варите до тех пор пока они не перевернуться хвостиками вниз, после доварите еще 10 минут.",
+                "Перед подачей можно присыпать свежемолотым перцем. Кушать хинкали принято руками, браться нужно за хвостики."
+            ],
+            "userId": 2
+        },
+        {
+            "id": 25,
+            "name": "Сэндвич с беконом",
+            "photos": [
+                "https://cdn.xn--j1agri5c.xn--p1ai/preview/468733f1-fd44-42ee-9b46-34bddf8810b6.webp"
+            ],
+            "cooking_time": 20,
+            "calories": 275,
+            "like": [],
+            "ingredients": [
+                "хлеб тостовый",
+                "бекон",
+                "масло сливочное",
+                "арахисовая паста",
+                "джем"
+            ],
+            "equipments": ["сковорода", "миска", "лопатка", "доска разделочная", "нож"],
+            "cooking_steps": [
+                "Разогрейте сковороду, положите в нее бекон и влейте воду, обжарьте бекон до сильного румянца и вытапливания жира.",
+                "Готовый бекон выложите на салфетку, чтобы убрать излишки жира.",
+                "Хлеб смажьте маслом и выложите на сковороду.",
+                "Обжарьте до румяной корочки.",
+                "На готовые тосты 2 шт намажьте арахисовую пасту, на оставшиеся 2 шт намажьте джем.",
+                "На тосты выложите бекон и соберите сэндвич.",
+                "Готовые сэндвичи разрежьте по диагонали и подавайте."
+            ],
+            "userId": 1
         }
     ],
     "users": [
         {
-            "email": "Ivanov@gmai.com",
-            "password": "$2a$10$uv235EzV1JJ74UKK2rtpgeCldXFdziMDT3adgwr.X7LxCTiyXodsW",
+            "email": "Ivanov@gmail.com",
+            "password": "$2a$10$55Pxzp49HP8368iIze1mS.oqvECBnvSCHuDqaElb.sPnEc2EzHBze",
             "lastname": "Иванов",
             "firstname": "Иван",
             "id": 1
         },
         {
-            "email": "NoIvanov@gma.com",
-            "password": "$2a$10$i.cUruz6MkKhd5uQacQjsOwgYkFzdkF6sAJd1JCNSGC/FBCanTjaS",
+            "email": "NoIvanov@gmail.com",
+            "password": "$2a$10$XELeQMEhVDpxxUp4huBWJ.t20ooUL5EzJ.0cNsnv6.s305moUbouO",
             "lastname": "НеИванов",
             "firstname": "НеИван",
             "id": 2

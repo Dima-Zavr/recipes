@@ -38,7 +38,7 @@ const router = createBrowserRouter([
                 element: <RecipePage />,
                 loader: async ({ params }) => {
                     return await api
-                        .get("/recipes?id=" + params.recipeId)
+                        .get("/infRecipes/" + params.recipeId)
                         .then((response) => response)
                 }
             },

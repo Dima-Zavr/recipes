@@ -21,7 +21,8 @@ export const allRecipesSlice = createSlice({
         changeAllRecipes: (state, action) => {
             state.recipes = state.recipes.map((el) => {
                 if (el.id === action.payload.id) {
-                    return action.payload
+                    el.like = action.payload.like
+                    return el
                 }
                 return el
             })

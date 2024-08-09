@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { HangButton } from "../../styles/components"
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards"
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
 import { ModalForm } from "./ModalForm/ModalForm"
 import { addMyRecipes, deleteMyRecipes, selectMyRecipes } from "../../store/myRecipesSlice"
 import { useSelector } from "react-redux"
@@ -15,7 +15,7 @@ export const MyRecipesPage = () => {
         <PageLayout>
             <h1>Мои Рецепты</h1>
             <RecipeCards
-                recipes={myRecipes}
+                data={myRecipes}
                 addRecipes={addMyRecipes}
                 deleteRecipes={deleteMyRecipes}
             />

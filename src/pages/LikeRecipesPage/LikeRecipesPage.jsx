@@ -1,4 +1,4 @@
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards"
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
 import { addLikeRecipes, deleteLikeRecipes, selectLikeRecipes } from "../../store/likeRecipesSlice"
 import { useSelector } from "react-redux"
 import { PageLayout } from "../../components/PageLayout/PageLayout"
@@ -10,7 +10,7 @@ export const LikeRecipesPage = () => {
         <PageLayout>
             <h1>Избранные Рецепты</h1>
             <RecipeCards
-                recipes={likeRecipes}
+                data={likeRecipes}
                 addRecipes={addLikeRecipes}
                 deleteRecipes={deleteLikeRecipes}
             />

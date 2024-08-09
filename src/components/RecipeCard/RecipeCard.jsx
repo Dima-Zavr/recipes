@@ -8,7 +8,8 @@ import { useDispatch } from "react-redux"
 export const RecipeCard = ({ recipe }) => {
     const nav = useNavigate()
     const dispatch = useDispatch()
-    const [isLike, setIsLike] = useState(recipe.like)
+    console.log(recipe)
+    const [isLike, setIsLike] = useState(recipe.like?.includes(localStorage.getItem("userId")))
 
     return (
         <Main
