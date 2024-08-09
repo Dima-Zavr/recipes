@@ -1,12 +1,12 @@
-import { Search, Ul } from "./RecipeCards_components"
-import { RecipeCard } from "../RecipeCard/RecipeCard"
-import { Preloader } from "../Preloader/Preloader"
+import { Search, Ul } from "./RecipeCards_components.js"
+import { RecipeCard } from "../RecipeCard/RecipeCard.jsx"
+import { Preloader } from "../Preloader/Preloader.jsx"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { debounce } from "lodash"
 import InfiniteScroll from "react-infinite-scroller"
-import { api } from "../../api/api"
+import { api } from "../../api/api.js"
 
 interface IParams {
     name_like: string
