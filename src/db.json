@@ -1,4 +1,5 @@
 {
+    "users": [],
     "cardRecipes": [
         {
             "id": 1,
@@ -18,7 +19,7 @@
             ],
             "cooking_time": 25,
             "calories": 217,
-            "like": []
+            "like": ["2"]
         },
         {
             "id": 3,
@@ -229,7 +230,7 @@
             "cooking_time": 18,
             "calories": 175,
             "like": [],
-            "userId": 1
+            "userId": "1"
         },
         {
             "id": 24,
@@ -240,7 +241,7 @@
             "cooking_time": 90,
             "calories": 180,
             "like": [],
-            "userId": 2
+            "userId": "2"
         },
         {
             "id": 25,
@@ -251,7 +252,16 @@
             "cooking_time": 20,
             "calories": 275,
             "like": [],
-            "userId": 1
+            "userId": "1"
+        },
+        {
+            "id": 26,
+            "name": "Эчпочмак",
+            "photos": ["https://reciple.kz/images/bluda/kaz_kuhnia/echpochmak.jpg"],
+            "cooking_time": 23,
+            "calories": 989,
+            "like": [],
+            "userId": "1"
         }
     ],
     "infRecipes": [
@@ -306,7 +316,7 @@
             ],
             "cooking_time": 25,
             "calories": 217,
-            "like": [],
+            "like": ["2"],
             "ingredients": [
                 "молоко",
                 "вода",
@@ -1217,7 +1227,7 @@
                 "Смажьте нижнюю половину булочки японским майонезом. Выложите листья салата, курицу, замаринованные огурцы. Смажьте майонезом верхнюю половину булочки и накройте бургер.",
                 "Подавайте бургер горячим."
             ],
-            "userId": 1
+            "userId": "1"
         },
         {
             "id": 24,
@@ -1252,7 +1262,7 @@
                 "В кипящую хорошо подсоленную воду в кастрюле, положите хинкали. Варите до тех пор пока они не перевернуться хвостиками вниз, после доварите еще 10 минут.",
                 "Перед подачей можно присыпать свежемолотым перцем. Кушать хинкали принято руками, браться нужно за хвостики."
             ],
-            "userId": 2
+            "userId": "2"
         },
         {
             "id": 25,
@@ -1280,23 +1290,16 @@
                 "На тосты выложите бекон и соберите сэндвич.",
                 "Готовые сэндвичи разрежьте по диагонали и подавайте."
             ],
-            "userId": 1
-        }
-    ],
-    "users": [
-        {
-            "email": "Ivanov@gmail.com",
-            "password": "$2a$10$55Pxzp49HP8368iIze1mS.oqvECBnvSCHuDqaElb.sPnEc2EzHBze",
-            "lastname": "Иванов",
-            "firstname": "Иван",
-            "id": 1
+            "userId": "1"
         },
         {
-            "email": "NoIvanov@gmail.com",
-            "password": "$2a$10$XELeQMEhVDpxxUp4huBWJ.t20ooUL5EzJ.0cNsnv6.s305moUbouO",
-            "lastname": "НеИванов",
-            "firstname": "НеИван",
-            "id": 2
+            "id": 26,
+            "name": "Эчпочмак",
+            "photos": ["https://reciple.kz/images/bluda/kaz_kuhnia/echpochmak.jpg"],
+            "cooking_time": 23,
+            "calories": 989,
+            "like": [],
+            "userId": "1"
         }
     ]
 }

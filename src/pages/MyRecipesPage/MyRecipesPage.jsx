@@ -1,11 +1,14 @@
 import { useState } from "react"
-import { HangButton } from "../../styles/components"
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
-import { ModalForm } from "./ModalForm/ModalForm"
-import { addMyRecipes, deleteMyRecipes, selectMyRecipes } from "../../store/myRecipesSlice"
 import { useSelector } from "react-redux"
-import { PlusIcon } from "../../assets/PlusIcon"
+
+import { ModalForm } from "./ModalForm/ModalForm"
+
+import { HangButton } from "../../components/Button/Button_components"
 import { PageLayout } from "../../components/PageLayout/PageLayout"
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
+import { PlusIcon } from "../../assets/PlusIcon"
+
+import { addMyRecipes, deleteMyRecipes, selectMyRecipes } from "../../store/myRecipesSlice"
 
 export const MyRecipesPage = () => {
     const [isModal, setIsModal] = useState(false)
@@ -21,7 +24,7 @@ export const MyRecipesPage = () => {
             />
             <HangButton view="primary" onClick={() => setIsModal(true)}>
                 <PlusIcon />
-                Добавить свой рецепт
+                Добавить рецепт
             </HangButton>
             {isModal && <ModalForm onClose={() => setIsModal(false)} />}
         </PageLayout>

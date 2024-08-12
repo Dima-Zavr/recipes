@@ -1,7 +1,9 @@
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
-import { addLikeRecipes, deleteLikeRecipes, selectLikeRecipes } from "../../store/likeRecipesSlice"
 import { useSelector } from "react-redux"
+
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
 import { PageLayout } from "../../components/PageLayout/PageLayout"
+
+import { addLikeRecipes, deleteLikeRecipes, selectLikeRecipes } from "../../store/likeRecipesSlice"
 
 export const LikeRecipesPage = () => {
     const likeRecipes = useSelector(selectLikeRecipes)

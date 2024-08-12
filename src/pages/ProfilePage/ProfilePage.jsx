@@ -1,14 +1,18 @@
-import { PageLayout } from "../../components/PageLayout/PageLayout"
-import * as yup from "yup"
-import * as S from "../SignUpPage/SignUpPage_components"
-import { Formik } from "formik"
-import { Input } from "../../components/Input/Input"
-import { Button } from "../../components/Button/Button"
+import * as S from "../../styles/components"
+
 import { useLoaderData, useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
+
+import { Formik } from "formik"
+import * as yup from "yup"
+
+import { Button, DefaultButton } from "../../components/Button/Button_components"
+import { PageLayout } from "../../components/PageLayout/PageLayout"
+import { Input } from "../../components/Input/Input"
+
 import { deleteAllRecipes } from "../../store/allRecipesSlice"
-import { deleteMyRecipes } from "../../store/myRecipesSlice"
 import { deleteLikeRecipes } from "../../store/likeRecipesSlice"
+import { deleteMyRecipes } from "../../store/myRecipesSlice"
 
 export const ProfilePage = () => {
     const user = useLoaderData()
@@ -32,7 +36,7 @@ export const ProfilePage = () => {
         password: "********"
     }
 
-    const onSubmit = (values) => {
+    const onSubmit = () => {
         alert("Извините, не сегодня :(")
     }
 
@@ -81,12 +85,8 @@ export const ProfilePage = () => {
                         placeholder="Введите пароль"
                     />
                     <S.Buttons>
-                        <Button view="primary" type="submit">
-                            Обновить данные профиля
-                        </Button>
-                        <Button view="default" onClick={logOut}>
-                            Выйти из аккаунта
-                        </Button>
+                        <Button type="submit">Обновить данные профиля</Button>
+                        <DefaultButton onClick={logOut}>Выйти из аккаунта</DefaultButton>
                     </S.Buttons>
                 </S.MyForm>
             </Formik>

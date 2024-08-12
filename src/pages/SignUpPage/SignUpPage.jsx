@@ -1,10 +1,12 @@
-import * as S from "./SignUpPage_components"
-import { api } from "../../api/api"
-import * as yup from "yup"
-import { Formik } from "formik"
-import { Input } from "../../components/Input/Input"
-import { Button } from "../../components/Button/Button"
+import * as S from "../../styles/components"
+
 import { useNavigate } from "react-router-dom"
+import { Formik } from "formik"
+import * as yup from "yup"
+
+import { Button, DefaultButton } from "../../components/Button/Button_components"
+import { Input } from "../../components/Input/Input"
+import { api } from "../../api/api"
 
 export const SignUpPage = () => {
     const nav = useNavigate()
@@ -18,7 +20,6 @@ export const SignUpPage = () => {
 
     const onSubmit = (values) => {
         api.post("/signup", values).then((response) => {
-            console.log(response)
             localStorage.setItem("token", response.accessToken)
             localStorage.setItem("userId", response.user.id)
             nav("/allRecipes")
@@ -72,12 +73,10 @@ export const SignUpPage = () => {
                         placeholder="Введите пароль"
                     />
                     <S.Buttons>
-                        <Button view="primary" type="submit">
-                            Зарегистрироваться
-                        </Button>
-                        <Button view="default" onClick={() => nav("/signin")}>
+                        <Button type="submit">Зарегистрироваться</Button>
+                        <DefaultButton onClick={() => nav("/signin")}>
                             У меня есть аккаунт
-                        </Button>
+                        </DefaultButton>
                     </S.Buttons>
                 </S.MyForm>
             </Formik>

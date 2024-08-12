@@ -1,7 +1,9 @@
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
-import { addAllRecipes, deleteAllRecipes, selectAllRecipes } from "../../store/allRecipesSlice"
 import { useSelector } from "react-redux"
+
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx"
 import { PageLayout } from "../../components/PageLayout/PageLayout"
+
+import { addAllRecipes, deleteAllRecipes, selectAllRecipes } from "../../store/allRecipesSlice"
 
 export const AllRecipesPage = () => {
     const allRecipes = useSelector(selectAllRecipes)

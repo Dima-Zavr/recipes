@@ -1,22 +1,28 @@
-import { BtnBack, Content } from "../../styles/components"
+import { Content } from "../../styles/components"
 
+import { useState } from "react"
 import { ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom"
 
-import { Preloader } from "../../components/Preloader/Preloader"
 import { RecipeInf } from "./RecipeInf/RecipeInf"
 import { RecipeSteps } from "./RecipeSteps/RecipeSteps"
+import { Edit } from "./Edit/Edit"
 import { Slider } from "./Slider/Slider"
-import { BackIcon } from "../../assets/BackIcon"
+
+import { BtnBack, HangButton } from "../../components/Button/Button_components"
 import { PageLayout } from "../../components/PageLayout/PageLayout"
+import { BackIcon } from "../../assets/BackIcon"
+import { EditIcon } from "../../assets/EditIcon"
 
 export const RecipePage = () => {
     const recipe = useLoaderData()
     const nav = useNavigate()
+    const [isEdit, setIsEdit] = useState(false)
+    console.log(recipe)
 
     return (
-        <>
-            {recipe && (
-                <PageLayout>
+        <PageLayout>
+            {!isEdit && (
+                <>
                     <BtnBack view="link" onClick={() => nav(-1)}>
                         <BackIcon />
                         <p>Назад</p>
@@ -26,10 +32,16 @@ export const RecipePage = () => {
                         <Slider photos={recipe.photos} />
                     </Content>
                     <RecipeSteps steps={recipe.cooking_steps} />
-                    <ScrollRestoration />
-                </PageLayout>
+                    {localStorage.getItem("userId") === recipe.userId && (
+                        <HangButton view="primary" onClick={() => setIsEdit(true)}>
+                            <EditIcon />
+                            Изменить рецепт
+                        </HangButton>
+                    )}
+                </>
             )}
-            {!recipe && <Preloader />}
-        </>
+            {isEdit && <Edit recipe={recipe} onClick={() => setIsEdit(false)} />}
+            <ScrollRestoration />
+        </PageLayout>
     )
 }

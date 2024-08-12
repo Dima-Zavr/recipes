@@ -1,10 +1,12 @@
-import { api } from "../../api/api"
-import * as yup from "yup"
-import * as S from "../SignUpPage/SignUpPage_components"
-import { Formik } from "formik"
-import { Input } from "../../components/Input/Input"
-import { Button } from "../../components/Button/Button"
+import * as S from "../../styles/components"
+
 import { useNavigate } from "react-router-dom"
+import { Formik } from "formik"
+import * as yup from "yup"
+
+import { Button } from "../../components/Button/Button_components"
+import { Input } from "../../components/Input/Input"
+import { api } from "../../api/api"
 
 export const SignInPage = () => {
     const nav = useNavigate()
@@ -58,9 +60,9 @@ export const SignInPage = () => {
                         <Button type="submit" view="primary">
                             Войти
                         </Button>
-                        <Button view="default" onClick={() => nav("/signup")}>
+                        <DefaultButton onClick={() => nav("/signup")}>
                             Зарегистрироваться
-                        </Button>
+                        </DefaultButton>
                     </S.Buttons>
                 </S.MyForm>
             </Formik>

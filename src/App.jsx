@@ -1,7 +1,7 @@
 import GlobalStyles from "./styles/global"
 
 import { useSelector } from "react-redux"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 
 import { PageHeader } from "./components/PageHeader/PageHeader"
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <PageHeader />,
         children: [
+            {
+                path: "",
+                element: <Navigate to="/allRecipes" replace={true} />
+            },
             {
                 path: "allRecipes",
                 element: <AllRecipesPage />

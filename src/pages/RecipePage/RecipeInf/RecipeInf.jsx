@@ -27,18 +27,32 @@ export const RecipeInf = ({ recipe }) => {
                     />
                 </S.HeartBlock>
             </S.Blocks>
-            <S.Subtitle>Оборудование для приготовления:</S.Subtitle>
-            <ul>
-                {recipe.equipments?.map((el, index) => (
-                    <S.Li key={index}>{el}</S.Li>
-                ))}
-            </ul>
-            <S.Subtitle>Ингредиенты:</S.Subtitle>
-            <ul>
-                {recipe.ingredients?.map((el, index) => (
-                    <S.Li key={index}>{el}</S.Li>
-                ))}
-            </ul>
+            <S.Table>
+                <thead>
+                    <tr>
+                        <td>Ингредиенты</td>
+                        <td>Оборудование для приготовления</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                {recipe.ingredients?.map((el, index) => (
+                                    <li key={index}>{el}</li>
+                                ))}
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                {recipe.equipments?.map((el, index) => (
+                                    <li key={index}>{el}</li>
+                                ))}
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </S.Table>
         </S.Container>
     )
 }

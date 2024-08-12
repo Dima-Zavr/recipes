@@ -12,7 +12,7 @@ interface IParams {
     name_like: string
     _page: string
     _limit: string
-    like?: string
+    like_like?: string
     userId?: string
 }
 
@@ -30,7 +30,7 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
         params.userId = localStorage.getItem("userId")
     }
     if (pathName === "/likeRecipes") {
-        params.like = localStorage.getItem("userId")
+        params.like_like = localStorage.getItem("userId")
     }
 
     const searchRecipe = (value) => {
