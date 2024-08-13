@@ -28,19 +28,18 @@ ___
 * Глобальное хранилище данных и state менеджер, который обеспечивает полноценную работу бесконечной прокрутки поиска и логику лайка;
 * Логика бесконечной прокрутки, поиска по рецептам и лайка;
 * Возможность смены темы (темная/светлая);
-* Вход в свой аккаунт через Регистрацию или Авторизацию.
-
-### В планах реализовать:
-* Возможность полноценно создавать свои собственные рецепты (пока можно создать только карточку рецепта);
-* Адаптив под другие устройства помимо ПК (мобильные, планшеты).
+* Вход в свой аккаунт через Регистрацию или Авторизацию;
+* Адаптив под все устройства (ПК/ноутбук/планшет/смартфон).
 ___
 
-|Страница "Все рецепты"|Страница "Мои рецепты"|
+|Страница "Все рецепты"|Страница "Избранные рецепты"|
 |:--------------:|:--------------:|
-|![image](https://github.com/user-attachments/assets/19a81fbd-81ad-4576-b9a6-e8549e738b1a)|![image](https://github.com/user-attachments/assets/3e83097e-c51d-4b7e-b35b-27716380deef)|
-|**Страница "Избранные рецепты"**|**Индивидуальная страница рецепта**|
-|![image](https://github.com/user-attachments/assets/05e62ad7-40d7-48ba-8b9a-1c56fe285cb1)|![image](https://github.com/user-attachments/assets/a7ef1c91-ee34-4700-be88-efab7286f407)|
-|**Индивидуальная страница рецепта, шаги по приготовлению**|**Страница "Профиль"**|
-|![image](https://github.com/user-attachments/assets/682349fe-03d0-4476-9f80-345e52e59f6f)|![image](https://github.com/user-attachments/assets/f2b71b07-42e8-4e4c-b41e-43880a0d13f9)|
+|![image](https://github.com/user-attachments/assets/19a81fbd-81ad-4576-b9a6-e8549e738b1a)|![image](https://github.com/user-attachments/assets/05e62ad7-40d7-48ba-8b9a-1c56fe285cb1)|
+|**Страница "Мои рецепты"**|**Модальное окно для создания карточки рецепта**|
+|![image](https://github.com/user-attachments/assets/3e83097e-c51d-4b7e-b35b-27716380deef)|![image](https://github.com/user-attachments/assets/a1ce907c-164b-4b3f-a2ee-ecfe85daa403)|
+|**Индивидуальная страница рецепта**|**Индивидуальная страница рецепта, шаги по приготовлению**|
+|![image](https://github.com/user-attachments/assets/0aafb70e-b172-4b8a-a0f8-127be8f9a044)|![image](https://github.com/user-attachments/assets/682349fe-03d0-4476-9f80-345e52e59f6f)|
 |**Страница "Регистрации"**|**Страница "Авторизации"**|
 |![image](https://github.com/user-attachments/assets/a3110bf7-2ba2-454d-946e-ba5a2b2e60c3)|![image](https://github.com/user-attachments/assets/59ab8e6d-c873-4f5c-bf84-052728bbb949)|
+|**Страница "Профиль"**||
+|![image](https://github.com/user-attachments/assets/f2b71b07-42e8-4e4c-b41e-43880a0d13f9)||
