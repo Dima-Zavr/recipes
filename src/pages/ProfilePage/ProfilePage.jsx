@@ -27,6 +27,7 @@ export const ProfilePage = () => {
         dispatch(deleteMyRecipes(""))
         dispatch(deleteLikeRecipes(""))
         nav("/allRecipes")
+        location.reload()
     }
 
     const initialValues = {

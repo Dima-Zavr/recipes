@@ -24,7 +24,7 @@ export const MyRecipesPage = () => {
             />
             <HangButton view="primary" onClick={() => setIsModal(true)}>
                 <PlusIcon />
-                Добавить рецепт
+                <span>Добавить рецепт</span>
             </HangButton>
             {isModal && <ModalForm onClose={() => setIsModal(false)} />}
         </PageLayout>

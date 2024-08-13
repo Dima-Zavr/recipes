@@ -1,11 +1,11 @@
 import * as S from "./ModalForm_components"
-import { Button } from "../../../components/Button/Button_components"
+import { Button, DefaultButton } from "../../../components/Button/Button_components"
 import { useDispatch } from "react-redux"
 import { api } from "../../../api/api"
 import { addMyRecipes } from "../../../store/myRecipesSlice"
 import { Modal } from "../../../components/Modal/Modal"
 import { Input } from "../../../components/Input/Input"
-import { Form, Formik } from "formik"
+import { Formik } from "formik"
 import * as yup from "yup"
 
 export const ModalForm = ({ onClose }) => {
@@ -17,7 +17,7 @@ export const ModalForm = ({ onClose }) => {
 
     const initialValues = {
         name: "",
-        cooking_time: "",
+        cook_time: "",
         calories: "",
         photo: ""
     }
@@ -27,7 +27,7 @@ export const ModalForm = ({ onClose }) => {
             id: id + 1,
             name: values.name,
             photos: [values.photo],
-            cooking_time: values.cooking_time,
+            cook_time: values.cook_time,
             calories: values.calories,
             like: [],
             userId: localStorage.getItem("userId")
@@ -44,7 +44,7 @@ export const ModalForm = ({ onClose }) => {
             .max(100, "Слишком много символов!")
             .matches(/^[A-ZА-Я0-9-"]+$/i, "Недоступное название!")
             .required("Обязательное поле!"),
-        cooking_time: yup.number().required("Обязательное поле!"),
+        cook_time: yup.number().required("Обязательное поле!"),
         calories: yup.number().required("Обязательное поле!"),
         photo: yup.string().required("Обязательное поле!")
     })
@@ -56,7 +56,7 @@ export const ModalForm = ({ onClose }) => {
                 onSubmit={onSubmit}
                 validationSchema={validationSchema}
             >
-                <Form>
+                <S.MyForm>
                     <h2>Добавить рецепт</h2>
                     <Input
                         label="Название блюда*"
@@ -68,7 +68,7 @@ export const ModalForm = ({ onClose }) => {
                         <Input
                             label="Время приготовления*"
                             type="number"
-                            name="cooking_time"
+                            name="cook_time"
                             placeholder="Укажите время приготовления в минутах"
                         />
                         <Input
@@ -88,7 +88,7 @@ export const ModalForm = ({ onClose }) => {
                         <Button type="submit">Добавить</Button>
                         <DefaultButton onClick={onClose}>Закрыть</DefaultButton>
                     </S.Buttons>
-                </Form>
+                </S.MyForm>
             </Formik>
         </Modal>
     )

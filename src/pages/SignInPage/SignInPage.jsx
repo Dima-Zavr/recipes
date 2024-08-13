@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { Formik } from "formik"
 import * as yup from "yup"
 
-import { Button } from "../../components/Button/Button_components"
+import { Button, DefaultButton } from "../../components/Button/Button_components"
 import { Input } from "../../components/Input/Input"
 import { api } from "../../api/api"
 

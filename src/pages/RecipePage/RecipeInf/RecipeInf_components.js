@@ -1,7 +1,13 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    width: 450px;
+    width: calc(50% - 12px);
+    @media ${({ theme }) => theme.media.medium} {
+        width: 400px;
+    }
+    @media ${({ theme }) => theme.media.small} {
+        width: 100%;
+    }
 `
 export const Title = styled.h1`
     text-align: center;
@@ -15,6 +21,9 @@ export const Blocks = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 24px;
+    @media ${({ theme }) => theme.media.small} {
+        gap: 15px;
+    }
 `
 export const Block = styled.div`
     width: 100px;
@@ -27,6 +36,11 @@ export const Block = styled.div`
     background-color: #61a146;
     border-radius: 16px;
     color: white;
+    @media ${({ theme }) => theme.media.small} {
+        width: 90px;
+        height: 90px;
+        font-size: 14px;
+    }
 `
 export const HeartBlock = styled(Block)`
     &:hover {
@@ -71,5 +85,15 @@ export const Table = styled.table`
 
     tbody tr td {
         border-bottom: none;
+    }
+
+    @media ${({ theme }) => theme.media.medium} {
+        thead {
+            font-size: 16px;
+        }
+
+        tbody {
+            font-size: 14px;
+        }
     }
 `

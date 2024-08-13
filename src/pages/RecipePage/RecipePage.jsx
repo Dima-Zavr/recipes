@@ -31,11 +31,11 @@ export const RecipePage = () => {
                         <RecipeInf recipe={recipe} />
                         <Slider photos={recipe.photos} />
                     </Content>
-                    <RecipeSteps steps={recipe.cooking_steps} />
+                    <RecipeSteps steps={recipe.cook_steps} />
                     {localStorage.getItem("userId") === recipe.userId && (
                         <HangButton view="primary" onClick={() => setIsEdit(true)}>
                             <EditIcon />
-                            Изменить рецепт
+                            <span>Изменить рецепт</span>
                         </HangButton>
                     )}
                 </>

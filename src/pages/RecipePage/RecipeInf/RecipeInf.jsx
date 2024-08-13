@@ -13,7 +13,7 @@ export const RecipeInf = ({ recipe }) => {
             <S.Title>{recipe.name}</S.Title>
             <S.Blocks>
                 <S.Block>
-                    Время готовки:<S.Weight> {recipe.cooking_time} мин</S.Weight>
+                    Время готовки:<S.Weight> {recipe.cook_time} мин</S.Weight>
                 </S.Block>
                 <S.Block>
                     Кол-во калорий:<S.Weight> {recipe.calories} ккал</S.Weight>

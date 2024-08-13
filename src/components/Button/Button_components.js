@@ -24,6 +24,10 @@ export const Button = styled.button`
     &:active {
         filter: brightness(0.9);
     }
+
+    @media ${({ theme }) => theme.media.medium} {
+        padding: 8px 16px;
+    }
 `
 export const DefaultButton = styled(Button)`
     color: ${({ theme }) => theme.colors.primary};
@@ -45,4 +49,12 @@ export const HangButton = styled(Button)`
     right: 20px;
     width: fit-content;
     z-index: ${({ theme }) => theme.zIndex.btn};
+
+    @media ${({ theme }) => theme.media.medium} {
+        bottom: 70px;
+        right: 10px;
+        & span {
+            display: none;
+        }
+    }
 `

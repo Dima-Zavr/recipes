@@ -25,7 +25,7 @@ export const RecipeCard = ({ recipe }) => {
                     }}
                 />
                 <Inf>
-                    <Time> {recipe.cooking_time} мин</Time>
+                    <Time> {recipe.cook_time} мин</Time>
                     <Calor>{recipe.calories} ккал</Calor>
                 </Inf>
             </Picture>
