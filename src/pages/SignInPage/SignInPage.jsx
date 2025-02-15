@@ -7,9 +7,12 @@ import * as yup from "yup"
 import { Button, DefaultButton } from "../../components/Button/Button_components"
 import { Input } from "../../components/Input/Input"
 import { api } from "../../api/api"
+import { deleteAllRecipes } from "../../store/allRecipesSlice"
+import { useDispatch } from "react-redux"
 
 export const SignInPage = () => {
     const nav = useNavigate()
+    const dispatch = useDispatch()
 
     const initialValues = {
         email: "",
@@ -17,10 +20,9 @@ export const SignInPage = () => {
     }
 
     const onSubmit = (values) => {
-        api.post("/signin", values).then((response) => {
-            console.log(response.user)
-            localStorage.setItem("token", response.accessToken)
-            localStorage.setItem("userId", response.user.id)
+        api.post("/auth/login", values).then((response) => {
+            localStorage.setItem("token", response.token)
+            dispatch(deleteAllRecipes(""))
             nav("/allRecipes")
         })
     }

@@ -42,7 +42,11 @@ const router = createBrowserRouter([
                 element: <RecipePage />,
                 loader: async ({ params }) => {
                     return await api
-                        .get("/infRecipes/" + params.recipeId)
+                        .get(
+                            "/recipes/inf_recipe/" + params.recipeId,
+                            {},
+                            localStorage.getItem("token")
+                        )
                         .then((response) => response)
                 }
             },
@@ -51,11 +55,7 @@ const router = createBrowserRouter([
                 element: <ProfilePage />,
                 loader: async () => {
                     return await api
-                        .get(
-                            "/users/" + localStorage.getItem("userId"),
-                            {},
-                            localStorage.getItem("token")
-                        )
+                        .get("/user", {}, localStorage.getItem("token"))
                         .then((response) => response)
                 }
             }

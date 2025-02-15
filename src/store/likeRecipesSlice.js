@@ -19,7 +19,7 @@ export const likeRecipesSlice = createSlice({
             state.searchStr = action.payload
         },
         eraseLikeRecipes: (state, action) => {
-            state.recipes = state.recipes.filter((el) => el.id !== action.payload)
+            state.recipes = state.recipes.filter((el) => el._id !== action.payload)
             state.page = Math.ceil(state.recipes.length / state.limit) + 1
         }
     }

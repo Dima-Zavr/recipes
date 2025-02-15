@@ -9,11 +9,9 @@ import InfiniteScroll from "react-infinite-scroller"
 import { api } from "../../api/api.js"
 
 interface IParams {
-    name_like: string
+    search: string
     _page: string
     _limit: string
-    like_like?: string
-    userId?: string
 }
 
 export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
@@ -22,15 +20,9 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
     const [isHasMore, setIsHasMore] = useState(true)
 
     let params: IParams = {
-        name_like: data.searchStr,
+        search: data.searchStr,
         _page: data.page,
         _limit: data.limit
-    }
-    if (pathName === "/myRecipes") {
-        params.userId = localStorage.getItem("userId")
-    }
-    if (pathName === "/likeRecipes") {
-        params.like_like = localStorage.getItem("userId")
     }
 
     const searchRecipe = (value) => {
@@ -41,15 +33,17 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
     const debounceSearch = debounce(searchRecipe, 1000)
 
     const loadRecipes = () => {
-        api.get("/cardRecipes", params, localStorage.getItem("token")).then((response) => {
-            if (response?.length !== 0) {
-                response?.map((el) => {
-                    dispatch(addRecipes(el))
-                })
-            } else {
-                setIsHasMore(false)
+        api.get("/recipes/card_recipes" + pathName, params, localStorage.getItem("token")).then(
+            (response) => {
+                if (response?.recipes?.length !== 0) {
+                    response?.recipes?.map((el) => {
+                        dispatch(addRecipes(el))
+                    })
+                } else {
+                    setIsHasMore(false)
+                }
             }
-        })
+        )
     }
 
     return (
@@ -64,11 +58,11 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
                 pageStart={0}
                 loadMore={loadRecipes}
                 hasMore={isHasMore}
-                loader={<Preloader />}
+                loader={<Preloader key={0} />}
             >
                 <Ul>
-                    {data.recipes?.map((recipe, i) => (
-                        <li key={i}>
+                    {data.recipes?.map((recipe) => (
+                        <li key={recipe._id}>
                             <RecipeCard recipe={recipe} />
                         </li>
                     ))}

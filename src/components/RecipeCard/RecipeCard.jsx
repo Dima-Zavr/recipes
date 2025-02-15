@@ -8,16 +8,16 @@ import { useDispatch } from "react-redux"
 export const RecipeCard = ({ recipe }) => {
     const nav = useNavigate()
     const dispatch = useDispatch()
-    const [isLike, setIsLike] = useState(recipe.like?.includes(localStorage.getItem("userId")))
+    const [isLike, setIsLike] = useState(recipe.like)
 
     return (
         <Main
             onClick={() => {
-                nav(`/recipe/${recipe.id}`)
+                nav(`/recipe/${recipe._id}`)
             }}
         >
             <Picture>
-                <Img src={recipe.photos} alt={"Фото блюда: " + recipe.name} loading="lazy" />
+                <Img src={recipe.photos[0]} alt={"Фото блюда: " + recipe.name} loading="lazy" />
                 <Heart
                     isLike={isLike}
                     onClick={(event) => {

@@ -9,8 +9,7 @@
         "eject": "react-scripts eject",
         "server": "json-server -w src/db.json -p 3001 -m ./node_modules/json-server-auth -r src/routes.json",
         "prepare": "husky install",
-        "lint-staged": "lint-staged",
-        "dev": "npm run server & npm start"
+        "lint-staged": "lint-staged"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.2.7",

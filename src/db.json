@@ -1,11 +1,18 @@
 {
     "users": [
         {
-            "email": "Ivanov@gmail.com",
-            "password": "$2a$10$8bIVJ/qV0QFDMomRyerim.fXxUcI5QAThTgyAoXl0umIuMIVSL24C",
+            "email": "ivanov@gmail.com",
+            "password": "$2a$10$r1BgfwmGaUvu0I9T7BlfNug.b9Gv0/gQVoU4SqVxeutz8WwspjBhi",
             "lastname": "Иванов",
             "firstname": "Иван",
             "id": 1
+        },
+        {
+            "email": "sosindi@yandex.ru",
+            "password": "$2a$10$W/y7uRinIWkn8ZXNt3T8KOukO87XAmefsJc8hRsUelZalO021U8mm",
+            "lastname": "Сосин",
+            "firstname": "Дмитрий",
+            "id": 2
         }
     ],
     "cardRecipes": [
@@ -265,7 +272,9 @@
         {
             "id": 26,
             "name": "Эчпочмак",
-            "photos": ["https://reciple.kz/images/bluda/kaz_kuhnia/echpochmak.jpg"],
+            "photos": [
+                "https://avatars.mds.yandex.net/get-entity_search/5100341/953836996/S600xU_2x"
+            ],
             "cook_time": 23,
             "calories": 989,
             "like": [],
@@ -1303,7 +1312,9 @@
         {
             "id": 26,
             "name": "Эчпочмак",
-            "photos": ["https://reciple.kz/images/bluda/kaz_kuhnia/echpochmak.jpg"],
+            "photos": [
+                "https://avatars.mds.yandex.net/get-entity_search/5100341/953836996/S600xU_2x"
+            ],
             "cook_time": 23,
             "calories": 989,
             "like": [],

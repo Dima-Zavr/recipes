@@ -17,7 +17,6 @@ export const RecipePage = () => {
     const recipe = useLoaderData()
     const nav = useNavigate()
     const [isEdit, setIsEdit] = useState(false)
-    console.log(recipe)
 
     return (
         <PageLayout>
