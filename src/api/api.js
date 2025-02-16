@@ -1,3 +1,5 @@
+import { refreshAccessToken } from "./refreshAccessToken"
+
 export const BASE_URL = "http://localhost:5000/api"
 
 export const api = {
@@ -7,6 +9,20 @@ export const api = {
                 method: "GET",
                 headers: this.createHeader(token)
             })
+
+            // Проверяем статус ответа
+            if (response.status === 401) {
+                // Обновляем access token
+                const newAccessToken = await refreshAccessToken()
+
+                // Повторяем запрос с новым access token
+                const newResponse = await fetch(this.createUrl(path, params), {
+                    method: "GET",
+                    headers: this.createHeader(newAccessToken)
+                })
+
+                return await newResponse.json()
+            }
 
             return await response.json()
         } catch (error) {
@@ -21,6 +37,21 @@ export const api = {
                 headers: this.createHeader(token),
                 body: JSON.stringify(element)
             })
+
+            // Проверяем статус ответа
+            if (response.status === 401) {
+                // Обновляем access token
+                const newAccessToken = await refreshAccessToken()
+
+                // Повторяем запрос с новым access token
+                const newResponse = await fetch(this.createUrl(path), {
+                    method: "POST",
+                    headers: this.createHeader(newAccessToken),
+                    body: JSON.stringify(element)
+                })
+
+                return await newResponse.json()
+            }
 
             return await response.json()
         } catch (error) {

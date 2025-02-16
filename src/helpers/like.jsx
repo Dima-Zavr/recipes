@@ -14,7 +14,7 @@ export const like = (event, dispatch, recipe, isLike) => {
         dispatch(addLikeRecipes(newRecipe))
     }
 
-    api.get("/recipes/like_recipe/" + recipe._id, {}, localStorage.getItem("token")).then()
+    api.get("/recipes/like_recipe/" + recipe._id, {}, localStorage.getItem("accessToken")).then()
 
     dispatch(changeAllRecipes({ id: recipe._id }))
     dispatch(changeMyRecipes({ id: recipe._id }))

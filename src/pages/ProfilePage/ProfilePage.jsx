@@ -21,7 +21,7 @@ export const ProfilePage = () => {
 
     const logOut = (event) => {
         event.stopPropagation()
-        localStorage.removeItem("token")
+        localStorage.removeItem("accessToken")
         dispatch(deleteAllRecipes(""))
         dispatch(deleteMyRecipes(""))
         dispatch(deleteLikeRecipes(""))

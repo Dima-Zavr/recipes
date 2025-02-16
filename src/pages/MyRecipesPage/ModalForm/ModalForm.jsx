@@ -32,8 +32,8 @@ export const ModalForm = ({ onClose }) => {
             like: [],
             userId: localStorage.getItem("userId")
         }
-        api.post("/cardRecipes", recipe, localStorage.getItem("token")).then()
-        api.post("/infRecipes", recipe, localStorage.getItem("token")).then()
+        api.post("/cardRecipes", recipe, localStorage.getItem("accessToken")).then()
+        api.post("/infRecipes", recipe, localStorage.getItem("accessToken")).then()
         dispatch(addMyRecipes(recipe))
         onClose()
     }

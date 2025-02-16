@@ -29,7 +29,7 @@ export const PageHeader = () => {
                     <S.Left>
                         <S.Logo src={logo} alt="website logo" />
                         <S.Title to="allRecipes">Все рецепты</S.Title>
-                        {!!localStorage.getItem("token") && (
+                        {!!localStorage.getItem("accessToken") && (
                             <>
                                 <S.Title to="myRecipes">Мои рецепты</S.Title>
                                 <S.Title to="likeRecipes">Избранные рецепты</S.Title>
@@ -40,9 +40,11 @@ export const PageHeader = () => {
                         <S.Theme onClick={changeTheme}>
                             {theme.type === "light" ? <SunIcon /> : <MoonIcon />}
                         </S.Theme>
-                        <S.Profile to={!!localStorage.getItem("token") ? "/profile" : "/signin"}>
+                        <S.Profile
+                            to={!!localStorage.getItem("accessToken") ? "/profile" : "/signin"}
+                        >
                             <ProfileIcon />
-                            {!!localStorage.getItem("token") ? "Профиль" : "Войти"}
+                            {!!localStorage.getItem("accessToken") ? "Профиль" : "Войти"}
                         </S.Profile>
                     </S.Right>
                 </S.Header>

@@ -9,6 +9,7 @@ import { Input } from "../../components/Input/Input"
 import { api } from "../../api/api"
 import { useDispatch } from "react-redux"
 import { deleteAllRecipes } from "../../store/allRecipesSlice"
+import { setCookie } from "../../helpers/cookie"
 
 export const SignUpPage = () => {
     const nav = useNavigate()
@@ -23,7 +24,8 @@ export const SignUpPage = () => {
 
     const onSubmit = (values) => {
         api.post("/auth/register", values).then((response) => {
-            localStorage.setItem("token", response.token)
+            localStorage.setItem("accessToken", response.accessToken)
+            setCookie("refreshToken", response.refreshToken, 14)
             dispatch(deleteAllRecipes(""))
             nav("/allRecipes")
         })

@@ -33,17 +33,19 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
     const debounceSearch = debounce(searchRecipe, 1000)
 
     const loadRecipes = () => {
-        api.get("/recipes/card_recipes" + pathName, params, localStorage.getItem("token")).then(
-            (response) => {
-                if (response?.recipes?.length !== 0) {
-                    response?.recipes?.map((el) => {
-                        dispatch(addRecipes(el))
-                    })
-                } else {
-                    setIsHasMore(false)
-                }
+        api.get(
+            "/recipes/card_recipes" + pathName,
+            params,
+            localStorage.getItem("accessToken")
+        ).then((response) => {
+            if (response?.recipes?.length !== 0) {
+                response?.recipes?.map((el) => {
+                    dispatch(addRecipes(el))
+                })
+            } else {
+                setIsHasMore(false)
             }
-        )
+        })
     }
 
     return (

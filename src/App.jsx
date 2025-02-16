@@ -45,7 +45,7 @@ const router = createBrowserRouter([
                         .get(
                             "/recipes/inf_recipe/" + params.recipeId,
                             {},
-                            localStorage.getItem("token")
+                            localStorage.getItem("accessToken")
                         )
                         .then((response) => response)
                 }
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                 element: <ProfilePage />,
                 loader: async () => {
                     return await api
-                        .get("/user", {}, localStorage.getItem("token"))
+                        .get("/user", {}, localStorage.getItem("accessToken"))
                         .then((response) => response)
                 }
             }
