@@ -4,7 +4,7 @@ import { Form } from "formik"
 export const MyForm = styled(Form)`
     display: flex;
     flex-direction: column;
-    width: 650px;
+    width: 100%;
     @media ${({ theme }) => theme.media.medium} {
         width: 100%;
     }

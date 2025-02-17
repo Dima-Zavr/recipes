@@ -15,6 +15,7 @@ import { RecipePage } from "./pages/RecipePage/RecipePage"
 import { SignUpPage } from "./pages/SignUpPage/SignUpPage"
 import { SignInPage } from "./pages/SignInPage/SignInPage"
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage"
+import { AddRecipePage } from "./pages/AddRecipePage/AddRecipePage"
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "myRecipes",
                 element: <MyRecipesPage />
+            },
+            {
+                path: "addRecipe",
+                element: <AddRecipePage />
             },
             {
                 path: "likeRecipes",
