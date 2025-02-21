@@ -23,30 +23,38 @@ export const SignPage = styled.div`
 `
 export const MyForm = styled(Form)`
     display: flex;
-    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
     width: 100%;
-    padding: 32px;
-    border: 1px solid ${({ theme }) => theme.colors.primary};
-    border-radius: 32px;
-
-    @media ${({ theme }) => theme.media.medium} {
-        padding: 20px;
-        border: none;
-    }
-    @media ${({ theme }) => theme.media.small} {
-        padding: 10px;
-    }
+    max-width: 600px;
 `
 export const Title = styled.h1`
     text-align: center;
 `
 export const Buttons = styled.div`
     display: flex;
-    flex-direction: column;
     width: 100%;
     margin-top: 8px;
     gap: 24px;
+`
+export const Table = styled.table`
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+
+    tbody tr:nth-child(odd) {
+        background: #454545;
+    }
+
+    th {
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        width: 50%;
+    }
+
+    td {
+        padding: 10px;
+        width: 50%;
+    }
 `

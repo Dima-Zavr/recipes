@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom"
 export const MyRecipesPage = () => {
     const myRecipes = useSelector(selectMyRecipes)
     const nav = useNavigate()
+
     return (
         <PageLayout>
             <h1>Мои Рецепты</h1>

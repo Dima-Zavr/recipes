@@ -78,10 +78,10 @@ export const SignUpPage = () => {
                         placeholder="Введите пароль"
                     />
                     <S.Buttons>
-                        <Button type="submit">Зарегистрироваться</Button>
                         <DefaultButton onClick={() => nav("/signin")}>
                             У меня есть аккаунт
                         </DefaultButton>
+                        <Button type="submit">Зарегистрироваться</Button>
                     </S.Buttons>
                 </S.MyForm>
             </Formik>

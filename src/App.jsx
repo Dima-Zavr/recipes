@@ -60,7 +60,7 @@ const router = createBrowserRouter([
                 element: <ProfilePage />,
                 loader: async () => {
                     return await api
-                        .get("/user", {}, localStorage.getItem("accessToken"))
+                        .get("/user/get_data", {}, localStorage.getItem("accessToken"))
                         .then((response) => response)
                 }
             }
