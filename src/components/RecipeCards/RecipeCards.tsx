@@ -10,20 +10,23 @@ import { api } from "../../api/api.js"
 
 interface IParams {
     search: string
+    time_min: number
+    time_max: number
+    cal_min: number
+    cal_max: number
     _page: string
     _limit: string
 }
 
-export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
+export const RecipeCards = ({ data, addRecipes, deleteRecipes, changeFilters }) => {
     let pathName = useLocation().pathname
     const dispatch = useDispatch()
     const [isHasMore, setIsHasMore] = useState(true)
 
-    let params: IParams = {
-        search: data.searchStr,
+    let params: IParams = Object.assign(JSON.parse(JSON.stringify(data.filters)), {
         _page: data.page,
         _limit: data.limit
-    }
+    })
 
     const searchRecipe = (value) => {
         dispatch(deleteRecipes(value.toLowerCase()))
@@ -42,6 +45,8 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
                 response?.recipes?.map((el) => {
                     dispatch(addRecipes(el))
                 })
+                console.log(" filters", response.meta.filters)
+                dispatch(changeFilters(response.meta.filters))
             } else {
                 setIsHasMore(false)
             }
@@ -52,7 +57,7 @@ export const RecipeCards = ({ data, addRecipes, deleteRecipes }) => {
         <>
             <Search
                 placeholder="Поиск"
-                defaultValue={data.searchStr}
+                defaultValue={data.search}
                 onChange={(event) => debounceSearch(event.target.value)}
             />
             <InfiniteScroll

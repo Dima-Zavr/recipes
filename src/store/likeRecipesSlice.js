@@ -4,8 +4,14 @@ export const likeRecipesSlice = createSlice({
     name: "like",
     initialState: {
         recipes: [],
+        filters: {
+            search: "",
+            time_min: 0,
+            time_max: 0,
+            cal_min: 0,
+            cal_max: 0
+        },
         page: 1,
-        searchStr: "",
         limit: 6
     },
     reducers: {
@@ -16,7 +22,7 @@ export const likeRecipesSlice = createSlice({
         deleteLikeRecipes: (state, action) => {
             state.recipes = []
             state.page = 1
-            state.searchStr = action.payload
+            state.filters.search = action.payload
         },
         eraseLikeRecipes: (state, action) => {
             state.recipes = state.recipes.filter((el) => el._id !== action.payload)

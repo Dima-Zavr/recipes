@@ -4,8 +4,14 @@ export const myRecipesSlice = createSlice({
     name: "my",
     initialState: {
         recipes: [],
+        filters: {
+            search: "",
+            time_min: 0,
+            time_max: 0,
+            cal_min: 0,
+            cal_max: 0
+        },
         page: 1,
-        searchStr: "",
         limit: 6
     },
     reducers: {
@@ -16,7 +22,7 @@ export const myRecipesSlice = createSlice({
         deleteMyRecipes: (state, action) => {
             state.recipes = []
             state.page = 1
-            state.searchStr = action.payload
+            state.filters.search = action.payload
         },
         changeMyRecipes: (state, action) => {
             state.recipes = state.recipes.map((el) => {

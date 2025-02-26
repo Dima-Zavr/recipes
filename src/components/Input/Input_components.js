@@ -5,12 +5,10 @@ export const Container = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
-    margin-bottom: 24px;
     width: 100%;
 `
-
 export const Label = styled.div`
-    font-size: 16px;
+    font-size: 14px;
     color: ${({ theme }) => theme.colors.font};
     margin-bottom: 5px;
 `
@@ -23,6 +21,7 @@ export const Input = styled(InputMask)`
     background-color: ${({ theme }) => theme.colors.fontPrimary};
     color: ${({ theme }) => theme.colors.font};
     box-sizing: border-box;
+    width: 100%;
 
     &:hover {
         box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.font};

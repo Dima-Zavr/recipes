@@ -1,4 +1,5 @@
 import { DefaultTheme } from "styled-components"
+// @ts-ignore
 import { ITheme, ThemeEnum } from "../interfaces/styled.ts"
 
 export const baseTheme: ITheme = {

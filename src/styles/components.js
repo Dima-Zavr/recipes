@@ -27,9 +27,11 @@ export const MyForm = styled(Form)`
     align-items: center;
     width: 100%;
     max-width: 600px;
+    gap: 24px;
 `
 export const Title = styled.h1`
     text-align: center;
+    margin-bottom: 0;
 `
 export const Buttons = styled.div`
     display: flex;
