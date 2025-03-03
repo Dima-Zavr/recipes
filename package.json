@@ -52,7 +52,7 @@
         }
     },
     "lint-staged": {
-        "*.{json,js,jsx,ts,tsx,html}": "npx prettier --write"
+        "*.{json,js,jsx,ts,tsx}": "npx prettier --write"
     },
     "browserslist": {
         "production": [

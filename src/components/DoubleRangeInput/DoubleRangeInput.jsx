@@ -1,30 +1,30 @@
-import { Input, Inputs, RangeInput, Slider, SliderTrack } from "./DoubleRangeInput_components"
-import { useState } from "react"
+import { Input, Inputs, RangeInput, Slider, SliderTrack } from "./DoubleRangeInput_components";
+import { useState } from "react";
 
 export const DoubleRangeInput = ({ min, max }) => {
-    const [minValue, setMinValue] = useState(min.defaultValue)
-    const [maxValue, setMaxValue] = useState(max.defaultValue)
+    const [minValue, setMinValue] = useState(min.value ? min.value : min.defaultValue);
+    const [maxValue, setMaxValue] = useState(max.value ? max.value : max.defaultValue);
 
     const changeMinValue = (event) => {
         if (event.target.value) {
-            setMinValue(Number(event.target.value))
+            setMinValue(Number(event.target.value));
             if (Number(event.target.value) > Number(maxValue)) {
-                setMinValue(Number(maxValue) - 1)
+                setMinValue(Number(maxValue) - 1);
             }
         } else {
-            setMinValue(min.defaultValue)
+            setMinValue(min.defaultValue);
         }
-    }
+    };
     const changeMaxValue = (event) => {
         if (event.target.value) {
-            setMaxValue(Number(event.target.value))
+            setMaxValue(Number(event.target.value));
             if (Number(event.target.value) < Number(minValue)) {
-                setMaxValue(Number(minValue) + 1)
+                setMaxValue(Number(minValue) + 1);
             }
         } else {
-            setMaxValue(max.defaultValue)
+            setMaxValue(max.defaultValue);
         }
-    }
+    };
     return (
         <>
             <Inputs>
@@ -49,8 +49,14 @@ export const DoubleRangeInput = ({ min, max }) => {
             </Inputs>
             <Slider>
                 <SliderTrack
-                    percent1={(Number(minValue) / max.defaultValue) * 100}
-                    percent2={(Number(maxValue) / max.defaultValue) * 100}
+                    percent1={
+                        ((minValue - min.defaultValue) / (max.defaultValue - min.defaultValue)) *
+                        100
+                    }
+                    percent2={
+                        ((maxValue - min.defaultValue) / (max.defaultValue - min.defaultValue)) *
+                        100
+                    }
                 />
                 <RangeInput
                     type="range"
@@ -70,5 +76,5 @@ export const DoubleRangeInput = ({ min, max }) => {
                 />
             </Slider>
         </>
-    )
-}
+    );
+};

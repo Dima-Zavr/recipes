@@ -1,35 +1,31 @@
-import { useLoaderData, useNavigate } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-import { PageLayout } from "../../components/PageLayout/PageLayout"
+import { PageLayout } from "../../components/PageLayout/PageLayout";
 
-import { deleteAllRecipes } from "../../store/allRecipesSlice"
-import { deleteLikeRecipes } from "../../store/likeRecipesSlice"
-import { deleteMyRecipes } from "../../store/myRecipesSlice"
-import { ChangeDataModal } from "./ChangeDataModal"
-import { DefaultButton } from "../../components/Button/Button_components"
-import { useState } from "react"
-import { ChangePasswordModal } from "./ChangePasswordModal"
-import { Buttons, Table } from "../../styles/components"
-import { date } from "../../helpers/date"
+import { resetState } from "../../store/actions";
+import { ChangeDataModal } from "./ChangeDataModal";
+import { DefaultButton } from "../../components/Button/Button_components";
+import { useState } from "react";
+import { ChangePasswordModal } from "./ChangePasswordModal";
+import { Buttons, Table } from "../../styles/components";
+import { date } from "../../helpers/date";
 
 export const ProfilePage = () => {
-    const user = useLoaderData()
-    const nav = useNavigate()
-    const dispatch = useDispatch()
+    const user = useLoaderData();
+    const nav = useNavigate();
+    const dispatch = useDispatch();
 
-    const [isChangeDataOpen, setIsChangeDataOpen] = useState(false)
-    const [isChangePassOpen, setIsChangePassOpen] = useState(false)
+    const [isChangeDataOpen, setIsChangeDataOpen] = useState(false);
+    const [isChangePassOpen, setIsChangePassOpen] = useState(false);
 
     const logOut = (event) => {
-        event.stopPropagation()
-        localStorage.removeItem("accessToken")
-        dispatch(deleteAllRecipes(""))
-        dispatch(deleteMyRecipes(""))
-        dispatch(deleteLikeRecipes(""))
-        nav("/allRecipes")
-        location.reload()
-    }
+        event.stopPropagation();
+        localStorage.removeItem("accessToken");
+        dispatch(resetState());
+        nav("/allRecipes");
+        location.reload();
+    };
 
     return (
         <PageLayout>
@@ -78,5 +74,5 @@ export const ProfilePage = () => {
             )}
             {isChangePassOpen && <ChangePasswordModal setIsChangePassOpen={setIsChangePassOpen} />}
         </PageLayout>
-    )
-}
+    );
+};

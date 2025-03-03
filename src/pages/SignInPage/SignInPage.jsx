@@ -1,33 +1,33 @@
-import * as S from "../../styles/components"
+import * as S from "../../styles/components";
 
-import { useNavigate } from "react-router-dom"
-import { Formik } from "formik"
-import * as yup from "yup"
+import { useNavigate } from "react-router-dom";
+import { Formik } from "formik";
+import * as yup from "yup";
 
-import { Button, DefaultButton } from "../../components/Button/Button_components"
-import { Input } from "../../components/Input/Input"
-import { api } from "../../api/api"
-import { deleteAllRecipes } from "../../store/allRecipesSlice"
-import { useDispatch } from "react-redux"
-import { setCookie } from "../../helpers/cookie"
+import { Button, DefaultButton } from "../../components/Button/Button_components";
+import { Input } from "../../components/Input/Input";
+import { api } from "../../api/api";
+import { resetState } from "../../store/actions";
+import { useDispatch } from "react-redux";
+import { setCookie } from "../../helpers/cookie";
 
 export const SignInPage = () => {
-    const nav = useNavigate()
-    const dispatch = useDispatch()
+    const nav = useNavigate();
+    const dispatch = useDispatch();
 
     const initialValues = {
         email: "",
         password: ""
-    }
+    };
 
     const onSubmit = (values) => {
         api.post("/auth/login", values).then((response) => {
-            localStorage.setItem("accessToken", response.accessToken)
-            setCookie("refreshToken", response.refreshToken, 14)
-            dispatch(deleteAllRecipes(""))
-            nav("/allRecipes")
-        })
-    }
+            localStorage.setItem("accessToken", response.accessToken);
+            setCookie("refreshToken", response.refreshToken, 14);
+            dispatch(resetState());
+            nav("/allRecipes");
+        });
+    };
 
     const validationSchema = yup.object({
         email: yup
@@ -43,7 +43,7 @@ export const SignInPage = () => {
                 "Пароль должен содержать буквы верхнего и нижнего регистра, а также цифры!"
             )
             .required("Обязательное поле!")
-    })
+    });
     return (
         <S.SignPage>
             <Formik
@@ -71,5 +71,5 @@ export const SignInPage = () => {
                 </S.MyForm>
             </Formik>
         </S.SignPage>
-    )
-}
+    );
+};

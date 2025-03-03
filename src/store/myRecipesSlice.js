@@ -1,43 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
+import { initialState, resetState } from "./actions";
 
 export const myRecipesSlice = createSlice({
     name: "my",
-    initialState: {
-        recipes: [],
-        filters: {
-            search: "",
-            time_min: 0,
-            time_max: 0,
-            cal_min: 0,
-            cal_max: 0
-        },
-        page: 1,
-        limit: 6
-    },
+    initialState,
     reducers: {
         addMyRecipes: (state, action) => {
-            state.recipes = [...state.recipes, action.payload]
-            state.page = Math.ceil(state.recipes.length / state.limit) + 1
-        },
-        deleteMyRecipes: (state, action) => {
-            state.recipes = []
-            state.page = 1
-            state.filters.search = action.payload
+            if (action.payload.length !== 0) {
+                state.recipesData.recipes = [...state.recipesData.recipes, ...action.payload];
+                state.recipesData.page =
+                    Math.ceil(state.recipesData.recipes.length / state.recipesData.limit) + 1;
+            } else {
+                state.recipesData.isHasMore = false;
+            }
         },
         changeMyRecipes: (state, action) => {
-            state.recipes = state.recipes.map((el) => {
+            state.recipesData.recipes = state.recipesData.recipes.map((el) => {
                 if (el._id === action.payload.id) {
-                    el.like = !el.like
-                    return el
+                    el.like = !el.like;
+                    return el;
                 }
-                return el
-            })
+                return l;
+            });
+        },
+        changeMySearch: (state, action) => {
+            state.recipesData.recipes = [];
+            state.recipesData.page = 1;
+            state.recipesData.isHasMore = true;
+            state.recipesData.search = action.payload;
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(resetState, () => initialState);
     }
-})
+});
 
-export const { addMyRecipes, deleteMyRecipes, changeMyRecipes } = myRecipesSlice.actions
+export const { addMyRecipes, changeMyRecipes, changeMySearch } = myRecipesSlice.actions;
 
-export const selectMyRecipes = (state) => state.my
+export const selectMyRecipesData = (state) => state.my.recipesData;
 
-export default myRecipesSlice.reducer
+export default myRecipesSlice.reducer;
