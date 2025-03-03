@@ -1,7 +1,7 @@
 import GlobalStyles from "./styles/global"
 
 import { useSelector } from "react-redux"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 
 import { PageHeader } from "./components/PageHeader/PageHeader"
@@ -15,6 +15,7 @@ import { RecipePage } from "./pages/RecipePage/RecipePage"
 import { SignUpPage } from "./pages/SignUpPage/SignUpPage"
 import { SignInPage } from "./pages/SignInPage/SignInPage"
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage"
+import { AddRecipePage } from "./pages/AddRecipePage/AddRecipePage"
 
 const router = createBrowserRouter([
     {
@@ -22,12 +23,20 @@ const router = createBrowserRouter([
         element: <PageHeader />,
         children: [
             {
+                path: "",
+                element: <Navigate to="/allRecipes" replace={true} />
+            },
+            {
                 path: "allRecipes",
                 element: <AllRecipesPage />
             },
             {
                 path: "myRecipes",
                 element: <MyRecipesPage />
+            },
+            {
+                path: "addRecipe",
+                element: <AddRecipePage />
             },
             {
                 path: "likeRecipes",
@@ -38,7 +47,11 @@ const router = createBrowserRouter([
                 element: <RecipePage />,
                 loader: async ({ params }) => {
                     return await api
-                        .get("/infRecipes/" + params.recipeId)
+                        .get(
+                            "/recipes/inf_recipe/" + params.recipeId,
+                            {},
+                            localStorage.getItem("accessToken")
+                        )
                         .then((response) => response)
                 }
             },
@@ -47,11 +60,7 @@ const router = createBrowserRouter([
                 element: <ProfilePage />,
                 loader: async () => {
                     return await api
-                        .get(
-                            "/users/" + localStorage.getItem("userId"),
-                            {},
-                            localStorage.getItem("token")
-                        )
+                        .get("/user/get_data", {}, localStorage.getItem("accessToken"))
                         .then((response) => response)
                 }
             }

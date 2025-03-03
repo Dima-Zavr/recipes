@@ -1,23 +1,62 @@
 import styled from "styled-components"
-import { MyButton } from "../components/Button/Button_components.ts"
+import { Form } from "formik"
 
 export const Content = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 56px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+    gap: 24px;
+    @media ${({ theme }) => theme.media.medium} {
+        flex-direction: column;
+        align-items: center;
+    }
 `
-export const BtnBack = styled(MyButton)`
-    width: fit-content;
-    position: absolute;
-    left: 0;
-    color: ${({ theme }) => theme.colors.font};
+export const SignPage = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 `
-export const HangButton = styled(MyButton)`
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: fit-content;
-    z-index: ${({ theme }) => theme.zIndex.btn};
+export const MyForm = styled(Form)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    gap: 24px;
+`
+export const Title = styled.h1`
+    text-align: center;
+    margin-bottom: 0;
+`
+export const Buttons = styled.div`
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
+    gap: 24px;
+`
+export const Table = styled.table`
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+
+    tbody tr:nth-child(odd) {
+        background: #454545;
+    }
+
+    th {
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        width: 50%;
+    }
+
+    td {
+        padding: 10px;
+        width: 50%;
+    }
 `

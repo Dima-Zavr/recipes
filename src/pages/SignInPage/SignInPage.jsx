@@ -1,27 +1,33 @@
-import { api } from "../../api/api"
-import * as yup from "yup"
-import * as S from "../SignUpPage/SignUpPage_components"
-import { Formik } from "formik"
-import { Input } from "../../components/Input/Input"
-import { Button } from "../../components/Button/Button"
-import { useNavigate } from "react-router-dom"
+import * as S from "../../styles/components";
+
+import { useNavigate } from "react-router-dom";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+import { Button, DefaultButton } from "../../components/Button/Button_components";
+import { Input } from "../../components/Input/Input";
+import { api } from "../../api/api";
+import { resetState } from "../../store/actions";
+import { useDispatch } from "react-redux";
+import { setCookie } from "../../helpers/cookie";
 
 export const SignInPage = () => {
-    const nav = useNavigate()
+    const nav = useNavigate();
+    const dispatch = useDispatch();
 
     const initialValues = {
         email: "",
         password: ""
-    }
+    };
 
     const onSubmit = (values) => {
-        api.post("/signin", values).then((response) => {
-            console.log(response.user)
-            localStorage.setItem("token", response.accessToken)
-            localStorage.setItem("userId", response.user.id)
-            nav("/allRecipes")
-        })
-    }
+        api.post("/auth/login", values).then((response) => {
+            localStorage.setItem("accessToken", response.accessToken);
+            setCookie("refreshToken", response.refreshToken, 14);
+            dispatch(resetState());
+            nav("/allRecipes");
+        });
+    };
 
     const validationSchema = yup.object({
         email: yup
@@ -37,7 +43,7 @@ export const SignInPage = () => {
                 "Пароль должен содержать буквы верхнего и нижнего регистра, а также цифры!"
             )
             .required("Обязательное поле!")
-    })
+    });
     return (
         <S.SignPage>
             <Formik
@@ -55,15 +61,15 @@ export const SignInPage = () => {
                         placeholder="Введите пароль"
                     />
                     <S.Buttons>
+                        <DefaultButton onClick={() => nav("/signup")}>
+                            Зарегистрироваться
+                        </DefaultButton>
                         <Button type="submit" view="primary">
                             Войти
-                        </Button>
-                        <Button view="default" onClick={() => nav("/signup")}>
-                            Зарегистрироваться
                         </Button>
                     </S.Buttons>
                 </S.MyForm>
             </Formik>
         </S.SignPage>
-    )
-}
+    );
+};

@@ -6,14 +6,14 @@ import { like } from "../../../helpers/like"
 
 export const RecipeInf = ({ recipe }) => {
     const dispatch = useDispatch()
-    const [isLike, setIsLike] = useState(recipe.like.includes(localStorage.getItem("userId")))
+    const [isLike, setIsLike] = useState(recipe.like)
 
     return (
         <S.Container>
             <S.Title>{recipe.name}</S.Title>
             <S.Blocks>
                 <S.Block>
-                    Время готовки:<S.Weight> {recipe.cooking_time} мин</S.Weight>
+                    Время готовки:<S.Weight> {recipe.cook_time} мин</S.Weight>
                 </S.Block>
                 <S.Block>
                     Кол-во калорий:<S.Weight> {recipe.calories} ккал</S.Weight>
@@ -27,18 +27,32 @@ export const RecipeInf = ({ recipe }) => {
                     />
                 </S.HeartBlock>
             </S.Blocks>
-            <S.Subtitle>Оборудование для приготовления:</S.Subtitle>
-            <ul>
-                {recipe.equipments?.map((el, index) => (
-                    <S.Li key={index}>{el}</S.Li>
-                ))}
-            </ul>
-            <S.Subtitle>Ингредиенты:</S.Subtitle>
-            <ul>
-                {recipe.ingredients?.map((el, index) => (
-                    <S.Li key={index}>{el}</S.Li>
-                ))}
-            </ul>
+            <S.Table>
+                <thead>
+                    <tr>
+                        <td>Ингредиенты</td>
+                        <td>Оборудование для приготовления</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                {recipe.ingredients?.map((el, index) => (
+                                    <li key={index}>{el}</li>
+                                ))}
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                {recipe.equipments?.map((el, index) => (
+                                    <li key={index}>{el}</li>
+                                ))}
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </S.Table>
         </S.Container>
     )
 }

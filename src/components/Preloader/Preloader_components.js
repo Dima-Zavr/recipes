@@ -10,8 +10,8 @@ export const Loader = styled.div`
     border: 8px solid ${({ theme }) => theme.colors.bg};
     border-top: 8px solid ${({ theme }) => theme.colors.primary};
     border-radius: 50%;
-    animation: spin 1s linear infinite;
     margin: 20px auto;
+    animation: spin 1s linear infinite;
     @keyframes spin {
         0% {
             transform: rotate(0deg);

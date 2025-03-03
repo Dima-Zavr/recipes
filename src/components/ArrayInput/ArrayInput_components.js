@@ -1,19 +1,8 @@
 import styled from "styled-components"
-import InputMask from "react-input-mask"
+import { Button } from "../Button/Button_components"
 
-export const Container = styled.div`
-    display: flex;
-    position: relative;
-    flex-direction: column;
+export const MyInput = styled.input`
     width: 100%;
-`
-export const Label = styled.div`
-    font-size: 14px;
-    color: ${({ theme }) => theme.colors.font};
-    margin-bottom: 5px;
-`
-
-export const Input = styled(InputMask)`
     padding: 12px;
     font-size: 14px;
     border: none;
@@ -21,7 +10,6 @@ export const Input = styled(InputMask)`
     background-color: ${({ theme }) => theme.colors.fontPrimary};
     color: ${({ theme }) => theme.colors.font};
     box-sizing: border-box;
-    width: 100%;
 
     &:hover {
         box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.font};
@@ -38,10 +26,15 @@ export const Input = styled(InputMask)`
     }
 `
 
-export const Error = styled.div`
-    position: absolute;
-    left: 0;
-    bottom: -22px;
+export const AddButton = styled(Button)`
+    width: auto;
+    height: auto;
+    line-height: 14px;
+    padding: 12px;
     font-size: 14px;
-    color: red;
+    font-weight: 400;
+`
+export const Flex = styled.div`
+    width: 100%;
+    display: flex;
 `

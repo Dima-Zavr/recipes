@@ -1,37 +1,50 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
+import { initialState, resetState } from "./actions";
 
 export const allRecipesSlice = createSlice({
     name: "all",
-    initialState: {
-        recipes: [],
-        page: 1,
-        searchStr: "",
-        limit: 6
-    },
+    initialState,
     reducers: {
         addAllRecipes: (state, action) => {
-            state.recipes = [...state.recipes, action.payload]
-            state.page = Math.ceil(state.recipes.length / state.limit) + 1
-        },
-        deleteAllRecipes: (state, action) => {
-            state.recipes = []
-            state.page = 1
-            state.searchStr = action.payload
+            if (action.payload.length !== 0) {
+                state.recipesData.recipes = [...state.recipesData.recipes, ...action.payload];
+                state.recipesData.page =
+                    Math.ceil(state.recipesData.recipes.length / state.recipesData.limit) + 1;
+            } else {
+                state.recipesData.isHasMore = false;
+            }
         },
         changeAllRecipes: (state, action) => {
-            state.recipes = state.recipes.map((el) => {
-                if (el.id === action.payload.id) {
-                    el.like = action.payload.like
-                    return el
+            state.recipesData.recipes = state.recipesData.recipes.map((el) => {
+                if (el._id === action.payload.id) {
+                    el.like = !el.like;
+                    return el;
                 }
-                return el
-            })
+                return l;
+            });
+        },
+        changeAllSearch: (state, action) => {
+            state.recipesData.recipes = [];
+            state.recipesData.page = 1;
+            state.recipesData.isHasMore = true;
+            state.recipesData.search = action.payload;
+        },
+        changeAllFilters: (state, action) => {
+            state.recipesData.recipes = [];
+            state.recipesData.page = 1;
+            state.recipesData.isHasMore = true;
+            state.filters = action.payload;
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(resetState, () => initialState);
     }
-})
+});
 
-export const { addAllRecipes, deleteAllRecipes, changeAllRecipes } = allRecipesSlice.actions
+export const { addAllRecipes, changeAllSearch, changeAllRecipes, changeAllFilters } =
+    allRecipesSlice.actions;
 
-export const selectAllRecipes = (state) => state.all
+export const selectAllRecipesData = (state) => state.all.recipesData;
+export const selectAllFilters = (state) => state.all.filters;
 
-export default allRecipesSlice.reducer
+export default allRecipesSlice.reducer;

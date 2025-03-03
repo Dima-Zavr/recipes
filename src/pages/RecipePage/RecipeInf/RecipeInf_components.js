@@ -1,7 +1,13 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    width: 450px;
+    width: calc(50% - 12px);
+    @media ${({ theme }) => theme.media.medium} {
+        width: 400px;
+    }
+    @media ${({ theme }) => theme.media.small} {
+        width: 100%;
+    }
 `
 export const Title = styled.h1`
     text-align: center;
@@ -13,7 +19,11 @@ export const Blocks = styled.div`
     margin: 32px 0;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 24px;
+    @media ${({ theme }) => theme.media.small} {
+        gap: 15px;
+    }
 `
 export const Block = styled.div`
     width: 100px;
@@ -26,6 +36,11 @@ export const Block = styled.div`
     background-color: #61a146;
     border-radius: 16px;
     color: white;
+    @media ${({ theme }) => theme.media.small} {
+        width: 90px;
+        height: 90px;
+        font-size: 14px;
+    }
 `
 export const HeartBlock = styled(Block)`
     &:hover {
@@ -36,13 +51,49 @@ export const HeartBlock = styled(Block)`
         color: #d9544d;
     }
 `
-export const Subtitle = styled.p`
-    margin: 16px 0;
-    color: ${({ theme }) => theme.colors.font};
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-`
-export const Li = styled.li`
-    margin-left: 16px;
+
+export const Table = styled.table`
+    thead {
+        color: ${({ theme }) => theme.colors.font};
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    tbody {
+        color: ${({ theme }) => theme.colors.font};
+        text-align: center;
+        font-size: 16px;
+    }
+
+    td {
+        width: 50%;
+        border-bottom: 1px dashed ${({ theme }) => theme.colors.font};
+        text-align: left;
+        padding: 8px;
+        border-right: 1px dashed ${({ theme }) => theme.colors.font};
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    tbody tr td {
+        border-bottom: none;
+    }
+
+    @media ${({ theme }) => theme.media.medium} {
+        thead {
+            font-size: 16px;
+        }
+
+        tbody {
+            font-size: 14px;
+        }
+    }
 `

@@ -1,5 +1,5 @@
 import * as S from "./PageHeader_components"
-import { NavLink, Outlet, useNavigate } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 import { SunIcon } from "../../assets/SunIcon"
 import { ProfileIcon } from "../../assets/ProfileIcon"
@@ -11,7 +11,6 @@ import { darkTheme, lightTheme } from "../../styles/theme.ts"
 export const PageHeader = () => {
     const dispatch = useDispatch()
     const theme = useSelector(selectTheme)
-    const nav = useNavigate()
 
     const changeTheme = () => {
         if (theme.type === "light") {
@@ -22,14 +21,6 @@ export const PageHeader = () => {
             localStorage.setItem("theme", "light")
         }
     }
-    const profileClick = () => {
-        if (!!localStorage.getItem("token")) {
-            nav("/profile")
-        } else {
-            nav("/signin")
-        }
-        console.log(localStorage.getItem("token"), !!localStorage.getItem("token"))
-    }
 
     return (
         <>
@@ -37,17 +28,11 @@ export const PageHeader = () => {
                 <S.Header>
                     <S.Left>
                         <S.Logo src={logo} alt="website logo" />
-                        <NavLink to="allRecipes">
-                            <S.Title>Все рецепты</S.Title>
-                        </NavLink>
-                        {!!localStorage.getItem("token") && (
+                        <S.Title to="allRecipes">Все рецепты</S.Title>
+                        {!!localStorage.getItem("accessToken") && (
                             <>
-                                <NavLink to="myRecipes">
-                                    <S.Title>Мои рецепты</S.Title>
-                                </NavLink>
-                                <NavLink to="likeRecipes">
-                                    <S.Title>Избранные рецепты</S.Title>
-                                </NavLink>
+                                <S.Title to="myRecipes">Мои рецепты</S.Title>
+                                <S.Title to="likeRecipes">Избранные рецепты</S.Title>
                             </>
                         )}
                     </S.Left>
@@ -55,9 +40,11 @@ export const PageHeader = () => {
                         <S.Theme onClick={changeTheme}>
                             {theme.type === "light" ? <SunIcon /> : <MoonIcon />}
                         </S.Theme>
-                        <S.Profile onClick={profileClick}>
+                        <S.Profile
+                            to={!!localStorage.getItem("accessToken") ? "/profile" : "/signin"}
+                        >
                             <ProfileIcon />
-                            {!!localStorage.getItem("token") ? "Профиль" : "Войти"}
+                            {!!localStorage.getItem("accessToken") ? "Профиль" : "Войти"}
                         </S.Profile>
                     </S.Right>
                 </S.Header>
