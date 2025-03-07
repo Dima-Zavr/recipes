@@ -11,6 +11,7 @@ export const initialState = {
         isHasMore: true
     },
     filters: {
+        types: [],
         time_min: "",
         time_max: "",
         cal_min: "",

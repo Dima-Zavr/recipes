@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { HangButton } from "../../components/Button/Button_components";
+import { FitButton } from "../../components/Button/Button_components";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
 import { PlusIcon } from "../../assets/PlusIcon";
@@ -9,11 +9,18 @@ import { addMyRecipes, changeMySearch, selectMyRecipesData } from "../../store/m
 import { debounce } from "lodash";
 import { Search } from "../../components/RecipeCards/RecipeCards_components";
 import { useNavigate } from "react-router-dom";
+import { Buttons } from "../../styles/components";
+import { FiltersIcon } from "../../assets/FiltersIcon";
+import { SortIcon } from "../../assets/SortIcon";
+import { useState } from "react";
+import { Filters } from "../../components/Filters/Filters";
+import { changeAllFilters } from "../../store/allRecipesSlice";
 
 export const MyRecipesPage = () => {
     const recipesData = useSelector(selectMyRecipesData);
     const nav = useNavigate();
     const dispatch = useDispatch();
+    const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
     const searchRecipe = (value) => {
         dispatch(changeMySearch(value.toLowerCase()));
@@ -29,11 +36,29 @@ export const MyRecipesPage = () => {
                 defaultValue={recipesData.search}
                 onChange={(event) => debounceSearch(event.target.value)}
             />
+            <Buttons>
+                <FitButton onClick={() => setIsFiltersOpen(true)}>
+                    <FiltersIcon />
+                    Фильтры
+                </FitButton>
+                <FitButton>
+                    <SortIcon />
+                    Сортировка
+                </FitButton>
+                <FitButton view="primary" onClick={() => nav("/addRecipe", { replace: true })}>
+                    <PlusIcon />
+                    <span>Создать рецепт</span>
+                </FitButton>
+            </Buttons>
             <RecipeCards recipesData={recipesData} addRecipes={addMyRecipes} />
-            <HangButton view="primary" onClick={() => nav("/addRecipe", { replace: true })}>
-                <PlusIcon />
-                <span>Создать рецепт</span>
-            </HangButton>
+            {isFiltersOpen && (
+                <Filters
+                    key={JSON.stringify(filters)}
+                    filters={filters}
+                    changeFilters={changeAllFilters}
+                    setIsFiltersOpen={setIsFiltersOpen}
+                />
+            )}
         </PageLayout>
     );
 };

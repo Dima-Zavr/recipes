@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Button = styled.button`
     color: ${({ theme }) => theme.colors.fontPrimary};
@@ -28,21 +28,24 @@ export const Button = styled.button`
     @media ${({ theme }) => theme.media.medium} {
         padding: 8px 16px;
     }
-`
+`;
 export const DefaultButton = styled(Button)`
     color: ${({ theme }) => theme.colors.primary};
     border: 1px ${({ theme }) => theme.colors.primary} solid;
     background-color: ${({ theme }) => theme.colors.bg};
-`
+`;
 export const LinkButton = styled(Button)`
     color: ${({ theme }) => theme.colors.font};
     width: fit-content;
     background-color: transparent;
-`
+`;
 export const BtnBack = styled(LinkButton)`
     position: absolute;
     left: 0;
-`
+`;
+export const FitButton = styled(DefaultButton)`
+    width: fit-content;
+`;
 export const HangButton = styled(Button)`
     position: fixed;
     bottom: 20px;
@@ -57,4 +60,4 @@ export const HangButton = styled(Button)`
             display: none;
         }
     }
-`
+`;

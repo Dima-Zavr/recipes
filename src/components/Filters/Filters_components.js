@@ -1,15 +1,15 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const Container = styled.div`
+export const MyFilters = styled.div`
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
+    position: relative;
     max-width: 300px;
-    margin: 24px;
-`
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    background-color: ${({ theme }) => theme.colors.bg};
+`;
 export const Filter = styled.div`
     display: flex;
     flex-direction: column;
@@ -18,12 +18,12 @@ export const Filter = styled.div`
     padding: 16px;
     border-radius: 16px;
     border: 1px solid ${({ theme }) => theme.colors.primary};
-`
+`;
 export const Label = styled.div`
     font-size: 20px;
     color: ${({ theme }) => theme.colors.font};
     margin-bottom: 8px;
-`
+`;
 export const MyForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -31,4 +31,4 @@ export const MyForm = styled.form`
     width: 100%;
     max-width: 600px;
     gap: 24px;
-`
+`;

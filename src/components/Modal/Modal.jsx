@@ -1,15 +1,16 @@
-import * as S from "./Modal_components"
-import { CloseIcon } from "../../assets/CloseIcon"
+import { MyModal } from "./Modal_components";
+import { CloseIcon } from "../../assets/CloseIcon";
+import { Background, Close } from "../../styles/components";
 
 export const Modal = ({ children, onClose }) => {
     return (
-        <S.Modal>
-            <S.ModalContent>
-                <S.Close onClick={() => onClose()}>
+        <Background>
+            <MyModal>
+                <Close onClick={() => onClose()}>
                     <CloseIcon />
-                </S.Close>
+                </Close>
                 {children}
-            </S.ModalContent>
-        </S.Modal>
-    )
-}
+            </MyModal>
+        </Background>
+    );
+};

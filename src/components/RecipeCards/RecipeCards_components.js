@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Search = styled.input`
     font-size: 20px;
@@ -7,7 +7,7 @@ export const Search = styled.input`
     box-sizing: border-box;
     background-color: ${({ theme }) => theme.colors.fontPrimary};
     padding: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     border-radius: 16px;
     border: none;
 
@@ -19,7 +19,7 @@ export const Search = styled.input`
         outline: none;
         box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary};
     }
-`
+`;
 export const Ul = styled.ul`
     display: grid;
     grid-template-columns: 300px 300px 300px;
@@ -33,4 +33,4 @@ export const Ul = styled.ul`
         grid-template-columns: 300px;
         gap: 20px;
     }
-`
+`;

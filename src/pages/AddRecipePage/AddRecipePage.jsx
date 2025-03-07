@@ -1,18 +1,18 @@
-import * as S from "./ModalForm_components"
-import { Button, DefaultButton } from "../../components/Button/Button_components"
-import { useDispatch } from "react-redux"
-import { api } from "../../api/api"
-import { addMyRecipes } from "../../store/myRecipesSlice"
-import { Input } from "../../components/Input/Input"
-import { Formik } from "formik"
-import * as yup from "yup"
-import { PageLayout } from "../../components/PageLayout/PageLayout"
-import { ArrayInput } from "../../components/ArrayInput/ArrayInput"
-import { useNavigate } from "react-router-dom"
+import { Buttons, Inputs, MyForm } from "./AddRecipePage_components";
+import { Button, DefaultButton } from "../../components/Button/Button_components";
+import { useDispatch } from "react-redux";
+import { api } from "../../api/api";
+import { addMyRecipes } from "../../store/myRecipesSlice";
+import { Input } from "../../components/Input/Input";
+import { Formik } from "formik";
+import * as yup from "yup";
+import { PageLayout } from "../../components/PageLayout/PageLayout";
+import { ArrayInput } from "../../components/ArrayInput/ArrayInput";
+import { useNavigate } from "react-router-dom";
 
 export const AddRecipePage = () => {
-    const dispatch = useDispatch()
-    const nav = useNavigate()
+    const dispatch = useDispatch();
+    const nav = useNavigate();
 
     const initialValues = {
         name: "",
@@ -22,13 +22,13 @@ export const AddRecipePage = () => {
         ingredients: [],
         equipments: [],
         cook_steps: []
-    }
+    };
 
     const onSubmit = (values) => {
-        api.post("/recipes/add_recipe ", values, localStorage.getItem("accessToken")).then()
-        dispatch(addMyRecipes(values))
-        nav("/myRecipes")
-    }
+        api.post("/recipes/add_recipe ", values, localStorage.getItem("accessToken")).then();
+        dispatch(addMyRecipes(values));
+        nav("/myRecipes");
+    };
 
     const validationSchema = yup.object({
         name: yup
@@ -42,7 +42,7 @@ export const AddRecipePage = () => {
         ingredients: yup.array().of(yup.string()).min(1, "Добавьте хотя бы один ингредиент"),
         equipments: yup.array().of(yup.string()).min(1, "Добавьте хотя бы одно оборудование"),
         cook_steps: yup.array().of(yup.string()).min(1, "Добавьте хотя бы один шаг приготовления")
-    })
+    });
 
     return (
         <PageLayout>
@@ -52,7 +52,7 @@ export const AddRecipePage = () => {
                 validationSchema={validationSchema}
             >
                 {({ values, setFieldValue }) => (
-                    <S.MyForm>
+                    <MyForm>
                         <h2>Создать рецепт</h2>
                         <Input
                             label="Название блюда"
@@ -60,7 +60,7 @@ export const AddRecipePage = () => {
                             name="name"
                             placeholder="Введите название"
                         />
-                        <S.Inputs>
+                        <Inputs>
                             <Input
                                 label="Время приготовления"
                                 type="number"
@@ -73,7 +73,7 @@ export const AddRecipePage = () => {
                                 name="calories"
                                 placeholder="Укажите количество каллорий"
                             />
-                        </S.Inputs>
+                        </Inputs>
                         <ArrayInput
                             label="Фотографии"
                             name="photos"
@@ -102,19 +102,19 @@ export const AddRecipePage = () => {
                             setFieldValue={setFieldValue}
                             placeholder="Пропишите шаги по приготовлению"
                         />
-                        <S.Buttons>
+                        <Buttons>
                             <DefaultButton
                                 onClick={() => {
-                                    nav("/myRecipes")
+                                    nav("/myRecipes");
                                 }}
                             >
                                 Назад
                             </DefaultButton>
                             <Button type="submit">Создать</Button>
-                        </S.Buttons>
-                    </S.MyForm>
+                        </Buttons>
+                    </MyForm>
                 )}
             </Formik>
         </PageLayout>
-    )
-}
+    );
+};
