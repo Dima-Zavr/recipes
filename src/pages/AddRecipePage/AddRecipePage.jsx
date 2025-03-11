@@ -18,6 +18,7 @@ export const AddRecipePage = () => {
         name: "",
         cook_time: "",
         calories: "",
+        type: "",
         photos: [],
         ingredients: [],
         equipments: [],
@@ -38,6 +39,7 @@ export const AddRecipePage = () => {
             .required("Обязательное поле!"),
         cook_time: yup.number().required("Обязательное поле!"),
         calories: yup.number().required("Обязательное поле!"),
+        type: yup.string().required("Обязательное поле!"),
         photos: yup.array().of(yup.string()).min(1, "Добавьте хотя бы одну ссылку на фото"),
         ingredients: yup.array().of(yup.string()).min(1, "Добавьте хотя бы один ингредиент"),
         equipments: yup.array().of(yup.string()).min(1, "Добавьте хотя бы одно оборудование"),
@@ -72,6 +74,12 @@ export const AddRecipePage = () => {
                                 type="number"
                                 name="calories"
                                 placeholder="Укажите количество каллорий"
+                            />
+                            <Input
+                                label="Тип блюда"
+                                type="text"
+                                name="type"
+                                placeholder="Введите тип блюда"
                             />
                         </Inputs>
                         <ArrayInput
