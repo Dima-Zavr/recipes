@@ -9,7 +9,7 @@ export const DoubleRangeInput = ({ min, max }) => {
         if (event.target.value) {
             setMinValue(Number(event.target.value));
             if (Number(event.target.value) > Number(maxValue)) {
-                setMinValue(Number(maxValue) - 1);
+                setMinValue(Number(maxValue) - 10);
             }
         } else {
             setMinValue(min.defaultValue);
@@ -19,7 +19,7 @@ export const DoubleRangeInput = ({ min, max }) => {
         if (event.target.value) {
             setMaxValue(Number(event.target.value));
             if (Number(event.target.value) < Number(minValue)) {
-                setMaxValue(Number(minValue) + 1);
+                setMaxValue(Number(minValue) + 10);
             }
         } else {
             setMaxValue(max.defaultValue);

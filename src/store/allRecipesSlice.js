@@ -33,7 +33,15 @@ export const allRecipesSlice = createSlice({
             state.recipesData.recipes = [];
             state.recipesData.page = 1;
             state.recipesData.isHasMore = true;
-            state.filters = action.payload;
+            state.filters.times = {
+                min: action.payload.times_min,
+                max: action.payload.times_max
+            };
+            state.filters.cals = {
+                min: action.payload.cals_min,
+                max: action.payload.cals_max
+            };
+            state.filters.types = action.payload.types;
         }
     },
     extraReducers: (builder) => {

@@ -1,33 +1,37 @@
-import { refreshAccessToken } from "./refreshAccessToken"
+import { refreshAccessToken } from "./refreshAccessToken";
+import { parseParams } from "./parseParams";
 
-export const BASE_URL = "http://localhost:5000/api"
+export const BASE_URL = "http://localhost:5000/api";
 
 export const api = {
     get: async function (path, params = {}, token = null) {
         try {
-            const response = await fetch(this.createUrl(path, params), {
+            const newUrl = new URL(BASE_URL + path);
+            const fullUrl = parseParams(newUrl, params);
+
+            const response = await fetch(fullUrl, {
                 method: "GET",
                 headers: this.createHeader(token)
-            })
+            });
 
             // Проверяем статус ответа
             if (response.status === 401) {
                 // Обновляем access token
-                const newAccessToken = await refreshAccessToken()
+                const newAccessToken = await refreshAccessToken();
 
                 // Повторяем запрос с новым access token
-                const newResponse = await fetch(this.createUrl(path, params), {
+                const newResponse = await fetch(fullUrl, {
                     method: "GET",
                     headers: this.createHeader(newAccessToken)
-                })
+                });
 
-                return await newResponse.json()
+                return await newResponse.json();
             }
 
-            return await response.json()
+            return await response.json();
         } catch (error) {
-            console.error("Fetch error: ", error)
-            throw error
+            console.error("Fetch error: ", error);
+            throw error;
         }
     },
     post: async function (path, element = {}, token = null) {
@@ -36,27 +40,27 @@ export const api = {
                 method: "POST",
                 headers: this.createHeader(token),
                 body: JSON.stringify(element)
-            })
+            });
 
             // Проверяем статус ответа
             if (response.status === 401) {
                 // Обновляем access token
-                const newAccessToken = await refreshAccessToken()
+                const newAccessToken = await refreshAccessToken();
 
                 // Повторяем запрос с новым access token
                 const newResponse = await fetch(this.createUrl(path), {
                     method: "POST",
                     headers: this.createHeader(newAccessToken),
                     body: JSON.stringify(element)
-                })
+                });
 
-                return await newResponse.json()
+                return await newResponse.json();
             }
 
-            return await response.json()
+            return await response.json();
         } catch (error) {
-            console.error("Fetch error: ", error)
-            throw error
+            console.error("Fetch error: ", error);
+            throw error;
         }
     },
     put: async function (path, element = {}, token = null) {
@@ -65,12 +69,12 @@ export const api = {
                 method: "PUT",
                 headers: this.createHeader(token),
                 body: JSON.stringify(element)
-            })
+            });
 
-            return await response.json()
+            return await response.json();
         } catch (error) {
-            console.error("Fetch error: ", error)
-            throw error
+            console.error("Fetch error: ", error);
+            throw error;
         }
     },
     patch: async function (path, element = {}, token = null) {
@@ -79,12 +83,12 @@ export const api = {
                 method: "PATCH",
                 headers: this.createHeader(token),
                 body: JSON.stringify(element)
-            })
+            });
 
-            return await response.json()
+            return await response.json();
         } catch (error) {
-            console.error("Fetch error: ", error)
-            throw error
+            console.error("Fetch error: ", error);
+            throw error;
         }
     },
     delete: async function (path, params = {}, token = null) {
@@ -92,28 +96,28 @@ export const api = {
             const response = await fetch(this.createUrl(path, params), {
                 method: "DELETE",
                 headers: this.createHeader(token)
-            })
+            });
 
-            return await response.json()
+            return await response.json();
         } catch (error) {
-            console.error("Fetch error: ", error)
-            throw error
+            console.error("Fetch error: ", error);
+            throw error;
         }
     },
     createUrl: function (path, params) {
-        const urlWithParams = new URL(BASE_URL + path)
+        const urlWithParams = new URL(BASE_URL + path);
         if (params) {
             Object.keys(params).forEach((key) =>
                 urlWithParams.searchParams.append(key, params[key])
-            )
+            );
         }
-        return urlWithParams
+        return urlWithParams;
     },
     createHeader: function (token) {
-        const headers = { "Content-Type": "application/json" }
+        const headers = { "Content-Type": "application/json" };
         if (token) {
-            headers["Authorization"] = `Bearer ${token}`
+            headers["Authorization"] = `Bearer ${token}`;
         }
-        return headers
+        return headers;
     }
-}
+};

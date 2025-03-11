@@ -12,9 +12,13 @@ export const initialState = {
     },
     filters: {
         types: [],
-        time_min: "",
-        time_max: "",
-        cal_min: "",
-        cal_max: ""
+        times: {
+            min: "",
+            max: ""
+        },
+        cals: {
+            min: "",
+            max: ""
+        }
     }
 };

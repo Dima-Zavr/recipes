@@ -14,21 +14,14 @@ export const Filters = ({ key, filters, changeFilters, setIsFiltersOpen }) => {
             ? JSON.parse(sessionStorage.getItem("filters"))
             : false;
 
-    const handleCheckboxChange = (event) => {
-        const { value, checked } = event.target;
-        if (checked) {
-        } else {
-        }
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
         let form = new FormData(event.target);
+        let types = form.getAll("types");
         // @ts-ignore
         let filtersObject = Object.fromEntries(form.entries());
         delete filtersObject.slider;
         filtersObject.types = types;
-        console.log(filtersObject);
         dispatch(changeFilters(filtersObject));
         setIsFiltersOpen(false);
     };
@@ -36,6 +29,7 @@ export const Filters = ({ key, filters, changeFilters, setIsFiltersOpen }) => {
     const removeFilters = () => {
         const newDefaultFilters = defaultFilters;
         delete newDefaultFilters._id;
+        newDefaultFilters.types = [];
         dispatch(changeFilters(newDefaultFilters));
         setIsFiltersOpen(false);
     };
@@ -57,8 +51,7 @@ export const Filters = ({ key, filters, changeFilters, setIsFiltersOpen }) => {
                                     <li key={num}>
                                         <Checkbox
                                             label={el}
-                                            id={num}
-                                            isCheck={!!filters.types[el]}
+                                            defaultCheck={filters.types.includes(el)}
                                         />
                                     </li>
                                 ))}
@@ -68,14 +61,14 @@ export const Filters = ({ key, filters, changeFilters, setIsFiltersOpen }) => {
                             <Label>Время приготовления</Label>
                             <DoubleRangeInput
                                 min={{
-                                    name: "time_min",
-                                    defaultValue: defaultFilters.time_min,
-                                    value: filters.time_min
+                                    name: "times_min",
+                                    defaultValue: defaultFilters.times_min,
+                                    value: filters.times.min
                                 }}
                                 max={{
-                                    name: "time_max",
-                                    defaultValue: defaultFilters.time_max,
-                                    value: filters.time_max
+                                    name: "times_max",
+                                    defaultValue: defaultFilters.times_max,
+                                    value: filters.times.max
                                 }}
                             />
                         </Filter>
@@ -83,14 +76,14 @@ export const Filters = ({ key, filters, changeFilters, setIsFiltersOpen }) => {
                             <Label>Кол-во калорий</Label>
                             <DoubleRangeInput
                                 min={{
-                                    name: "cal_min",
-                                    defaultValue: defaultFilters.cal_min,
-                                    value: filters.cal_min
+                                    name: "cals_min",
+                                    defaultValue: defaultFilters.cals_min,
+                                    value: filters.cals.min
                                 }}
                                 max={{
-                                    name: "cal_max",
-                                    defaultValue: defaultFilters.cal_max,
-                                    value: filters.cal_max
+                                    name: "cals_max",
+                                    defaultValue: defaultFilters.cals_max,
+                                    value: filters.cals.max
                                 }}
                             />
                         </Filter>
