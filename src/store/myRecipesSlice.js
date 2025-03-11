@@ -20,7 +20,7 @@ export const myRecipesSlice = createSlice({
                     el.like = !el.like;
                     return el;
                 }
-                return l;
+                return el;
             });
         },
         changeMySearch: (state, action) => {
