@@ -1,15 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
 import { FitButton } from "../../components/Button/Button_components";
+import { Search } from "../../components/RecipeCards/RecipeCards_components";
+import { Buttons } from "../../styles/components";
+
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { debounce } from "lodash";
+
+import { PlusIcon } from "../../assets/PlusIcon";
+import { SortIcon } from "../../assets/SortIcon";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
-import { PlusIcon } from "../../assets/PlusIcon";
-
 import { addMyRecipes, changeMySearch, selectMyRecipesData } from "../../store/myRecipesSlice";
-import { debounce } from "lodash";
-import { Search } from "../../components/RecipeCards/RecipeCards_components";
-import { useNavigate } from "react-router-dom";
-import { Buttons } from "../../styles/components";
-import { SortIcon } from "../../assets/SortIcon";
 
 export const MyRecipesPage = () => {
     const recipesData = useSelector(selectMyRecipesData);

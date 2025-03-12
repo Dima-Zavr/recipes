@@ -1,7 +1,7 @@
 import { api } from "../api/api";
 import { changeAllRecipes } from "../store/allRecipesSlice";
-import { changeMyRecipes } from "../store/myRecipesSlice";
 import { addLikeRecipes, eraseLikeRecipes } from "../store/likeRecipesSlice";
+import { changeMyRecipes } from "../store/myRecipesSlice";
 
 export const like = (event, dispatch, recipe, isLike) => {
     event.stopPropagation();

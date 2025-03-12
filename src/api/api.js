@@ -1,5 +1,5 @@
-import { refreshAccessToken } from "./refreshAccessToken";
 import { parseParams } from "./parseParams";
+import { refreshAccessToken } from "./refreshAccessToken";
 
 export const BASE_URL = "http://localhost:5000/api";
 

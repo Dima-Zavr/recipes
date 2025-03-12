@@ -1,15 +1,16 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { DefaultButton } from "../../components/Button/Button_components";
+import { Buttons, Table } from "../../styles/components";
+
+import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 import { PageLayout } from "../../components/PageLayout/PageLayout";
-
-import { resetState } from "../../store/actions";
-import { ChangeDataModal } from "./ChangeDataModal";
-import { DefaultButton } from "../../components/Button/Button_components";
-import { useState } from "react";
-import { ChangePasswordModal } from "./ChangePasswordModal";
-import { Buttons, Table } from "../../styles/components";
 import { date } from "../../helpers/date";
+import { resetState } from "../../store/actions";
+
+import { ChangeDataModal } from "./ChangeDataModal";
+import { ChangePasswordModal } from "./ChangePasswordModal";
 
 export const ProfilePage = () => {
     const user = useLoaderData();

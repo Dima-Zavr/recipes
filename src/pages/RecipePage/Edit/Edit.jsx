@@ -1,10 +1,14 @@
-import * as yup from "yup"
-import * as S from "../../../styles/components"
-import { Formik } from "formik"
-import { Button, DefaultButton } from "../../../components/Button/Button_components"
-import { PageLayout } from "../../../components/PageLayout/PageLayout"
+import { Button, DefaultButton } from "../../../components/Button/Button_components";
+import * as S from "../../../styles/components";
+
+import { useNavigate } from "react-router-dom";
+import { Formik } from "formik";
+import * as yup from "yup";
+
+import { PageLayout } from "../../../components/PageLayout/PageLayout";
 
 export const Edit = ({ recipe }) => {
+    const nav = useNavigate();
     const initialValues = {
         name: recipe.name,
         photos: recipe.photos,
@@ -13,11 +17,11 @@ export const Edit = ({ recipe }) => {
         ingredients: recipe.ingredients,
         equipments: recipe.equipments,
         cook_steps: recipe.cook_steps
-    }
+    };
 
-    const onSubmit = () => {}
+    const onSubmit = () => {};
 
-    const validationSchema = yup.object({})
+    const validationSchema = yup.object({});
     return (
         <PageLayout>
             <Formik
@@ -35,5 +39,5 @@ export const Edit = ({ recipe }) => {
                 </S.MyForm>
             </Formik>
         </PageLayout>
-    )
-}
+    );
+};

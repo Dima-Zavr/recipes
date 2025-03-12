@@ -1,10 +1,12 @@
-import { Filter, Label, MyFilters, MyForm } from "./Filters_components";
-import { Button, DefaultButton } from "../Button/Button_components";
-import { DoubleRangeInput } from "../DoubleRangeInput/DoubleRangeInput";
-import { useDispatch } from "react-redux";
-import { Checkbox } from "../Checkbox/Checkbox";
 import { Background, Close } from "../../styles/components";
+import { Button, DefaultButton } from "../Button/Button_components";
+import { Filter, Label, MyFilters, MyForm } from "./Filters_components";
+
+import { useDispatch } from "react-redux";
+
 import { CloseIcon } from "../../assets/CloseIcon";
+import { Checkbox } from "../Checkbox/Checkbox";
+import { DoubleRangeInput } from "../DoubleRangeInput/DoubleRangeInput";
 
 export const Filters = ({ key, filters, changeFilters, setIsFiltersOpen }) => {
     const dispatch = useDispatch();

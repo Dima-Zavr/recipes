@@ -1,5 +1,6 @@
-import * as S from "./Input_components.js"
-import { ErrorMessage, Field } from "formik"
+import { ErrorMessage, Field } from "formik";
+
+import * as S from "./Input_components.js";
 
 export const Input = ({ label, name, type, placeholder = "", readOnly = false, mask }) => {
     return (
@@ -21,5 +22,5 @@ export const Input = ({ label, name, type, placeholder = "", readOnly = false, m
                 </S.Container>
             )}
         </Field>
-    )
-}
+    );
+};

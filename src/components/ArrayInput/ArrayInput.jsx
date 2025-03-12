@@ -1,28 +1,29 @@
-import React, { useState } from "react"
-import * as I from "../Input/Input_components"
-import * as AI from "./ArrayInput_components"
-import { ErrorMessage } from "formik"
+import * as I from "../Input/Input_components";
+import * as AI from "./ArrayInput_components";
+
+import React, { useState } from "react";
+import { ErrorMessage } from "formik";
 
 export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholder }) => {
-    const [inputValue, setInputValue] = useState("")
+    const [inputValue, setInputValue] = useState("");
 
     //console.log(`Values for ${name}:`, values); // Проверка значений
 
     // Функция для добавления элемента
     const handleAddItem = () => {
         if (inputValue.trim()) {
-            setFieldValue(name, [...values, inputValue])
-            setInputValue("")
+            setFieldValue(name, [...values, inputValue]);
+            setInputValue("");
         }
-    }
+    };
 
     // Обработчик нажатия клавиши
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
-            e.preventDefault() // Предотвращаем стандартное поведение (например, отправку формы)
-            handleAddItem() // Добавляем элемент
+            e.preventDefault(); // Предотвращаем стандартное поведение (например, отправку формы)
+            handleAddItem(); // Добавляем элемент
         }
-    }
+    };
 
     return (
         <I.Container>
@@ -53,5 +54,5 @@ export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholde
                 ))}
             </ul>
         </I.Container>
-    )
-}
+    );
+};

@@ -1,19 +1,21 @@
-import { Calor, Img, Inf, Main, Picture, Time } from "./RecipeCard_components"
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Heart } from "../Heart/Heart"
-import { like } from "../../helpers/like"
-import { useDispatch } from "react-redux"
+import { Calor, Img, Inf, Main, Picture, Time } from "./RecipeCard_components";
+
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { like } from "../../helpers/like";
+import { Heart } from "../Heart/Heart";
 
 export const RecipeCard = ({ recipe }) => {
-    const nav = useNavigate()
-    const dispatch = useDispatch()
-    const [isLike, setIsLike] = useState(recipe.like)
+    const nav = useNavigate();
+    const dispatch = useDispatch();
+    const [isLike, setIsLike] = useState(recipe.like);
 
     return (
         <Main
             onClick={() => {
-                nav(`/recipe/${recipe._id}`)
+                nav(`/recipe/${recipe._id}`);
             }}
         >
             <Picture>
@@ -21,7 +23,7 @@ export const RecipeCard = ({ recipe }) => {
                 <Heart
                     isLike={isLike}
                     onClick={(event) => {
-                        setIsLike(like(event, dispatch, recipe, isLike))
+                        setIsLike(like(event, dispatch, recipe, isLike));
                     }}
                 />
                 <Inf>
@@ -31,5 +33,5 @@ export const RecipeCard = ({ recipe }) => {
             </Picture>
             <h3>{recipe.name}</h3>
         </Main>
-    )
-}
+    );
+};

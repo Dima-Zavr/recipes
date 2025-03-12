@@ -1,6 +1,16 @@
+import { FitButton } from "../../components/Button/Button_components";
+import { Search } from "../../components/RecipeCards/RecipeCards_components";
+import { Buttons } from "../../styles/components";
+
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
+import { debounce } from "lodash";
+
+import { FiltersIcon } from "../../assets/FiltersIcon";
+import { SortIcon } from "../../assets/SortIcon";
+import { Filters } from "../../components/Filters/Filters";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
 import {
     addAllRecipes,
     changeAllFilters,
@@ -8,14 +18,6 @@ import {
     selectAllFilters,
     selectAllRecipesData
 } from "../../store/allRecipesSlice";
-import { Filters } from "../../components/Filters/Filters";
-import { Search } from "../../components/RecipeCards/RecipeCards_components";
-import { debounce } from "lodash";
-import { Buttons } from "../../styles/components";
-import { useState } from "react";
-import { FitButton } from "../../components/Button/Button_components";
-import { FiltersIcon } from "../../assets/FiltersIcon";
-import { SortIcon } from "../../assets/SortIcon";
 
 export const AllRecipesPage = () => {
     const recipesData = useSelector(selectAllRecipesData);

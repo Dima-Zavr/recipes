@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Button } from "../Button/Button_components"
+import { Button } from "../Button/Button_components";
+import styled from "styled-components";
 
 export const MyInput = styled.input`
     width: 100%;
@@ -24,7 +24,7 @@ export const MyInput = styled.input`
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;
     }
-`
+`;
 
 export const AddButton = styled(Button)`
     width: auto;
@@ -33,8 +33,8 @@ export const AddButton = styled(Button)`
     padding: 12px;
     font-size: 14px;
     font-weight: 400;
-`
+`;
 export const Flex = styled.div`
     width: 100%;
     display: flex;
-`
+`;

@@ -1,9 +1,12 @@
-import { Img, Imgs } from "./Slider_components"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { A11y, Navigation, Pagination } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
+import "swiper/css";
+
+import { Img, Imgs } from "./Slider_components";
+
+import { A11y, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export const Slider = ({ photos }) => {
     return (
@@ -23,5 +26,5 @@ export const Slider = ({ photos }) => {
                 ))}
             </Swiper>
         </Imgs>
-    )
-}
+    );
+};

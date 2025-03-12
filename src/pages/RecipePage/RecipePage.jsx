@@ -1,22 +1,22 @@
-import { Content } from "../../styles/components"
+import { BtnBack, HangButton } from "../../components/Button/Button_components";
+import { Content } from "../../styles/components";
 
-import { useState } from "react"
-import { ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom";
 
-import { RecipeInf } from "./RecipeInf/RecipeInf"
-import { RecipeSteps } from "./RecipeSteps/RecipeSteps"
-import { Edit } from "./Edit/Edit"
-import { Slider } from "./Slider/Slider"
+import { BackIcon } from "../../assets/BackIcon";
+import { EditIcon } from "../../assets/EditIcon";
+import { PageLayout } from "../../components/PageLayout/PageLayout";
 
-import { BtnBack, HangButton } from "../../components/Button/Button_components"
-import { PageLayout } from "../../components/PageLayout/PageLayout"
-import { BackIcon } from "../../assets/BackIcon"
-import { EditIcon } from "../../assets/EditIcon"
+import { Edit } from "./Edit/Edit";
+import { RecipeInf } from "./RecipeInf/RecipeInf";
+import { RecipeSteps } from "./RecipeSteps/RecipeSteps";
+import { Slider } from "./Slider/Slider";
 
 export const RecipePage = () => {
-    const recipe = useLoaderData()
-    const nav = useNavigate()
-    const [isEdit, setIsEdit] = useState(false)
+    const recipe = useLoaderData();
+    const nav = useNavigate();
+    const [isEdit, setIsEdit] = useState(false);
 
     return (
         <PageLayout>
@@ -42,5 +42,5 @@ export const RecipePage = () => {
             {isEdit && <Edit recipe={recipe} onClick={() => setIsEdit(false)} />}
             <ScrollRestoration />
         </PageLayout>
-    )
-}
+    );
+};

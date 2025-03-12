@@ -1,4 +1,5 @@
 import { Input, Inputs, RangeInput, Slider, SliderTrack } from "./DoubleRangeInput_components";
+
 import { useState } from "react";
 
 export const DoubleRangeInput = ({ min, max }) => {

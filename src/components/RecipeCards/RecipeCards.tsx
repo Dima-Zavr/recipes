@@ -1,10 +1,12 @@
-import { Ul } from "./RecipeCards_components.js";
-import { RecipeCard } from "../RecipeCard/RecipeCard.jsx";
-import { Preloader } from "../Preloader/Preloader.jsx";
-import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import InfiniteScroll from "react-infinite-scroller";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+
 import { api } from "../../api/api.js";
+import { Preloader } from "../Preloader/Preloader.jsx";
+import { RecipeCard } from "../RecipeCard/RecipeCard.jsx";
+
+import { Ul } from "./RecipeCards_components.js";
 
 interface IParams {
     search: string;

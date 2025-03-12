@@ -1,6 +1,7 @@
-import { DefaultTheme } from "styled-components"
+import { DefaultTheme } from "styled-components";
+
 // @ts-ignore
-import { ITheme, ThemeEnum } from "../interfaces/styled.ts"
+import { ITheme, ThemeEnum } from "../interfaces/styled.ts";
 
 export const baseTheme: ITheme = {
     colors: {
@@ -18,7 +19,7 @@ export const baseTheme: ITheme = {
         btn: 10,
         modal: 100
     }
-}
+};
 export const lightTheme: DefaultTheme = {
     ...baseTheme,
     type: ThemeEnum.light,
@@ -29,7 +30,7 @@ export const lightTheme: DefaultTheme = {
         font: "#000000",
         fontPrimary: "#ffffff"
     }
-}
+};
 
 export const darkTheme: DefaultTheme = {
     ...baseTheme,
@@ -41,4 +42,4 @@ export const darkTheme: DefaultTheme = {
         font: "#ffffff",
         fontPrimary: "#000000"
     }
-}
+};

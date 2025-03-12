@@ -1,21 +1,20 @@
-import GlobalStyles from "./styles/global"
+import { ThemeProvider } from "styled-components";
 
-import { useSelector } from "react-redux"
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
-import { ThemeProvider } from "styled-components"
+import { useSelector } from "react-redux";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
-import { PageHeader } from "./components/PageHeader/PageHeader"
-import { selectTheme } from "./store/themeSlice"
-import { api } from "./api/api"
-
-import { AllRecipesPage } from "./pages/AllRecipesPage/AllRecipesPage"
-import { MyRecipesPage } from "./pages/MyRecipesPage/MyRecipesPage"
-import { LikeRecipesPage } from "./pages/LikeRecipesPage/LikeRecipesPage"
-import { RecipePage } from "./pages/RecipePage/RecipePage"
-import { SignUpPage } from "./pages/SignUpPage/SignUpPage"
-import { SignInPage } from "./pages/SignInPage/SignInPage"
-import { ProfilePage } from "./pages/ProfilePage/ProfilePage"
-import { AddRecipePage } from "./pages/AddRecipePage/AddRecipePage"
+import { api } from "./api/api";
+import { PageHeader } from "./components/PageHeader/PageHeader";
+import { AddRecipePage } from "./pages/AddRecipePage/AddRecipePage";
+import { AllRecipesPage } from "./pages/AllRecipesPage/AllRecipesPage";
+import { LikeRecipesPage } from "./pages/LikeRecipesPage/LikeRecipesPage";
+import { MyRecipesPage } from "./pages/MyRecipesPage/MyRecipesPage";
+import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
+import { RecipePage } from "./pages/RecipePage/RecipePage";
+import { SignInPage } from "./pages/SignInPage/SignInPage";
+import { SignUpPage } from "./pages/SignUpPage/SignUpPage";
+import { selectTheme } from "./store/themeSlice";
+import GlobalStyles from "./styles/global";
 
 const router = createBrowserRouter([
     {
@@ -52,7 +51,7 @@ const router = createBrowserRouter([
                             {},
                             localStorage.getItem("accessToken")
                         )
-                        .then((response) => response)
+                        .then((response) => response);
                 }
             },
             {
@@ -61,7 +60,7 @@ const router = createBrowserRouter([
                 loader: async () => {
                     return await api
                         .get("/user/get_data", {}, localStorage.getItem("accessToken"))
-                        .then((response) => response)
+                        .then((response) => response);
                 }
             }
         ]
@@ -74,14 +73,14 @@ const router = createBrowserRouter([
         path: "/signin",
         element: <SignInPage />
     }
-])
+]);
 
 export const App = () => {
-    const theme = useSelector(selectTheme)
+    const theme = useSelector(selectTheme);
     return (
         <ThemeProvider theme={theme}>
             <RouterProvider router={router} />
             <GlobalStyles />
         </ThemeProvider>
-    )
-}
+    );
+};

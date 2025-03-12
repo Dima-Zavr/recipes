@@ -1,15 +1,16 @@
-import { Svg } from "./Heart_components.ts"
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+
+import { Svg } from "./Heart_components.ts";
 
 export const Heart = ({ isLike, onClick }) => {
-    const [color, setColor] = useState("")
+    const [color, setColor] = useState("");
     useEffect(() => {
         if (isLike) {
-            setColor("red")
+            setColor("red");
         } else {
-            setColor("white")
+            setColor("white");
         }
-    }, [isLike])
+    }, [isLike]);
     return (
         <Svg
             xmlns="http://www.w3.org/2000/svg"
@@ -24,5 +25,5 @@ export const Heart = ({ isLike, onClick }) => {
                 fill="currentColor"
             ></path>
         </Svg>
-    )
-}
+    );
+};

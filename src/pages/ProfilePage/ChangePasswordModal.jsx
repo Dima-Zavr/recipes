@@ -1,29 +1,31 @@
-import { Formik } from "formik"
-import * as S from "../../styles/components"
-import { Input } from "../../components/Input/Input"
-import { Button, DefaultButton } from "../../components/Button/Button_components"
-import { Modal } from "../../components/Modal/Modal"
-import { api } from "../../api/api"
-import * as yup from "yup"
+import { Button, DefaultButton } from "../../components/Button/Button_components";
+import * as S from "../../styles/components";
+
+import { Formik } from "formik";
+import * as yup from "yup";
+
+import { api } from "../../api/api";
+import { Input } from "../../components/Input/Input";
+import { Modal } from "../../components/Modal/Modal";
 
 export const ChangePasswordModal = ({ setIsChangePassOpen }) => {
     const initialValues = {
         old_password: "",
         new_password: "",
         repite_new_password: ""
-    }
+    };
 
     const onSubmit = (values) => {
         api.post("/user/change_password", values, localStorage.getItem("accessToken")).then(
             (response) => {
                 if (response.message === "Пароль изменен") {
-                    location.reload()
+                    location.reload();
                 } else {
-                    alert(response.message)
+                    alert(response.message);
                 }
             }
-        )
-    }
+        );
+    };
 
     const validationSchema = yup.object({
         old_password: yup
@@ -46,7 +48,7 @@ export const ChangePasswordModal = ({ setIsChangePassOpen }) => {
             .string()
             .oneOf([yup.ref("new_password"), null], "Пароли должны совпадать")
             .required("Обязательное поле!")
-    })
+    });
 
     return (
         <Modal onClose={() => setIsChangePassOpen(false)}>
@@ -84,5 +86,5 @@ export const ChangePasswordModal = ({ setIsChangePassOpen }) => {
                 </S.MyForm>
             </Formik>
         </Modal>
-    )
-}
+    );
+};

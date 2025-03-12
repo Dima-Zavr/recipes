@@ -1,12 +1,14 @@
-import * as S from "./RecipeInf_components"
-import { Heart } from "../../../components/Heart/Heart"
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { like } from "../../../helpers/like"
+import * as S from "./RecipeInf_components";
+
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { Heart } from "../../../components/Heart/Heart";
+import { like } from "../../../helpers/like";
 
 export const RecipeInf = ({ recipe }) => {
-    const dispatch = useDispatch()
-    const [isLike, setIsLike] = useState(recipe.like)
+    const dispatch = useDispatch();
+    const [isLike, setIsLike] = useState(recipe.like);
 
     return (
         <S.Container>
@@ -22,7 +24,7 @@ export const RecipeInf = ({ recipe }) => {
                     <Heart
                         isLike={isLike}
                         onClick={(event) => {
-                            setIsLike(like(event, dispatch, recipe, isLike))
+                            setIsLike(like(event, dispatch, recipe, isLike));
                         }}
                     />
                 </S.HeartBlock>
@@ -54,5 +56,5 @@ export const RecipeInf = ({ recipe }) => {
                 </tbody>
             </S.Table>
         </S.Container>
-    )
-}
+    );
+};

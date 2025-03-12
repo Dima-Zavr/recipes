@@ -1,8 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit"
-import allRecipesSlice from "./allRecipesSlice"
-import myRecipesSlice from "./myRecipesSlice"
-import likeRecipesSlice from "./likeRecipesSlice"
-import themeSlice from "./themeSlice"
+import { configureStore } from "@reduxjs/toolkit";
+
+import allRecipesSlice from "./allRecipesSlice";
+import likeRecipesSlice from "./likeRecipesSlice";
+import myRecipesSlice from "./myRecipesSlice";
+import themeSlice from "./themeSlice";
 
 export default configureStore({
     reducer: {
@@ -11,4 +12,4 @@ export default configureStore({
         like: likeRecipesSlice,
         theme: themeSlice
     }
-})
+});

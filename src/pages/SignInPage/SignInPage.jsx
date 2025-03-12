@@ -1,15 +1,15 @@
+import { Button, DefaultButton } from "../../components/Button/Button_components";
 import * as S from "../../styles/components";
 
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as yup from "yup";
 
-import { Button, DefaultButton } from "../../components/Button/Button_components";
-import { Input } from "../../components/Input/Input";
 import { api } from "../../api/api";
-import { resetState } from "../../store/actions";
-import { useDispatch } from "react-redux";
+import { Input } from "../../components/Input/Input";
 import { setCookie } from "../../helpers/cookie";
+import { resetState } from "../../store/actions";
 
 export const SignInPage = () => {
     const nav = useNavigate();

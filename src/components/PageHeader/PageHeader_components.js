@@ -1,5 +1,6 @@
-import styled from "styled-components"
-import { NavLink } from "react-router-dom"
+import styled from "styled-components";
+
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
     width: 100%;
@@ -13,7 +14,7 @@ export const Container = styled.div`
         border-bottom: none;
         border-top: 1px solid ${({ theme }) => theme.colors.primary};
     }
-`
+`;
 export const Header = styled.header`
     max-width: 1360px;
     display: flex;
@@ -29,14 +30,14 @@ export const Header = styled.header`
         width: 100%;
         height: 60px;
     }
-`
+`;
 export const Logo = styled.img`
     height: 80px;
     width: auto;
     @media ${({ theme }) => theme.media.medium} {
         display: none;
     }
-`
+`;
 export const Left = styled.div`
     display: flex;
     align-items: center;
@@ -46,7 +47,7 @@ export const Left = styled.div`
         gap: 0;
         width: 75%;
     }
-`
+`;
 export const Right = styled.div`
     display: flex;
     align-items: center;
@@ -56,7 +57,7 @@ export const Right = styled.div`
         gap: 0;
         width: 25%;
     }
-`
+`;
 export const Title = styled(NavLink)`
     display: flex;
     box-sizing: border-box;
@@ -85,7 +86,7 @@ export const Title = styled(NavLink)`
     @media ${({ theme }) => theme.media.small} {
         font-size: 14px;
     }
-`
+`;
 
 export const Theme = styled.div`
     display: flex;
@@ -101,7 +102,7 @@ export const Theme = styled.div`
     @media ${({ theme }) => theme.media.medium} {
         display: none;
     }
-`
+`;
 export const Profile = styled(Title)`
     gap: 8px;
     @media ${({ theme }) => theme.media.medium} {
@@ -110,4 +111,4 @@ export const Profile = styled(Title)`
             display: none;
         }
     }
-`
+`;

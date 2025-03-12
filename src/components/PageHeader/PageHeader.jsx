@@ -1,26 +1,28 @@
-import * as S from "./PageHeader_components"
-import { Outlet } from "react-router-dom"
-import logo from "../../assets/logo.svg"
-import { SunIcon } from "../../assets/SunIcon"
-import { ProfileIcon } from "../../assets/ProfileIcon"
-import { MoonIcon } from "../../assets/MoonIcon"
-import { useDispatch, useSelector } from "react-redux"
-import { selectTheme, toggleTheme } from "../../store/themeSlice"
-import { darkTheme, lightTheme } from "../../styles/theme.ts"
+import * as S from "./PageHeader_components";
+
+import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
+
+import logo from "../../assets/logo.svg";
+import { MoonIcon } from "../../assets/MoonIcon";
+import { ProfileIcon } from "../../assets/ProfileIcon";
+import { SunIcon } from "../../assets/SunIcon";
+import { selectTheme, toggleTheme } from "../../store/themeSlice";
+import { darkTheme, lightTheme } from "../../styles/theme.ts";
 
 export const PageHeader = () => {
-    const dispatch = useDispatch()
-    const theme = useSelector(selectTheme)
+    const dispatch = useDispatch();
+    const theme = useSelector(selectTheme);
 
     const changeTheme = () => {
         if (theme.type === "light") {
-            dispatch(toggleTheme(darkTheme))
-            localStorage.setItem("theme", "dark")
+            dispatch(toggleTheme(darkTheme));
+            localStorage.setItem("theme", "dark");
         } else {
-            dispatch(toggleTheme(lightTheme))
-            localStorage.setItem("theme", "light")
+            dispatch(toggleTheme(lightTheme));
+            localStorage.setItem("theme", "light");
         }
-    }
+    };
 
     return (
         <>
@@ -41,15 +43,15 @@ export const PageHeader = () => {
                             {theme.type === "light" ? <SunIcon /> : <MoonIcon />}
                         </S.Theme>
                         <S.Profile
-                            to={!!localStorage.getItem("accessToken") ? "/profile" : "/signin"}
+                            to={localStorage.getItem("accessToken") ? "/profile" : "/signin"}
                         >
                             <ProfileIcon />
-                            {!!localStorage.getItem("accessToken") ? "Профиль" : "Войти"}
+                            {localStorage.getItem("accessToken") ? "Профиль" : "Войти"}
                         </S.Profile>
                     </S.Right>
                 </S.Header>
             </S.Container>
             <Outlet />
         </>
-    )
-}
+    );
+};

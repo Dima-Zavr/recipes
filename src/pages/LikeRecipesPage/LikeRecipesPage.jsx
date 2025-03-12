@@ -1,16 +1,18 @@
+import { FitButton } from "../../components/Button/Button_components";
+import { Search } from "../../components/RecipeCards/RecipeCards_components";
+import { Buttons } from "../../styles/components";
+
 import { useDispatch, useSelector } from "react-redux";
+import { debounce } from "lodash";
+
+import { SortIcon } from "../../assets/SortIcon";
+import { PageLayout } from "../../components/PageLayout/PageLayout";
+import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
 import {
     addLikeRecipes,
     changeLikeSearch,
     selectLikeRecipesData
 } from "../../store/likeRecipesSlice";
-import { debounce } from "lodash";
-import { Search } from "../../components/RecipeCards/RecipeCards_components";
-import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
-import { PageLayout } from "../../components/PageLayout/PageLayout";
-import { FitButton } from "../../components/Button/Button_components";
-import { SortIcon } from "../../assets/SortIcon";
-import { Buttons } from "../../styles/components";
 
 export const LikeRecipesPage = () => {
     const recipesData = useSelector(selectLikeRecipesData);

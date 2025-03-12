@@ -1,30 +1,32 @@
-import { api } from "../../api/api"
-import * as yup from "yup"
-import { Modal } from "../../components/Modal/Modal"
-import * as S from "../../styles/components"
-import { Input } from "../../components/Input/Input"
-import { Button, DefaultButton } from "../../components/Button/Button_components"
-import { Formik } from "formik"
+import { Button, DefaultButton } from "../../components/Button/Button_components";
+import * as S from "../../styles/components";
+
+import { Formik } from "formik";
+import * as yup from "yup";
+
+import { api } from "../../api/api";
+import { Input } from "../../components/Input/Input";
+import { Modal } from "../../components/Modal/Modal";
 
 export const ChangeDataModal = ({ user, setIsChangeDataOpen }) => {
     const initialValues = {
         lastname: user.lastname,
         firstname: user.firstname,
         email: user.email
-    }
+    };
 
     const onSubmit = (values) => {
-        console.log("Привет")
+        console.log("Привет");
         api.post("/user/change_data", values, localStorage.getItem("accessToken")).then(
             (response) => {
                 if (response.message === "Данные изменены") {
-                    location.reload()
+                    location.reload();
                 } else {
-                    alert(response.message)
+                    alert(response.message);
                 }
             }
-        )
-    }
+        );
+    };
 
     const validationSchema = yup.object({
         lastname: yup.string(),
@@ -34,7 +36,7 @@ export const ChangeDataModal = ({ user, setIsChangeDataOpen }) => {
             .max(100, "Слишком много символов!")
             .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{1,64}$/i, "Неправильный email!")
             .required("Обязательное поле!")
-    })
+    });
 
     return (
         <Modal onClose={() => setIsChangeDataOpen(false)}>
@@ -68,5 +70,5 @@ export const ChangeDataModal = ({ user, setIsChangeDataOpen }) => {
                 </S.MyForm>
             </Formik>
         </Modal>
-    )
-}
+    );
+};
