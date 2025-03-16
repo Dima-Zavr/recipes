@@ -10,6 +10,7 @@ import { PlusIcon } from "../../assets/PlusIcon";
 import { SortIcon } from "../../assets/SortIcon";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
+import { UpButton } from "../../components/UpButton/UpButton";
 import { addMyRecipes, changeMySearch, selectMyRecipesData } from "../../store/myRecipesSlice";
 
 export const MyRecipesPage = () => {
@@ -42,6 +43,7 @@ export const MyRecipesPage = () => {
                 </FitButton>
             </Buttons>
             <RecipeCards recipesData={recipesData} addRecipes={addMyRecipes} />
+            <UpButton />
         </PageLayout>
     );
 };

@@ -8,6 +8,7 @@ import { debounce } from "lodash";
 import { SortIcon } from "../../assets/SortIcon";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
+import { UpButton } from "../../components/UpButton/UpButton";
 import {
     addLikeRecipes,
     changeLikeSearch,
@@ -39,6 +40,7 @@ export const LikeRecipesPage = () => {
                 </FitButton>
             </Buttons>
             <RecipeCards recipesData={recipesData} addRecipes={addLikeRecipes} />
+            <UpButton />
         </PageLayout>
     );
 };

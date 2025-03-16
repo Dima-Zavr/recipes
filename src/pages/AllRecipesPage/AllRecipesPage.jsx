@@ -11,6 +11,7 @@ import { SortIcon } from "../../assets/SortIcon";
 import { Filters } from "../../components/Filters/Filters";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
+import { UpButton } from "../../components/UpButton/UpButton";
 import {
     addAllRecipes,
     changeAllFilters,
@@ -50,6 +51,7 @@ export const AllRecipesPage = () => {
                 </FitButton>
             </Buttons>
             <RecipeCards recipesData={recipesData} filters={filters} addRecipes={addAllRecipes} />
+            <UpButton />
             {isFiltersOpen && (
                 <Filters
                     key={JSON.stringify(filters)}
