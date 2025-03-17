@@ -8,6 +8,7 @@ import { debounce } from "lodash";
 
 import { FiltersIcon } from "../../assets/FiltersIcon";
 import { SortIcon } from "../../assets/SortIcon";
+import { Dropdown } from "../../components/Dropdown/Dropdown";
 import { Filters } from "../../components/Filters/Filters";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
@@ -20,6 +21,13 @@ import {
     selectAllRecipesData
 } from "../../store/allRecipesSlice";
 
+const options = [
+    { value: "default", label: "По умолчанию" },
+    { value: "asc_cook_time", label: "По возрастанию времени приготовления" },
+    { value: "desc_cook_time", label: "По убыванию времени приготовления" },
+    { value: "asc_calories", label: "По возрастанию калорий" },
+    { value: "desc_calories", label: "По убыванию калорий" }
+];
 export const AllRecipesPage = () => {
     const recipesData = useSelector(selectAllRecipesData);
     const filters = useSelector(selectAllFilters);
@@ -45,10 +53,10 @@ export const AllRecipesPage = () => {
                     <FiltersIcon />
                     Фильтры
                 </FitButton>
-                <FitButton>
+                <Dropdown options={options}>
                     <SortIcon />
-                    Сортировка
-                </FitButton>
+                    {options[0].label}
+                </Dropdown>
             </Buttons>
             <RecipeCards recipesData={recipesData} filters={filters} addRecipes={addAllRecipes} />
             <UpButton />
