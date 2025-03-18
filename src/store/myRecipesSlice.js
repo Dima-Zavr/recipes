@@ -29,6 +29,12 @@ export const myRecipesSlice = createSlice({
             state.recipesData.page = 1;
             state.recipesData.isHasMore = true;
             state.recipesData.search = action.payload;
+        },
+        changeMySort: (state, action) => {
+            state.recipesData.sort = action.payload;
+            state.recipesData.recipes = [];
+            state.recipesData.page = 1;
+            state.recipesData.isHasMore = true;
         }
     },
     extraReducers: (builder) => {
@@ -36,8 +42,10 @@ export const myRecipesSlice = createSlice({
     }
 });
 
-export const { addMyRecipes, changeMyRecipes, changeMySearch } = myRecipesSlice.actions;
+export const { addMyRecipes, changeMyRecipes, changeMySearch, changeMySort } =
+    myRecipesSlice.actions;
 
 export const selectMyRecipesData = (state) => state.my.recipesData;
+export const selectMySort = (state) => state.my.sort;
 
 export default myRecipesSlice.reducer;

@@ -1,17 +1,18 @@
-import { FitButton } from "../../components/Button/Button_components";
 import { Search } from "../../components/RecipeCards/RecipeCards_components";
 import { Buttons } from "../../styles/components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { debounce } from "lodash";
 
-import { SortIcon } from "../../assets/SortIcon";
+import { Dropdown } from "../../components/Dropdown/Dropdown";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
 import { UpButton } from "../../components/UpButton/UpButton";
+import { sortOptions } from "../../helpers/sortOptions";
 import {
     addLikeRecipes,
     changeLikeSearch,
+    changeLikeSort,
     selectLikeRecipesData
 } from "../../store/likeRecipesSlice";
 
@@ -34,10 +35,11 @@ export const LikeRecipesPage = () => {
                 onChange={(event) => debounceSearch(event.target.value)}
             />
             <Buttons>
-                <FitButton>
-                    <SortIcon />
-                    Сортировка
-                </FitButton>
+                <Dropdown
+                    options={sortOptions}
+                    defaultSort={recipesData.sort}
+                    changeSort={changeLikeSort}
+                />
             </Buttons>
             <RecipeCards recipesData={recipesData} addRecipes={addLikeRecipes} />
             <UpButton />

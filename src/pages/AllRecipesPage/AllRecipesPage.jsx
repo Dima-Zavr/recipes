@@ -7,30 +7,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { debounce } from "lodash";
 
 import { FiltersIcon } from "../../assets/FiltersIcon";
-import { SortIcon } from "../../assets/SortIcon";
 import { Dropdown } from "../../components/Dropdown/Dropdown";
 import { Filters } from "../../components/Filters/Filters";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
 import { UpButton } from "../../components/UpButton/UpButton";
+import { sortOptions } from "../../helpers/sortOptions";
 import {
     addAllRecipes,
     changeAllFilters,
     changeAllSearch,
+    changeAllSort,
     selectAllFilters,
     selectAllRecipesData
 } from "../../store/allRecipesSlice";
 
-const options = [
-    { value: "default", label: "По умолчанию" },
-    { value: "asc_cook_time", label: "По возрастанию времени приготовления" },
-    { value: "desc_cook_time", label: "По убыванию времени приготовления" },
-    { value: "asc_calories", label: "По возрастанию калорий" },
-    { value: "desc_calories", label: "По убыванию калорий" }
-];
 export const AllRecipesPage = () => {
     const recipesData = useSelector(selectAllRecipesData);
     const filters = useSelector(selectAllFilters);
+    //const sortOptions = useSelector(selectAllSort);
     const dispatch = useDispatch();
     const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
@@ -53,12 +48,18 @@ export const AllRecipesPage = () => {
                     <FiltersIcon />
                     Фильтры
                 </FitButton>
-                <Dropdown options={options}>
-                    <SortIcon />
-                    {options[0].label}
-                </Dropdown>
+                <Dropdown
+                    options={sortOptions}
+                    defaultSort={recipesData.sort}
+                    changeSort={changeAllSort}
+                />
             </Buttons>
-            <RecipeCards recipesData={recipesData} filters={filters} addRecipes={addAllRecipes} />
+            <RecipeCards
+                recipesData={recipesData}
+                filters={filters}
+                addRecipes={addAllRecipes}
+                //addSort={addAllSort}
+            />
             <UpButton />
             {isFiltersOpen && (
                 <Filters

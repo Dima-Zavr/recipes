@@ -30,6 +30,15 @@ export const allRecipesSlice = createSlice({
             state.recipesData.isHasMore = true;
             state.recipesData.search = action.payload;
         },
+        addAllSort: (state, action) => {
+            state.sort = action.payload;
+        },
+        changeAllSort: (state, action) => {
+            state.recipesData.sort = action.payload;
+            state.recipesData.recipes = [];
+            state.recipesData.page = 1;
+            state.recipesData.isHasMore = true;
+        },
         changeAllFilters: (state, action) => {
             state.recipesData.recipes = [];
             state.recipesData.page = 1;
@@ -50,10 +59,17 @@ export const allRecipesSlice = createSlice({
     }
 });
 
-export const { addAllRecipes, changeAllSearch, changeAllRecipes, changeAllFilters } =
-    allRecipesSlice.actions;
+export const {
+    addAllRecipes,
+    changeAllSearch,
+    changeAllRecipes,
+    addAllSort,
+    changeAllSort,
+    changeAllFilters
+} = allRecipesSlice.actions;
 
 export const selectAllRecipesData = (state) => state.all.recipesData;
 export const selectAllFilters = (state) => state.all.filters;
+export const selectAllSort = (state) => state.all.sort;
 
 export default allRecipesSlice.reducer;

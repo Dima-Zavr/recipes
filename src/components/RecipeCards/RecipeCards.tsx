@@ -25,7 +25,8 @@ export const RecipeCards = ({ recipesData, filters = {}, addRecipes }) => {
     let params: IParams = Object.assign(JSON.parse(JSON.stringify(filters)), {
         search: recipesData.search,
         page: recipesData.page,
-        limit: recipesData.limit
+        limit: recipesData.limit,
+        sort: recipesData.sort
     });
 
     const loadRecipes = () => {
@@ -35,6 +36,7 @@ export const RecipeCards = ({ recipesData, filters = {}, addRecipes }) => {
             localStorage.getItem("accessToken")
         ).then((response) => {
             dispatch(addRecipes(response.recipes));
+            //dispatch(addSort(response.sort))
             if (response.meta) {
                 sessionStorage.setItem("filters", JSON.stringify(response.meta?.filters));
             }

@@ -8,6 +8,7 @@ export const initialState = {
         page: 1,
         limit: 6,
         search: "",
+        sort: "default",
         isHasMore: true
     },
     filters: {
@@ -20,5 +21,6 @@ export const initialState = {
             min: "",
             max: ""
         }
-    }
+    },
+    sort: []
 };

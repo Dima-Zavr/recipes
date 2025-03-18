@@ -27,6 +27,12 @@ export const likeRecipesSlice = createSlice({
             state.recipesData.page = 1;
             state.recipesData.isHasMore = true;
             state.recipesData.search = action.payload;
+        },
+        changeLikeSort: (state, action) => {
+            state.recipesData.sort = action.payload;
+            state.recipesData.recipes = [];
+            state.recipesData.page = 1;
+            state.recipesData.isHasMore = true;
         }
     },
     extraReducers: (builder) => {
@@ -34,8 +40,10 @@ export const likeRecipesSlice = createSlice({
     }
 });
 
-export const { addLikeRecipes, changeLikeSearch, eraseLikeRecipes } = likeRecipesSlice.actions;
+export const { addLikeRecipes, eraseLikeRecipes, changeLikeSearch, changeLikeSort } =
+    likeRecipesSlice.actions;
 
 export const selectLikeRecipesData = (state) => state.like.recipesData;
+export const selectLikeSort = (state) => state.like.sort;
 
 export default likeRecipesSlice.reducer;

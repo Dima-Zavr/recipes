@@ -7,11 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
 
 import { PlusIcon } from "../../assets/PlusIcon";
-import { SortIcon } from "../../assets/SortIcon";
+import { Dropdown } from "../../components/Dropdown/Dropdown";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { RecipeCards } from "../../components/RecipeCards/RecipeCards.tsx";
 import { UpButton } from "../../components/UpButton/UpButton";
-import { addMyRecipes, changeMySearch, selectMyRecipesData } from "../../store/myRecipesSlice";
+import { sortOptions } from "../../helpers/sortOptions";
+import {
+    addMyRecipes,
+    changeMySearch,
+    changeMySort,
+    selectMyRecipesData
+} from "../../store/myRecipesSlice";
 
 export const MyRecipesPage = () => {
     const recipesData = useSelector(selectMyRecipesData);
@@ -22,7 +28,7 @@ export const MyRecipesPage = () => {
         dispatch(changeMySearch(value.toLowerCase()));
     };
 
-    const debounceSearch = debounce(searchRecipe, 10);
+    const debounceSearch = debounce(searchRecipe, 1000);
 
     return (
         <PageLayout>
@@ -33,14 +39,15 @@ export const MyRecipesPage = () => {
                 onChange={(event) => debounceSearch(event.target.value)}
             />
             <Buttons>
-                <FitButton>
-                    <SortIcon />
-                    Сортировка
-                </FitButton>
                 <FitButton view="primary" onClick={() => nav("/addRecipe", { replace: true })}>
                     <PlusIcon />
                     <span>Создать рецепт</span>
                 </FitButton>
+                <Dropdown
+                    options={sortOptions}
+                    defaultSort={recipesData.sort}
+                    changeSort={changeMySort}
+                />
             </Buttons>
             <RecipeCards recipesData={recipesData} addRecipes={addMyRecipes} />
             <UpButton />
