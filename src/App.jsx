@@ -5,8 +5,8 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 
 import { api } from "./api/api";
 import { PageHeader } from "./components/PageHeader/PageHeader";
-import { AddRecipePage } from "./pages/AddRecipePage/AddRecipePage";
 import { AllRecipesPage } from "./pages/AllRecipesPage/AllRecipesPage";
+import { EditRecipePage } from "./pages/EditRecipePage/EditRecipePage";
 import { LikeRecipesPage } from "./pages/LikeRecipesPage/LikeRecipesPage";
 import { MyRecipesPage } from "./pages/MyRecipesPage/MyRecipesPage";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
@@ -35,7 +35,20 @@ const router = createBrowserRouter([
             },
             {
                 path: "addRecipe",
-                element: <AddRecipePage />
+                element: <EditRecipePage />
+            },
+            {
+                path: "changeRecipe/:recipeId",
+                element: <EditRecipePage />,
+                loader: async ({ params }) => {
+                    return await api
+                        .get(
+                            "/recipes/inf_recipe/" + params.recipeId,
+                            {},
+                            localStorage.getItem("accessToken")
+                        )
+                        .then((response) => response);
+                }
             },
             {
                 path: "likeRecipes",

@@ -52,7 +52,6 @@ export const HangButton = styled(Button)`
     right: 20px;
     width: fit-content;
     padding: 16px;
-    border-radius: 50%;
     z-index: ${({ theme }) => theme.zIndex.btn};
 
     @media ${({ theme }) => theme.media.medium} {

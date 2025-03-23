@@ -1,8 +1,8 @@
 import { Button, DefaultButton } from "../../components/Button/Button_components";
-import { Buttons, Inputs, MyForm } from "./AddRecipePage_components";
+import { Buttons, Inputs, MyForm } from "./EditRecipePage_components";
 
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as yup from "yup";
 
@@ -12,19 +12,21 @@ import { Input } from "../../components/Input/Input";
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { addMyRecipes } from "../../store/myRecipesSlice";
 
-export const AddRecipePage = () => {
-    const dispatch = useDispatch();
+export const EditRecipePage = () => {
+    const recipe = useLoaderData();
     const nav = useNavigate();
+    const pathName = useLocation().pathname;
+    const dispatch = useDispatch();
 
     const initialValues = {
-        name: "",
-        cook_time: "",
-        calories: "",
-        type: "",
-        photos: [],
-        ingredients: [],
-        equipments: [],
-        cook_steps: []
+        name: recipe?.name ? recipe.name : "",
+        cook_time: recipe?.cook_time ? recipe.cook_time : "",
+        calories: recipe?.calories ? recipe.calories : "",
+        type: recipe?.type ? recipe.type : "",
+        photos: recipe?.photos ? recipe.photos : [],
+        ingredients: recipe?.ingredients ? recipe.ingredients : [],
+        equipments: recipe?.equipments ? recipe.equipments : [],
+        cook_steps: recipe?.cook_steps ? recipe.cook_steps : []
     };
 
     const onSubmit = (values) => {
@@ -57,7 +59,7 @@ export const AddRecipePage = () => {
             >
                 {({ values, setFieldValue }) => (
                     <MyForm>
-                        <h2>Создать рецепт</h2>
+                        <h2>{pathName === "/addRecipe" ? "Создать" : "Редактировать"} рецепт</h2>
                         <Input
                             label="Название блюда"
                             type="text"
@@ -115,7 +117,7 @@ export const AddRecipePage = () => {
                         <Buttons>
                             <DefaultButton
                                 onClick={() => {
-                                    nav("/myRecipes");
+                                    pathName === "/addRecipe" ? nav("/myRecipes") : nav(-1);
                                 }}
                             >
                                 Назад
