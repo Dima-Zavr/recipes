@@ -38,6 +38,11 @@ export const LinkButton = styled(Button)`
     color: ${({ theme }) => theme.colors.font};
     width: fit-content;
     background-color: transparent;
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+        cursor: pointer;
+    }
 `;
 export const BtnBack = styled(LinkButton)`
     position: absolute;
