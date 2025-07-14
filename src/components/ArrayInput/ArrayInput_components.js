@@ -38,19 +38,24 @@ export const Flex = styled.div`
     display: flex;
     margin-bottom: 8px;
 `;
-export const List = styled.div`
+export const List = styled.ul`
     display: flex;
     flex-direction: column;
-    gap: 8px;
 `;
 export const Item = styled.div`
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
+    margin-bottom: 8px;
     border: 1px solid ${({ theme }) => theme.colors.primary};
     border-radius: 16px;
     display: flex;
     justify-content: space-between;
+`;
+
+export const Label = styled.li`
+    display: flex;
+    align-items: center;
 `;
 export const Close = styled.div`
     height: 24px;

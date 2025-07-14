@@ -2,12 +2,26 @@ import * as I from "../Input/Input_components";
 import * as AI from "./ArrayInput_components";
 
 import React, { useState } from "react";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { ErrorMessage } from "formik";
 
 import { CloseIcon } from "../../assets/CloseIcon";
+import { DraggableIcon } from "../../assets/DraggableIcon";
 
 export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholder }) => {
     const [inputValue, setInputValue] = useState("");
+
+    const onDragEnd = (result) => {
+        const { destination, source } = result;
+
+        if (!destination) return;
+
+        const newItems = [...values];
+        const item = newItems[source.index];
+        newItems.splice(source.index, 1);
+        newItems.splice(destination.index, 0, item);
+        setFieldValue(name, newItems);
+    };
 
     // Функция для добавления элемента
     const handleAddItem = () => {
@@ -26,8 +40,7 @@ export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholde
     };
 
     const handleDeleteItem = (index) => {
-        console.log(index);
-        const newValue = values.splice(index, 1);
+        values.splice(index, 1);
         setFieldValue(name, values);
     };
 
@@ -52,18 +65,35 @@ export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholde
                 </AI.AddButton>
             </AI.Flex>
 
-            <AI.List>
-                {values?.map((item, index) => (
-                    <AI.Item key={index}>
-                        <li>
-                            {index + 1}. {item}
-                        </li>
-                        <AI.Close onClick={() => handleDeleteItem(index)}>
-                            <CloseIcon />
-                        </AI.Close>
-                    </AI.Item>
-                ))}
-            </AI.List>
+            <DragDropContext onDragEnd={onDragEnd}>
+                <Droppable droppableId="items">
+                    {(provided) => (
+                        <AI.List {...provided.droppableProps} ref={provided.innerRef}>
+                            {values?.map((item, index) => (
+                                <Draggable key={index} draggableId={String(index)} index={index}>
+                                    {(provided) => (
+                                        <div
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                        >
+                                            <AI.Item key={index}>
+                                                <AI.Label>
+                                                    <DraggableIcon /> {item}
+                                                </AI.Label>
+                                                <AI.Close onClick={() => handleDeleteItem(index)}>
+                                                    <CloseIcon />
+                                                </AI.Close>
+                                            </AI.Item>
+                                        </div>
+                                    )}
+                                </Draggable>
+                            ))}
+                            {provided.placeholder}
+                        </AI.List>
+                    )}
+                </Droppable>
+            </DragDropContext>
         </I.Container>
     );
 };
