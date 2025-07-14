@@ -30,9 +30,18 @@ export const EditRecipePage = () => {
     };
 
     const onSubmit = (values) => {
-        api.post("/recipes/add_recipe ", values, localStorage.getItem("accessToken")).then();
-        dispatch(addMyRecipes(values));
-        nav("/myRecipes");
+        if (recipe._id) {
+            api.post(
+                "/recipes/edit_recipe/" + recipe._id,
+                values,
+                localStorage.getItem("accessToken")
+            ).then();
+            nav(-1);
+        } else {
+            api.post("/recipes/add_recipe", values, localStorage.getItem("accessToken")).then();
+            dispatch(addMyRecipes(values));
+            nav("/myRecipes");
+        }
     };
 
     const validationSchema = yup.object({

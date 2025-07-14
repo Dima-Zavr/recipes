@@ -39,7 +39,7 @@ export const MyRecipesPage = () => {
                 onChange={(event) => debounceSearch(event.target.value)}
             />
             <Buttons>
-                <FitButton view="primary" onClick={() => nav("/addRecipe", { replace: true })}>
+                <FitButton view="primary" onClick={() => nav("/addRecipe")}>
                     <PlusIcon />
                     <span>Создать рецепт</span>
                 </FitButton>

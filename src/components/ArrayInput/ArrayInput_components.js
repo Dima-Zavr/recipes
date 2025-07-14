@@ -52,7 +52,6 @@ export const Item = styled.div`
     display: flex;
     justify-content: space-between;
 `;
-
 export const Label = styled.li`
     display: flex;
     align-items: center;
