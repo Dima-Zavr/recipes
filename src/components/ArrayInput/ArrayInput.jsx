@@ -4,10 +4,10 @@ import * as AI from "./ArrayInput_components";
 import React, { useState } from "react";
 import { ErrorMessage } from "formik";
 
+import { CloseIcon } from "../../assets/CloseIcon";
+
 export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholder }) => {
     const [inputValue, setInputValue] = useState("");
-
-    //console.log(`Values for ${name}:`, values); // Проверка значений
 
     // Функция для добавления элемента
     const handleAddItem = () => {
@@ -23,6 +23,12 @@ export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholde
             e.preventDefault(); // Предотвращаем стандартное поведение (например, отправку формы)
             handleAddItem(); // Добавляем элемент
         }
+    };
+
+    const handleDeleteItem = (index) => {
+        console.log(index);
+        const newValue = values.splice(index, 1);
+        setFieldValue(name, values);
     };
 
     return (
@@ -46,13 +52,18 @@ export const ArrayInput = ({ label, name, values = [], setFieldValue, placeholde
                 </AI.AddButton>
             </AI.Flex>
 
-            <ul>
+            <AI.List>
                 {values?.map((item, index) => (
-                    <li key={index}>
-                        {index + 1}. {item}
-                    </li>
+                    <AI.Item key={index}>
+                        <li>
+                            {index + 1}. {item}
+                        </li>
+                        <AI.Close onClick={() => handleDeleteItem(index)}>
+                            <CloseIcon />
+                        </AI.Close>
+                    </AI.Item>
                 ))}
-            </ul>
+            </AI.List>
         </I.Container>
     );
 };

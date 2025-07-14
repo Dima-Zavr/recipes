@@ -25,7 +25,6 @@ export const MyInput = styled.input`
         -webkit-appearance: none;
     }
 `;
-
 export const AddButton = styled(Button)`
     width: auto;
     height: auto;
@@ -37,4 +36,27 @@ export const AddButton = styled(Button)`
 export const Flex = styled.div`
     width: 100%;
     display: flex;
+    margin-bottom: 8px;
+`;
+export const List = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+`;
+export const Item = styled.div`
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+`;
+export const Close = styled.div`
+    height: 24px;
+    color: ${({ theme }) => theme.colors.font};
+    &:hover {
+        color: red;
+        cursor: pointer;
+    }
 `;

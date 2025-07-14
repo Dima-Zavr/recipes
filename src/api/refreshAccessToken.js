@@ -8,6 +8,7 @@ export async function refreshAccessToken() {
         const refreshToken = getCookie("refreshToken");
 
         if (!refreshToken) {
+            localStorage.removeItem("accessToken");
             throw new Error("Refresh token отсутствует");
         }
 

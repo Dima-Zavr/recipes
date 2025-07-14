@@ -122,7 +122,9 @@ export const EditRecipePage = () => {
                             >
                                 Назад
                             </DefaultButton>
-                            <Button type="submit">Создать</Button>
+                            <Button type="submit">
+                                {pathName === "/addRecipe" ? "Создать" : "Редактировать"}
+                            </Button>
                         </Buttons>
                     </MyForm>
                 )}
