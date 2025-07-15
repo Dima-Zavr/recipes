@@ -1,10 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Main = styled.div`
     &:hover {
         cursor: pointer;
     }
-`
+`;
 export const Picture = styled.div`
     position: relative;
 
@@ -13,7 +13,7 @@ export const Picture = styled.div`
         top: 3px;
         right: 5px;
     }
-`
+`;
 export const Img = styled.img`
     object-fit: cover;
     width: 100%;
@@ -28,7 +28,7 @@ export const Img = styled.img`
     ${Main}:hover & {
         box-shadow: 0 0 20px ${({ theme }) => theme.colors.font};
     }
-`
+`;
 export const Inf = styled.div`
     position: absolute;
     bottom: 0;
@@ -37,13 +37,13 @@ export const Inf = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-`
+`;
 export const Time = styled.p`
     background-color: ${({ theme }) => theme.colors.bg};
     font-size: 20px;
     padding: 10px;
     border-radius: 0 16px 0 15px;
-`
+`;
 export const Calor = styled(Time)`
     border-radius: 16px 0 15px 0;
-`
+`;

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   :root {
@@ -51,6 +51,10 @@ export default createGlobalStyle`
   li {
     list-style-type: none;
   }
+  
+  img{
+    user-select: none;
+  }
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -83,4 +87,4 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.colors.font};
     margin-bottom: 8px;
   }
-`
+`;

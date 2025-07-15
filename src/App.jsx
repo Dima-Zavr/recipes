@@ -34,12 +34,12 @@ const router = createBrowserRouter([
                 element: <MyRecipesPage />
             },
             {
-                path: "addRecipe",
-                element: <EditRecipePage />
+                path: "likeRecipes",
+                element: <LikeRecipesPage />
             },
             {
-                path: "changeRecipe/:recipeId",
-                element: <EditRecipePage />,
+                path: "recipe/:recipeId",
+                element: <RecipePage />,
                 loader: async ({ params }) => {
                     return await api
                         .get(
@@ -51,12 +51,12 @@ const router = createBrowserRouter([
                 }
             },
             {
-                path: "likeRecipes",
-                element: <LikeRecipesPage />
+                path: "addRecipe",
+                element: <EditRecipePage />
             },
             {
-                path: "recipe/:recipeId",
-                element: <RecipePage />,
+                path: "changeRecipe/:recipeId",
+                element: <EditRecipePage />,
                 loader: async ({ params }) => {
                     return await api
                         .get(
