@@ -36,7 +36,7 @@ export const EditRecipePage = () => {
                 values,
                 localStorage.getItem("accessToken")
             ).then();
-            nav(-1);
+            nav("/recipe/" + recipe._id, { replace: true });
         } else {
             api.post("/recipes/add_recipe", values, localStorage.getItem("accessToken")).then();
             dispatch(addMyRecipes(values));
@@ -125,8 +125,9 @@ export const EditRecipePage = () => {
                         />
                         <Buttons>
                             <DefaultButton
-                                onClick={() => {
-                                    pathName === "/addRecipe" ? nav("/myRecipes") : nav(-1);
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    nav(-1);
                                 }}
                             >
                                 Назад

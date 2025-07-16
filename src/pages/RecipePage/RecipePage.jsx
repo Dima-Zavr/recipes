@@ -27,7 +27,10 @@ export const RecipePage = () => {
             </Content>
             <RecipeSteps steps={recipe.cook_steps} />
             {recipe.isMyRecipe && (
-                <HangButton view="primary" onClick={() => nav(`/changeRecipe/${recipe._id}`)}>
+                <HangButton
+                    view="primary"
+                    onClick={() => nav(`/changeRecipe/${recipe._id}`, { replace: true })}
+                >
                     <EditIcon />
                     <span>Изменить рецепт</span>
                 </HangButton>
