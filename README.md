@@ -44,7 +44,7 @@ ___
 |![image](https://github.com/user-attachments/assets/55e9d100-9e90-474d-8765-575249d0d099)|![image](https://github.com/user-attachments/assets/4dd9ac76-0254-4861-99d9-4bdabb07bcbf)|
 |**Страница "Профиль"**|**Модальное окно для обновления данных профиля**|
 |![image](https://github.com/user-attachments/assets/3f176892-030d-4a15-950d-e7bbcb47c16b)|![image](https://github.com/user-attachments/assets/80754339-8bb6-43bb-9ce1-291f741986e2)|
-|**Модальное окно для обновления данных профиля**||
+|**Модальное окно для обновления пароля профиля**||
 |![image](https://github.com/user-attachments/assets/564ebb1f-67f6-47e5-b9b7-9528c88dd277)||
 |**Страница "Регистрации"**|**Страница "Авторизации"**|
 |![image](https://github.com/user-attachments/assets/a3110bf7-2ba2-454d-946e-ba5a2b2e60c3)|![image](https://github.com/user-attachments/assets/59ab8e6d-c873-4f5c-bf84-052728bbb949)|
